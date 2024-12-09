@@ -1,7 +1,9 @@
 ﻿using Dapper;
+using Microsoft.EntityFrameworkCore;
 using Project295.API.Models;
 using Project295.Core.Common;
 using Project295.Core.Repository;
+using Project295.Infra.Common;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,37 +15,42 @@ namespace Project295.Infra.Repository
 {
     public class AttachmentRepository: IAttachmentRepository
     {
-        private readonly IDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public AttachmentRepository(IDbContext dbContext)
+        public AttachmentRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public List<Attachment> GetAllAttachment()
+        public async Task<List<Attachment>> GetAllAttachment()
         {
-            return null;
-
+            return await _dbContext.Attachments.ToListAsync();
         }
 
-        public Attachment GetAttachmentById(int id)
+        public async Task<Attachment> GetAttachmentById(int id)
         {
-            return null;
-
+            return await _dbContext.Attachments.FirstOrDefaultAsync(x => x.AttachmentId == id);
         }
 
-        public void CreateAttachment(Attachment attachment)
+        public async Task CreateAttachment(Attachment attachment)
         {
-          
+            _dbContext.Attachments.Add(attachment);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void UpdateAttachment(Attachment attachment)
+        public async Task UpdateAttachment(Attachment attachment)
         {
-           
+            _dbContext.Attachments.Update(attachment);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void DeleteAttachment(int id)
+        public async Task DeleteAttachment(int id)
         {
-            
+            var attachment = await _dbContext.Attachments.FirstOrDefaultAsync(x => x.AttachmentId == id);
+            if (attachment != null)
+            {
+                _dbContext.Remove(attachment);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

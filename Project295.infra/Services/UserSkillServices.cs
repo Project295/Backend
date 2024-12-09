@@ -1,11 +1,7 @@
 ﻿using Project295.API.Models;
 using Project295.Core.Repository;
 using Project295.Core.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Project295.Infra.Services
 {
@@ -16,31 +12,32 @@ namespace Project295.Infra.Services
         {
             _userSkillRepository = userSkillRepository;
         }
-        public List<UserSkill> GetAllUserSkill()
+        public  Task<List<UserSkill>> GetAllUserSkill()
         {
-            return null;
+            return  _userSkillRepository.GetAllUserSkill();
 
         }
 
-        public UserSkill GetUserSkillById(int id)
+        public Task<UserSkill> GetUserSkillById(int id)
         {
-            return null;
+            return  _userSkillRepository.GetUserSkillById(id);
 
         }
 
-        public void CreateUserSkill(UserSkill userSkill)
+        public Task CreateUserSkill(UserSkill userSkill)
         {
+            return _userSkillRepository.CreateUserSkill(userSkill);
 
         }
 
-        public void UpdateUserSkill(UserSkill userSkill)
+        public Task UpdateUserSkill(UserSkill userSkill)
         {
-
+            return _userSkillRepository.UpdateUserSkill(userSkill);
         }
 
-        public void DeleteUserSkill(int id)
+        public Task DeleteUserSkill(int id)
         {
-
+            return _userSkillRepository.DeleteUserSkill(id);
         }
     }
 }

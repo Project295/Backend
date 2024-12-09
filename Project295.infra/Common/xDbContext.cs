@@ -6,12 +6,12 @@ using Project295.Core.Common;
 
 namespace Project295.Infra.Common
 {
-    public class DbContext : IDbContext
+    public class xDbContext : IDbContext
     {
         private DbConnection _connection;
         private readonly IConfiguration _configuration;
 
-        public DbContext(IConfiguration configuration)
+        public xDbContext(IConfiguration configuration)
         {
             _configuration = configuration;
         }

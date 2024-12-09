@@ -16,35 +16,35 @@ namespace Project295.API.Controllers
             _userSkillServices = userSkillServices;
         }
         [HttpGet]
-        public List<UserSkill> GetAllUserSkill()
+        public Task<List<UserSkill>> GetAllUserSkill()
         {
-            return null;
+           return _userSkillServices.GetAllUserSkill();
 
         }
         [HttpGet]
         [Route("GetUserSkillById")]
-        public UserSkill GetUserSkillById(int id)
+        public Task<UserSkill> GetUserSkillById(int id)
         {
-            return null;
+            return _userSkillServices.GetUserSkillById(id);
 
         }
         [HttpPost]
         [Route("CreateUserSkill")]
-        public void CreateUserSkill(UserSkill userSkill)
+        public Task CreateUserSkill(UserSkill userSkill)
         {
-
+            return _userSkillServices.UpdateUserSkill(userSkill);
         }
         [HttpPut]
         [Route("UpdateUserSkill")]
-        public void UpdateUserSkill(UserSkill userSkill)
+        public  Task UpdateUserSkill(UserSkill userSkill)
         {
-
+            return  _userSkillServices.UpdateUserSkill(userSkill);
         }
         [HttpDelete]
         [Route("DeleteUserSkill")]
-        public void DeleteUserSkill(int id)
+        public Task DeleteUserSkill(int id)
         {
-
+            return _userSkillServices.DeleteUserSkill(id);
         }
     }
 }

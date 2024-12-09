@@ -9,10 +9,10 @@ namespace Project295.Core.Repository
 {
     public interface IUserSkillRepository
     {
-         List<UserSkill> GetAllUserSkill();
-         UserSkill GetUserSkillById(int id);
-         void CreateUserSkill(UserSkill userSkill);
-         void UpdateUserSkill(UserSkill userSkill);
-         void DeleteUserSkill(int id);
+        Task<List<UserSkill>> GetAllUserSkill();
+         Task<UserSkill> GetUserSkillById(int id);
+         Task CreateUserSkill(UserSkill userSkill);
+         Task UpdateUserSkill(UserSkill userSkill);
+         Task DeleteUserSkill(int id);
     }
 }

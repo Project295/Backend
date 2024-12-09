@@ -15,35 +15,34 @@ namespace Project295.API.Controllers
             _complainServices = complainServices;
         }
         [HttpGet]
-        public List<Complain> GetAllComplain()
+        public Task<List<Complain>> GetAllComplain()
         {
-            return null;
+            return _complainServices.GetAllComplain();
 
         }
         [HttpGet]
         [Route("GetComplainById")]
-        public Complain GetComplainById(int id)
+        public Task<Complain> GetComplainById(int id)
         {
-            return null;
-
+            return _complainServices.GetComplainById(id);
         }
         [HttpPost]
         [Route("CreateComplain")]
-        public void CreateComplain(Complain complain)
+        public Task CreateComplain(Complain complain)
         {
-
+            return _complainServices.UpdateComplain(complain);
         }
         [HttpPut]
         [Route("UpdateComplain")]
-        public void UpdateComplain(Complain complain)
+        public Task UpdateComplain(Complain complain)
         {
-
+            return _complainServices.UpdateComplain(complain);
         }
         [HttpDelete]
         [Route("DeleteComplain")]
-        public void DeleteComplain(int id)
+        public Task DeleteComplain(int id)
         {
-
+            return _complainServices.DeleteComplain(id);
         }
     }
 }

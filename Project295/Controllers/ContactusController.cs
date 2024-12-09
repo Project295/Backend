@@ -14,31 +14,36 @@ namespace Project295.API.Controllers
         {
             _contactusServices = contactusServices;
         }
-        public List<ContactU> GetAllContactus()
+        [HttpGet]
+        public Task<List<ContactU>> GetAllContactus()
         {
-            return null;
+            return _contactusServices.GetAllContactus();
 
         }
-
-        public ContactU GetContactusById(int id)
+        [HttpGet]
+        [Route("GetUserById")]
+        public Task<ContactU> GetContactusById(int id)
         {
-            return null;
+            return _contactusServices.GetContactusById(id);
 
         }
-
-        public void CreateContactus(ContactU contactU)
+        [HttpPost]
+        [Route("CreateContactus")]
+        public Task CreateContactus(ContactU contactU)
         {
-
+            return _contactusServices.CreateContactus(contactU);
         }
-
-        public void UpdateContactus(ContactU contactU)
+        [HttpPut]
+        [Route("UpdateContactus")]
+        public Task UpdateContactus(ContactU contactU)
         {
-
+            return _contactusServices.UpdateContactus(contactU);
         }
-
-        public void DeleteContactus(int id)
+        [HttpDelete]
+        [Route("DeleteContactus")]
+        public Task DeleteContactus(int id)
         {
-
+            return _contactusServices.DeleteContactus(id);
         }
     }
 }

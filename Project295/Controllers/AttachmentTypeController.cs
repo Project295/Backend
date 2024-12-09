@@ -15,33 +15,33 @@ namespace Project295.API.Controllers
             _attachmentTypeServices = attachmentTypeServices;
         }
         [HttpGet]
-        public List<AttachmentType> GetAllAttachmentType()
+        public Task<List<AttachmentType>> GetAllAttachmentType()
         {
-            return null;
+            return _attachmentTypeServices.GetAllAttachmentType();
         }
         [HttpGet]
         [Route("GetAttachmentTypeById")]
-        public AttachmentType GetAttachmentTypeById(int id)
+        public Task<AttachmentType> GetAttachmentTypeById(int id)
         {
-            return null;
+            return _attachmentTypeServices.GetAttachmentTypeById(id);
         }
         [HttpPost]
         [Route("CreateAttachmentType")]
-        public void CreateAttachmentType(AttachmentType attachmentType)
+        public Task CreateAttachmentType(AttachmentType attachmentType)
         {
-
+            return _attachmentTypeServices.CreateAttachmentType(attachmentType);
         }
         [HttpPut]
         [Route("UpdateAttachmentType")]
-        public void UpdateAttachmentType(AttachmentType attachmentType)
+        public Task UpdateAttachmentType(AttachmentType attachmentType)
         {
-
+            return _attachmentTypeServices.UpdateAttachmentType(attachmentType);
         }
         [HttpDelete]
         [Route("DeleteAttachmentType")]
-        public void DeleteAttachmentType(int id)
+        public Task DeleteAttachmentType(int id)
         {
-
+            return _attachmentTypeServices.DeleteAttachmentType(id);
         }
     }
 }

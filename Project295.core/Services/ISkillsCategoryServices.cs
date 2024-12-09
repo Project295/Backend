@@ -9,10 +9,10 @@ namespace Project295.Core.Services
 {
     public interface ISkillsCategoryServices
     {
-        List<SkillsCategory> GetAllSkillsCategory();
-        SkillsCategory GetSkillsCategoryById(int id);
-        void CreateSkillsCategory(SkillsCategory skillsCategory);
-        void UpdateSkillsCategory(SkillsCategory skillsCategory);
-        void DeleteSkillsCategory(int id);
+        Task<List<SkillsCategory>> GetAllSkillsCategory();
+        Task<SkillsCategory> GetSkillsCategoryById(int id);
+        Task CreateSkillsCategory(SkillsCategory skillsCategory);
+        Task UpdateSkillsCategory(SkillsCategory skillsCategory);
+        Task DeleteSkillsCategory(int id);
     }
 }

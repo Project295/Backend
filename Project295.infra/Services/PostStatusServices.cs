@@ -16,31 +16,31 @@ namespace Project295.Infra.Services
         {
             _postStatusRepository = postStatusRepository;
         }
-        public List<PostStatus> GetAllPostStatus()
+        public Task<List<PostStatus>> GetAllPostStatus()
         {
-            return null;
+            return _postStatusRepository.GetAllPostStatus();
 
         }
 
-        public PostStatus GetPostStatusById(int id)
+        public Task<PostStatus> GetPostStatusById(int id)
         {
-            return null;
+            return _postStatusRepository.GetPostStatusById(id);
 
         }
 
-        public void CreatePostStatus(PostStatus postStatus)
+        public Task CreatePostStatus(PostStatus postStatus)
         {
-
+            return _postStatusRepository.CreatePostStatus(postStatus);
         }
 
-        public void UpdatePostStatus(PostStatus postStatus)
+        public Task UpdatePostStatus(PostStatus postStatus)
         {
-
+            return _postStatusRepository.UpdatePostStatus(postStatus);
         }
 
-        public void DeletePostStatus(int id)
+        public Task DeletePostStatus(int id)
         {
-
+            return _postStatusRepository.DeletePostStatus(id);
         }
     }
 }

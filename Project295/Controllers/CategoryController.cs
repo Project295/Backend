@@ -15,35 +15,33 @@ namespace Project295.API.Controllers
             _categoryServices = categoryServices;
         }
         [HttpGet]
-        public List<Category> GetAllCategory()
+        public Task<List<Category>> GetAllCategory()
         {
-            return null;
-
+            return _categoryServices.GetAllCategory();
         }
         [HttpGet]
         [Route("GetCategoryById")]
-        public Category GetCategoryById(int id)
+        public Task<Category> GetCategoryById(int id)
         {
-            return null;
-
+            return _categoryServices.GetCategoryById(id);
         }
         [HttpPost]
         [Route("CreateCategory")]
-        public void CreateCategory(Category category)
+        public Task CreateCategory(Category category)
         {
-
+            return _categoryServices.CreateCategory(category);
         }
         [HttpPut]
         [Route("UpdateCategory")]
-        public void UpdateCategory(Category category)
+        public Task UpdateCategory(Category category)
         {
-
+            return _categoryServices.UpdateCategory(category);
         }
         [HttpDelete]
         [Route("DeleteCategory")]
-        public void DeleteCategory(int id)
+        public Task DeleteCategory(int id)
         {
-
+            return _categoryServices.DeleteCategory(id);
         }
     }
 }

@@ -9,10 +9,10 @@ namespace Project295.Core.Repository
 {
     public interface ISkillRepository
     {
-         List<Skill> GetAllSkills();
-         Skill GetSkillById(int id);
-         void CreateSkill(Skill skill);
-         void UpdateSkill(Skill skill);
-         void DeleteSkill(int id);
+        Task<List<Skill>> GetAllSkills();
+        Task<Skill> GetSkillById(int id);
+        Task CreateSkill(Skill skill);
+        Task UpdateSkill(Skill skill);
+        Task DeleteSkill(int id);
     }
 }

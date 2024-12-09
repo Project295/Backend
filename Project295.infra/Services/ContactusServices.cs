@@ -16,31 +16,31 @@ namespace Project295.Infra.Services
         {
             _contactusRepository = contactusRepository;
         }
-        public List<ContactU> GetAllContactus()
+        public Task<List<ContactU>> GetAllContactus()
         {
-            return null;
+            return _contactusRepository.GetAllContactus();
 
         }
 
-        public ContactU GetContactusById(int id)
+        public Task<ContactU> GetContactusById(int id)
         {
-            return null;
+            return _contactusRepository.GetContactusById(id);
 
         }
 
-        public void CreateContactus(ContactU contactU)
+        public Task CreateContactus(ContactU contactU)
         {
-
+            return _contactusRepository.CreateContactus(contactU);
         }
 
-        public void UpdateContactus(ContactU contactU)
+        public Task UpdateContactus(ContactU contactU)
         {
-
+            return _contactusRepository.UpdateContactus(contactU);
         }
 
-        public void DeleteContactus(int id)
+        public Task DeleteContactus(int id)
         {
-
+         return _contactusRepository.DeleteContactus(id);
         }
     }
 }

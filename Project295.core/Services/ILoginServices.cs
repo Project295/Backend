@@ -9,10 +9,10 @@ namespace Project295.Core.Services
 {
     public interface ILoginServices
     {
-        List<Login> GetAllLogins();
-        Login GetLoginById(int id);
-        void CreateLogin(Login login);
-        void UpdateLogin(Login login);
-        void DeleteLogin(int id);
+        Task<List<Login>> GetAllLogins();
+        Task<Login> GetLoginById(int id);
+        Task CreateLogin(Login login);
+        Task UpdateLogin(Login login);
+        Task DeleteLogin(int id);
     }
 }

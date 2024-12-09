@@ -15,35 +15,35 @@ namespace Project295.API.Controllers
             _postServices = postServices;
         }
         [HttpGet]
-        public List<Post> GetAllPosts()
+        public Task<List<Post>> GetAllPosts()
         {
-            return null;
+            return _postServices.GetAllPosts();
 
         }
         [HttpGet]
         [Route("GetPostById")]
-        public Post GetPostById(int id)
+        public Task<Post> GetPostById(int id)
         {
-            return null;
+            return _postServices.GetPostById(id);
 
         }
         [HttpPost]
         [Route("CreatePost")]
-        public void CreatePost(Post post)
+        public Task CreatePost(Post post)
         {
-
+            return _postServices.CreatePost(post);
         }
         [HttpPut]
         [Route("UpdatePost")]
-        public void UpdatePost(Post post)
+        public Task UpdatePost(Post post)
         {
-
+            return _postServices.UpdatePost(post);
         }
         [HttpDelete]
         [Route("DeletePost")]
-        public void DeletePost(int id)
+        public Task DeletePost(int id)
         {
-
+            return _postServices.DeletePost(id);
         }
     }
 }

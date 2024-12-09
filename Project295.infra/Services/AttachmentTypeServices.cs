@@ -16,29 +16,29 @@ namespace Project295.Infra.Services
         {
             _attachmentTypeRepository = attachmentTypeRepository;
         }
-        public List<AttachmentType> GetAllAttachmentType()
+        public Task<List<AttachmentType>> GetAllAttachmentType()
         {
-            return null;
+            return _attachmentTypeRepository.GetAllAttachmentType();
         }
 
-        public AttachmentType GetAttachmentTypeById(int id)
+        public Task<AttachmentType> GetAttachmentTypeById(int id)
         {
-            return null;
+            return _attachmentTypeRepository.GetAttachmentTypeById(id);
         }
 
-        public void CreateAttachmentType(AttachmentType attachmentType)
+        public Task CreateAttachmentType(AttachmentType attachmentType)
         {
-
+            return _attachmentTypeRepository.CreateAttachmentType(attachmentType);
         }
 
-        public void UpdateAttachmentType(AttachmentType attachmentType)
+        public Task UpdateAttachmentType(AttachmentType attachmentType)
         {
-
+            return _attachmentTypeRepository.UpdateAttachmentType(attachmentType);
         }
 
-        public void DeleteAttachmentType(int id)
+        public Task DeleteAttachmentType(int id)
         {
-
+            return _attachmentTypeRepository.DeleteAttachmentType(id);
         }
     }
 }

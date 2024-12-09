@@ -9,10 +9,10 @@ namespace Project295.Core.Services
 {
     public interface IUserExperienceServices
     {
-        List<UserExperience> GetAllUserExperience();
-        UserExperience GetUserExperienceById(int id);
-        void CreateUserExperience(UserExperience userExperience);
-        void UpdateUserExperience(UserExperience userExperience);
-        void DeleteUserExperience(int id);
+         Task<List<UserExperience>> GetAllUserExperience();
+         Task<UserExperience> GetUserExperienceById(int id);
+         Task CreateUserExperience(UserExperience userExperience);
+         Task UpdateUserExperience(UserExperience userExperience);
+         Task DeleteUserExperience(int id);
     }
 }

@@ -16,30 +16,31 @@ namespace Project295.Infra.Services
         {
             _userRepository = userRepository;
         }
-        public List<User> GetAllUsers()
+        public Task<List<User>> GetAllUsers()
         {
-            return null;
+            return _userRepository.GetAllUsers();
 
         }
 
-        public User GetUserById(int id)
+        public Task<User> GetUserById(int id)
         {
-            return null;
+            return _userRepository.GetUserById(id);
 
         }
 
-        public void CreateUser(User user)
+        public Task CreateUser(User user)
         {
-
+            return _userRepository.CreateUser(user);
         }
 
-        public void UpdateUser(User user)
+        public Task UpdateUser(User user)
         {
-
+            return _userRepository.UpdateUser(user);
         }
 
-        public void DeleteUser(int id)
+        public Task DeleteUser(int id)
         {
+            return _userRepository.DeleteUser(id);
 
         }
     }

@@ -9,10 +9,10 @@ namespace Project295.Core.Services
 {
     public interface IContactusServices
     {
-         List<ContactU> GetAllContactus();
-         ContactU GetContactusById(int id);
-         void CreateContactus(ContactU contactU);
-         void UpdateContactus(ContactU contactU);
-         void DeleteContactus(int id);
+        Task<List<ContactU>> GetAllContactus();
+        Task<ContactU> GetContactusById(int id);
+         Task CreateContactus(ContactU contactU);
+         Task UpdateContactus(ContactU contactU);
+         Task DeleteContactus(int id);
     }
 }

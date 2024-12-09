@@ -1,6 +1,8 @@
-﻿using Project295.API.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Project295.API.Models;
 using Project295.Core.Common;
 using Project295.Core.Repository;
+using Project295.Infra.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,32 +13,39 @@ namespace Project295.Infra.Repository
 {
     public class FollowerRepository: IFollowerRepository
     {
-        private readonly IDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public FollowerRepository(IDbContext dbContext)
+        public FollowerRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public List<Follower> GetAllFollowers()
+        public async Task<List<Follower>> GetAllFollowers()
         {
-            return null;
+            return await _dbContext.Followers.ToListAsync();
         }
-        public Follower GetFollowerById(int id)
+        public async Task<Follower> GetFollowerById(int id)
         {
-            return null;
+            return await _dbContext.Followers.FirstOrDefaultAsync(x => x.UserId == id);
 
         }
-        public void CreateFollower(Follower follower)
+        public async Task CreateFollower(Follower follower)
         {
-
+            _dbContext.Followers.Add(follower);
+            await _dbContext.SaveChangesAsync();
         }
-        public void UpdateFollower(Follower follower)
+        public async Task UpdateFollower(Follower follower)
         {
-
+            _dbContext.Followers.Update(follower);
+            await _dbContext.SaveChangesAsync();
         }
-        public void DeleteFollower(int id)
+        public async Task DeleteFollower(int id)
         {
-
+            var follower = await _dbContext.Followers.FirstOrDefaultAsync(x => x.UserId == id);
+            if (follower != null)
+            {
+                _dbContext.Remove(follower);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

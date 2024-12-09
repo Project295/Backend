@@ -17,26 +17,26 @@ namespace Project295.Infra.Services
         {
             _followerRepository = followerRepository;
         }
-        public List<Follower> GetAllFollowers()
+        public Task<List<Follower>> GetAllFollowers()
         {
-            return null;
+            return _followerRepository.GetAllFollowers();   
         }
-        public Follower GetFollowerById(int id)
+        public Task<Follower> GetFollowerById(int id)
         {
-            return null;
+            return _followerRepository.GetFollowerById(id);
 
         }
-        public void CreateFollower(Follower follower)
+        public Task CreateFollower(Follower follower)
         {
-
+            return _followerRepository.CreateFollower(follower);    
         }
-        public void UpdateFollower(Follower follower)
+        public Task UpdateFollower(Follower follower)
         {
-
+            return _followerRepository.UpdateFollower(follower);
         }
-        public void DeleteFollower(int id)
+        public Task DeleteFollower(int id)
         {
-
+            return _followerRepository.DeleteFollower(id);
         }
     }
 }

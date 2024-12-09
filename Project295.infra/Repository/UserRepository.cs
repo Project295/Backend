@@ -1,6 +1,8 @@
-﻿using Project295.API.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Project295.API.Models;
 using Project295.Core.Common;
 using Project295.Core.Repository;
+using Project295.Infra.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,37 +13,44 @@ namespace Project295.Infra.Repository
 {
     public class UserRepository: IUserRepository
     {
-        private readonly IDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public UserRepository(IDbContext dbContext)
+        public UserRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public List<User> GetAllUsers()
+        public async Task<List<User>> GetAllUsers()
         {
-            return null;
+            return await _dbContext.Users.ToListAsync();
 
         }
 
-        public User GetUserById(int id)
+        public async Task<User> GetUserById(int id)
         {
-            return null;
+            return await _dbContext.Users.FirstOrDefaultAsync(x=>x.UserId==id);
 
         }
 
-        public void CreateUser(User user)
+        public async Task CreateUser(User user)
         {
-
+            _dbContext.Users.Add(user);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void UpdateUser(User user)
+        public async Task UpdateUser(User user)
         {
-
+            _dbContext.Users.Update(user);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void DeleteUser(int id)
+        public async Task DeleteUser(int id)
         {
-
+           var user = await _dbContext.Users.FirstOrDefaultAsync(x => x.UserId == id);
+            if (user != null)
+            { 
+                _dbContext.Remove(user);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

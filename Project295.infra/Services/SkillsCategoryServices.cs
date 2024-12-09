@@ -16,31 +16,31 @@ namespace Project295.Infra.Services
         {
             _skillsCategoryRepository = skillsCategoryRepository;
         }
-        public List<SkillsCategory> GetAllSkillsCategory()
+        public Task<List<SkillsCategory>> GetAllSkillsCategory()
         {
-            return null;
+            return _skillsCategoryRepository.GetAllSkillsCategory();
 
         }
 
-        public SkillsCategory GetSkillsCategoryById(int id)
+        public Task<SkillsCategory> GetSkillsCategoryById(int id)
         {
-            return null;
+            return _skillsCategoryRepository.GetSkillsCategoryById(id);
 
         }
 
-        public void CreateSkillsCategory(SkillsCategory skillsCategory)
+        public Task CreateSkillsCategory(SkillsCategory skillsCategory)
         {
-
+            return _skillsCategoryRepository.CreateSkillsCategory(skillsCategory);  
         }
 
-        public void UpdateSkillsCategory(SkillsCategory skillsCategory)
+        public Task UpdateSkillsCategory(SkillsCategory skillsCategory)
         {
-
+            return _skillsCategoryRepository.UpdateSkillsCategory(skillsCategory);
         }
 
-        public void DeleteSkillsCategory(int id)
+        public Task DeleteSkillsCategory(int id)
         {
-
+            return _skillsCategoryRepository.DeleteSkillsCategory(id);
         }
     }
 }

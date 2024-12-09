@@ -16,38 +16,38 @@ namespace Project295.API.Controllers
         }
 
         [HttpGet]
-        public List<Follower> GetAllFollowers()
+        public Task<List<Follower>> GetAllFollowers()
         {
-            return null;
+            return _followerServices.GetAllFollowers();
         }
 
         [HttpGet]
         [Route("GetFollowerById")]
-        public Follower GetFollowerById(int id)
+        public Task<Follower> GetFollowerById(int id)
         {
-            return null;
+            return _followerServices.GetFollowerById(id);
 
         }
 
         [HttpPost]
         [Route("CreateFollower")]
-        public void CreateFollower(Follower follower)
+        public Task CreateFollower(Follower follower)
         {
-
+            return _followerServices.CreateFollower(follower);
         }
 
         [HttpPut]
         [Route("UpdateFollower")]
-        public void UpdateFollower(Follower follower)
+        public Task UpdateFollower(Follower follower)
         {
-
+            return _followerServices.UpdateFollower(follower);
         }
 
         [HttpDelete]
         [Route("DeleteFollower")]
-        public void DeleteFollower(int id)
+        public Task DeleteFollower(int id)
         {
-
+            return _followerServices.DeleteFollower(id);
         }
     }
 }

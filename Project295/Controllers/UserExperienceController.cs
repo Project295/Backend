@@ -16,35 +16,35 @@ namespace Project295.API.Controllers
             _userExperienceServices = userExperienceServices;
         }
         [HttpGet]
-        public List<UserExperience> GetAllUserExperience()
+        public  Task<List<UserExperience>> GetAllUserExperience()
         {
-            return null;
+            return _userExperienceServices.GetAllUserExperience();
 
         }
         [HttpGet]
         [Route("GetUserExperienceById")]
-        public UserExperience GetUserExperienceById(int id)
+        public  Task<UserExperience> GetUserExperienceById(int id)
         {
-            return null;
+            return _userExperienceServices.GetUserExperienceById(id);
 
         }
         [HttpPost]
         [Route("CreateUserExperience")]
-        public void CreateUserExperience(UserExperience userExperience)
+        public  Task CreateUserExperience(UserExperience userExperience)
         {
-
+            return _userExperienceServices.CreateUserExperience(userExperience);
         }
         [HttpPut]
         [Route("UpdateUserExperience")]
-        public void UpdateUserExperience(UserExperience userExperience)
+        public Task UpdateUserExperience(UserExperience userExperience)
         {
-
+            return _userExperienceServices.UpdateUserExperience(userExperience);
         }
         [HttpDelete]
         [Route("DeleteUserExperience")]
-        public void DeleteUserExperience(int id)
+        public Task DeleteUserExperience(int id)
         {
-
+            return _userExperienceServices.DeleteUserExperience(id);
         }
     }
 }

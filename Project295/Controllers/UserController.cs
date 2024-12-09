@@ -15,35 +15,36 @@ namespace Project295.API.Controllers
             _userServices = userServices;
         }
         [HttpGet]
-        public List<User> GetAllUsers()
+        public Task<List<User>> GetAllUsers()
         {
-            return null;
+            return _userServices.GetAllUsers();
 
         }
         [HttpGet]
         [Route("GetUserById")]
-        public User GetUserById(int id)
+        public Task<User> GetUserById(int id)
         {
-            return null;
+            return _userServices.GetUserById(id);
 
         }
         [HttpPost]
         [Route("CreateUser")]
-        public void CreateUser(User user)
+        public Task CreateUser(User user)
         {
-
+            return _userServices.CreateUser(user);
         }
         [HttpPut]
         [Route("UpdateUser")]
-        public void UpdateUser(User user)
+        public Task UpdateUser(User user)
         {
+            return _userServices.UpdateUser(user);
 
         }
         [HttpDelete]
         [Route("DeleteUser")]
-        public void DeleteUser(int id)
+        public Task DeleteUser(int id)
         {
-
+            return _userServices.DeleteUser(id);
         }
     }
 }

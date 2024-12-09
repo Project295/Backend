@@ -16,31 +16,31 @@ namespace Project295.Infra.Services
         {
             _complainRepository = complainRepository;
         }
-        public List<Complain> GetAllComplain()
+        public Task<List<Complain>> GetAllComplain()
         {
-            return null;
+            return _complainRepository.GetAllComplain();
 
         }
 
-        public Complain GetComplainById(int id)
+        public Task<Complain> GetComplainById(int id)
         {
-            return null;
+            return _complainRepository.GetComplainById(id);
 
         }
 
-        public void CreateComplain(Complain complain)
+        public Task CreateComplain(Complain complain)
         {
-
+            return _complainRepository.UpdateComplain(complain);
         }
 
-        public void UpdateComplain(Complain complain)
+        public Task UpdateComplain(Complain complain)
         {
-
+            return _complainRepository.UpdateComplain(complain);
         }
 
-        public void DeleteComplain(int id)
+        public Task DeleteComplain(int id)
         {
-
+            return _complainRepository.DeleteComplain(id);
         }
     }
 }

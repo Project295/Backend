@@ -9,10 +9,10 @@ namespace Project295.Core.Repository
 {
     public interface IPostRepository
     {
-         List<Post> GetAllPosts();
-         Post GetPostById(int id);
-         void CreatePost(Post post);
-         void UpdatePost(Post post);
-         void DeletePost(int id);
+        Task<List<Post>> GetAllPosts();
+        Task<Post> GetPostById(int id);
+        Task CreatePost(Post post);
+        Task UpdatePost(Post post);
+        Task DeletePost(int id);
     }
 }

@@ -16,31 +16,31 @@ namespace Project295.Infra.Services
         {
             _skillRepository = skillRepository;
         }
-        public List<Skill> GetAllSkills()
+        public Task<List<Skill>> GetAllSkills()
         {
-            return null;
+            return _skillRepository.GetAllSkills();
 
         }
 
-        public Skill GetSkillById(int id)
+        public Task<Skill> GetSkillById(int id)
         {
-            return null;
+            return _skillRepository.GetSkillById(id);
 
         }
 
-        public void CreateSkill(Skill skill)
+        public Task CreateSkill(Skill skill)
         {
-
+            return _skillRepository.CreateSkill(skill);
         }
 
-        public void UpdateSkill(Skill skill)
+        public Task UpdateSkill(Skill skill)
         {
-
+            return _skillRepository.UpdateSkill(skill);
         }
 
-        public void DeleteSkill(int id)
+        public Task DeleteSkill(int id)
         {
-
+            return _skillRepository.DeleteSkill(id);
         }
     }
 }

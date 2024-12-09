@@ -9,10 +9,10 @@ namespace Project295.Core.Repository
 {
     public interface IComplainRepository
     {
-         List<Complain> GetAllComplain();
-         Complain GetComplainById(int id);
-         void CreateComplain(Complain complain);
-         void UpdateComplain(Complain complain);
-         void DeleteComplain(int id);
+        Task<List<Complain>> GetAllComplain();
+        Task<Complain> GetComplainById(int id);
+        Task CreateComplain(Complain complain);
+        Task UpdateComplain(Complain complain);
+        Task DeleteComplain(int id);
     }
 }

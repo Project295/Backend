@@ -9,10 +9,10 @@ namespace Project295.Core.Services
 {
     public interface IUserServices
     {
-        List<User> GetAllUsers();
-        User GetUserById(int id);
-        void CreateUser(User user);
-        void UpdateUser(User user);
-        void DeleteUser(int id);
+        Task<List<User>> GetAllUsers();
+        Task<User> GetUserById(int id);
+        Task CreateUser(User user);
+        Task UpdateUser(User user);
+        Task DeleteUser(int id);
     }
 }
