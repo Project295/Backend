@@ -1,6 +1,8 @@
-﻿using Project295.API.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Project295.API.Models;
 using Project295.Core.Common;
 using Project295.Core.Repository;
+using Project295.Infra.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,37 +13,43 @@ namespace Project295.Infra.Repository
 {
     public class ComplainRepository : IComplainRepository
     {
-        private readonly IDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public ComplainRepository(IDbContext dbContext)
+        public ComplainRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public List<Complain> GetAllComplain()
+        public async Task<List<Complain>> GetAllComplain()
         {
-            return null;
+            return await _dbContext.Complains.ToListAsync();
+        }
+
+        public async Task<Complain> GetComplainById(int id)
+        {
+            return await _dbContext.Complains.FirstOrDefaultAsync(x => x.ComplainId == id);
 
         }
 
-        public Complain GetComplainById(int id)
+        public async Task CreateComplain(Complain complain)
         {
-            return null;
-
+            _dbContext.Complains.Add(complain);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void CreateComplain(Complain complain)
+        public async Task UpdateComplain(Complain complain)
         {
-
+            _dbContext.Complains.Update(complain);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void UpdateComplain(Complain complain)
+        public async Task DeleteComplain(int id)
         {
-
-        }
-
-        public void DeleteComplain(int id)
-        {
-
+            var complain = await _dbContext.Complains.FirstOrDefaultAsync(x => x.ComplainId == id);
+            if (complain != null)
+            {
+                _dbContext.Remove(complain);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

@@ -1,6 +1,8 @@
-﻿using Project295.API.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Project295.API.Models;
 using Project295.Core.Common;
 using Project295.Core.Repository;
+using Project295.Infra.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,37 +13,44 @@ namespace Project295.Infra.Repository
 {
     public class CategoryRepository : ICategoryRepository
     {
-        private readonly IDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public CategoryRepository(IDbContext dbContext)
+        public CategoryRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public List<Category> GetAllCategory()
+        public async Task<List<Category>> GetAllCategory()
         {
-            return null;
+            return await _dbContext.Categories.ToListAsync();
 
         }
 
-        public Category GetCategoryById(int id)
+        public async Task<Category> GetCategoryById(int id)
         {
-            return null;
+            return await _dbContext.Categories.FirstOrDefaultAsync(x => x.CategoryId == id);
 
         }
 
-        public void CreateCategory(Category category)
+        public async Task CreateCategory(Category category)
         {
-
+            _dbContext.Categories.Add(category);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void UpdateCategory(Category category)
+        public async Task UpdateCategory(Category category)
         {
-
+            _dbContext.Categories.Update(category);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void DeleteCategory(int id)
+        public async Task DeleteCategory(int id)
         {
-
+            var category = await _dbContext.Categories.FirstOrDefaultAsync(x => x.CategoryId == id);
+            if (category != null)
+            {
+                _dbContext.Remove(category);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

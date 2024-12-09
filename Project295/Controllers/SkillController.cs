@@ -16,35 +16,35 @@ namespace Project295.API.Controllers
             _skillServices = skillServices;
         }
         [HttpGet]
-        public List<Skill> GetAllSkills()
+        public Task<List<Skill>> GetAllSkills()
         {
-            return null;
+            return _skillServices.GetAllSkills();
 
         }
         [HttpGet]
         [Route("GetSkillById")]
-        public Skill GetSkillById(int id)
+        public Task<Skill> GetSkillById(int id)
         {
-            return null;
+            return _skillServices.GetSkillById(id);
 
         }
         [HttpPost]
         [Route("CreateSkill")]
-        public void CreateSkill(Skill skill)
+        public Task CreateSkill(Skill skill)
         {
-
+            return _skillServices.CreateSkill(skill);
         }
         [HttpPut]
         [Route("UpdateSkill")]
-        public void UpdateSkill(Skill skill)
+        public Task UpdateSkill(Skill skill)
         {
-
+            return _skillServices.UpdateSkill(skill);
         }
         [HttpDelete]
         [Route("DeleteSkill")]
-        public void DeleteSkill(int id)
+        public Task DeleteSkill(int id)
         {
-
+            return _skillServices.DeleteSkill(id);
         }
     }
 }

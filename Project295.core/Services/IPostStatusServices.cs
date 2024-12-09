@@ -9,11 +9,11 @@ namespace Project295.Core.Services
 {
     public interface IPostStatusServices
     {
-        List<PostStatus> GetAllPostStatus();
-        PostStatus GetPostStatusById(int id);
-        void CreatePostStatus(PostStatus postStatus);
-        void UpdatePostStatus(PostStatus postStatus);
-        void DeletePostStatus(int id);
+        Task<List<PostStatus>> GetAllPostStatus();
+        Task<PostStatus> GetPostStatusById(int id);
+        Task CreatePostStatus(PostStatus postStatus);
+        Task UpdatePostStatus(PostStatus postStatus);
+        Task DeletePostStatus(int id);
     }
 }
-}
+

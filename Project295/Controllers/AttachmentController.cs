@@ -16,38 +16,37 @@ namespace Project295.API.Controllers
         }
 
         [HttpGet]
-        public List<Attachment> GetAllAttachment()
+        public Task<List<Attachment>> GetAllAttachment()
         {
-            return null;
+            return _attachmentServices.GetAllAttachment();
         }
 
         [HttpGet]
         [Route("GetAttachmentById")]
-        public Attachment GetAttachmentById(int id)
+        public Task<Attachment> GetAttachmentById(int id)
         {
-            return null;
-
+            return _attachmentServices.GetAttachmentById(id);
         }
 
         [HttpPost]
         [Route("CreateAttachment")]
-        public void CreateAttachment(Attachment attachment)
+        public Task CreateAttachment(Attachment attachment)
         {
-
+            return _attachmentServices.CreateAttachment(attachment);
         }
 
         [HttpPut]
         [Route("UpdateAttachment")]
-        public void UpdateAttachment(Attachment attachment)
+        public Task UpdateAttachment(Attachment attachment)
         {
-
+            return _attachmentServices.UpdateAttachment(attachment);
         }
 
         [HttpDelete]
         [Route("DeleteAttachment")]
-        public void DeleteAttachment(int id)
+        public Task DeleteAttachment(int id)
         {
-
+            return _attachmentServices.DeleteAttachment(id);
         }
     }
 }

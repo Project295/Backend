@@ -1,6 +1,8 @@
-﻿using Project295.API.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Project295.API.Models;
 using Project295.Core.Common;
 using Project295.Core.Repository;
+using Project295.Infra.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,37 +13,44 @@ namespace Project295.Infra.Repository
 {
     public class SkillRepository: ISkillRepository
     {
-        private readonly IDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public SkillRepository(IDbContext dbContext)
+        public SkillRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public List<Skill> GetAllSkills()
+        public async Task<List<Skill>> GetAllSkills()
         {
-            return null;
+            return await _dbContext.Skills.ToListAsync();
 
         }
 
-        public Skill GetSkillById(int id)
+        public async Task<Skill>GetSkillById(int id)
         {
-            return null;
+            return await _dbContext.Skills.FirstOrDefaultAsync(x => x.SkillId == id);
 
         }
 
-        public void CreateSkill(Skill skill)
+        public async Task CreateSkill(Skill skill)
         {
-
+            _dbContext.Skills.Add(skill);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void UpdateSkill(Skill skill)
+        public async Task UpdateSkill(Skill skill)
         {
-
+            _dbContext.Skills.Update(skill);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void DeleteSkill(int id)
+        public async Task DeleteSkill(int id)
         {
-
+            var skill = await _dbContext.Skills.FirstOrDefaultAsync(x => x.SkillId == id);
+            if (skill != null)
+            {
+                _dbContext.Remove(skill);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

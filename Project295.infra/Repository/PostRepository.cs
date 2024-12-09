@@ -1,6 +1,8 @@
-﻿using Project295.API.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Project295.API.Models;
 using Project295.Core.Common;
 using Project295.Core.Repository;
+using Project295.Infra.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,33 +13,40 @@ namespace Project295.Infra.Repository
 {
     public class PostRepository: IPostRepository
     {
-        private readonly IDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public PostRepository(IDbContext dbContext)
+        public PostRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public List<Post> GetAllPosts()
+        public async Task<List<Post>> GetAllPosts()
         {
-            return null;
+            return await _dbContext.Posts.ToListAsync();
 
         }
-        public Post GetPostById(int id)
+        public async Task<Post> GetPostById(int id)
         {
-            return null;
+            return await _dbContext.Posts.FirstOrDefaultAsync(x => x.PostId == id);
 
         }
-        public void CreatePost(Post post)
+        public async Task CreatePost(Post post)
         {
-
+            _dbContext.Posts.Add(post);
+            await _dbContext.SaveChangesAsync();
         }
-        public void UpdatePost(Post post)
+        public async Task UpdatePost(Post post)
         {
-
+            _dbContext.Posts.Update(post);
+            await _dbContext.SaveChangesAsync();
         }
-        public void DeletePost(int id)
+        public async Task DeletePost(int id)
         {
-
+            var post = await _dbContext.Posts.FirstOrDefaultAsync(x => x.PostId == id);
+            if (post != null)
+            {
+                _dbContext.Remove(post);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

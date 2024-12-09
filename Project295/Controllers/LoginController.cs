@@ -15,35 +15,34 @@ namespace Project295.API.Controllers
             _loginServices = loginServices;
         }
         [HttpGet]
-        public List<Login> GetAllLogins()
+        public Task<List<Login>> GetAllLogins()
         {
-            return null;
+            return _loginServices.GetAllLogins();
 
         }
         [HttpGet]
         [Route("GetLoginById")]
-        public Login GetLoginById(int id)
+        public Task<Login> GetLoginById(int id)
         {
-            return null;
-
+            return _loginServices.GetLoginById(id);
         }
         [HttpPost]
         [Route("CreateLogin")]
-        public void CreateLogin(Login login)
+        public Task CreateLogin(Login login)
         {
-
+            return _loginServices.CreateLogin(login);
         }
         [HttpPut]
         [Route("UpdateLogin")]
-        public void UpdateLogin(Login login)
+        public Task UpdateLogin(Login login)
         {
-
+            return _loginServices.UpdateLogin(login);
         }
         [HttpDelete]
         [Route("DeleteLogin")]
-        public void DeleteLogin(int id)
+        public Task DeleteLogin(int id)
         {
-
+            return _loginServices.DeleteLogin(id);
         }
 
     }

@@ -10,10 +10,10 @@ namespace Project295.Core.Repository
 {
     public interface IAttachmentTypeRepository
     {
-         List<AttachmentType> GetAllAttachmentType();
-         AttachmentType GetAttachmentTypeById(int id);
-         void CreateAttachmentType(AttachmentType attachmentType);
-         void UpdateAttachmentType(AttachmentType attachmentType);
-         void DeleteAttachmentType(int id);
+        Task<List<AttachmentType>> GetAllAttachmentType();
+        Task<AttachmentType> GetAttachmentTypeById(int id);
+        Task CreateAttachmentType(AttachmentType attachmentType);
+        Task UpdateAttachmentType(AttachmentType attachmentType);
+        Task DeleteAttachmentType(int id);
     }
 }

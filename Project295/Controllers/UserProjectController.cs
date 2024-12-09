@@ -16,35 +16,35 @@ namespace Project295.API.Controllers
             _userProjectServices = userProjectServices;
         }
         [HttpGet]
-        public List<UserProject> GetAllUserProject()
+        public Task<List<UserProject>> GetAllUserProject()
         {
-            return null;
+            return _userProjectServices.GetAllUserProject();
 
         }
         [HttpGet]
         [Route("GetUserProjectById")]
-        public UserProject GetUserProjectById(int id)
+        public Task<UserProject> GetUserProjectById(int id)
         {
-            return null;
+            return _userProjectServices.GetUserProjectById(id);
 
         }
         [HttpPost]
         [Route("CreateUserProject")]
-        public void CreateUserProject(UserProject userProject)
+        public Task CreateUserProject(UserProject userProject)
         {
-
+            return _userProjectServices.CreateUserProject(userProject);
         }
         [HttpPut]
         [Route("UpdateUserProject")]
-        public void UpdateUserProject(UserProject userProject)
+        public Task UpdateUserProject(UserProject userProject)
         {
-
+            return _userProjectServices.UpdateUserProject(userProject);
         }
         [HttpDelete]
         [Route("DeleteUserProject")]
-        public void DeleteUserProject(int id)
+        public Task DeleteUserProject(int id)
         {
-
+            return _userProjectServices.DeleteUserProject(id);
         }
     }
 }

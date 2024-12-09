@@ -1,6 +1,8 @@
-﻿using Project295.API.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Project295.API.Models;
 using Project295.Core.Common;
 using Project295.Core.Repository;
+using Project295.Infra.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,37 +13,42 @@ namespace Project295.Infra.Repository
 {
     public class LoginRepository: ILoginRepository
     {
-        private readonly IDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public LoginRepository(IDbContext dbContext)
+        public LoginRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public List<Login> GetAllLogins()
+        public async Task<List<Login>> GetAllLogins()
         {
-            return null;
-
+            return await _dbContext.Logins.ToListAsync();
         }
 
-        public Login GetLoginById(int id)
+        public async Task<Login> GetLoginById(int id)
         {
-            return null;
-
+            return await _dbContext.Logins.FirstOrDefaultAsync(x => x.LoginId == id);
         }
 
-        public void CreateLogin(Login login)
+        public async Task CreateLogin(Login login)
         {
-
+            _dbContext.Logins.Add(login);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void UpdateLogin(Login login)
+        public async Task UpdateLogin(Login login)
         {
-
+            _dbContext.Logins.Update(login);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void DeleteLogin(int id)
+        public async Task DeleteLogin(int id)
         {
-
+            var login = await _dbContext.Logins.FirstOrDefaultAsync(x => x.UserId == id);
+            if (login != null)
+            {
+                _dbContext.Remove(login);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

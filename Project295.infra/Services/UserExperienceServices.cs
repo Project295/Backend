@@ -16,31 +16,31 @@ namespace Project295.Infra.Services
         {
             _userExperienceRepository = userExperienceRepository;
         }
-        public List<UserExperience> GetAllUserExperience()
+        public  Task<List<UserExperience>> GetAllUserExperience()
         {
-            return null;
+            return _userExperienceRepository.GetAllUserExperience();
 
         }
 
-        public UserExperience GetUserExperienceById(int id)
+        public  Task<UserExperience> GetUserExperienceById(int id)
         {
-            return null;
+            return _userExperienceRepository.GetUserExperienceById(id);
 
         }
 
-        public void CreateUserExperience(UserExperience userExperience)
+        public  Task CreateUserExperience(UserExperience userExperience)
         {
-
+            return _userExperienceRepository.CreateUserExperience(userExperience);
         }
 
-        public void UpdateUserExperience(UserExperience userExperience)
+        public  Task UpdateUserExperience(UserExperience userExperience)
         {
-
+            return _userExperienceRepository.UpdateUserExperience(userExperience);
         }
 
-        public void DeleteUserExperience(int id)
+        public  Task DeleteUserExperience(int id)
         {
-
+            return _userExperienceRepository.DeleteUserExperience(id);
         }
     }
 }

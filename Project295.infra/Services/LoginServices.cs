@@ -16,31 +16,31 @@ namespace Project295.Infra.Services
         {
             _loginRepository = loginRepository;
         }
-        public List<Login> GetAllLogins()
+        public Task<List<Login>> GetAllLogins()
         {
-            return null;
+            return _loginRepository.GetAllLogins();
 
         }
 
-        public Login GetLoginById(int id)
+        public Task<Login> GetLoginById(int id)
         {
-            return null;
+            return _loginRepository.GetLoginById(id);
 
         }
 
-        public void CreateLogin(Login login)
+        public Task CreateLogin(Login login)
         {
-
+            return _loginRepository.CreateLogin(login);
         }
 
-        public void UpdateLogin(Login login)
+        public Task UpdateLogin(Login login)
         {
-
+            return _loginRepository.UpdateLogin(login);
         }
 
-        public void DeleteLogin(int id)
+        public Task DeleteLogin(int id)
         {
-
+            return _loginRepository.DeleteLogin(id);
         }
     }
 }

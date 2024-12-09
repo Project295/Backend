@@ -9,10 +9,10 @@ namespace Project295.Core.Repository
 {
     public interface IUserProjectRepository
     {
-         List<UserProject> GetAllUserProject();
-         UserProject GetUserProjectById(int id);
-         void CreateUserProject(UserProject userProject);
-         void UpdateUserProject(UserProject userProject);
-         void DeleteUserProject(int id);
+        Task<List<UserProject>> GetAllUserProject();
+        Task<UserProject> GetUserProjectById(int id);
+        Task CreateUserProject(UserProject userProject);
+        Task UpdateUserProject(UserProject userProject);
+        Task DeleteUserProject(int id);
     }
 }

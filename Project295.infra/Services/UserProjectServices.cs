@@ -16,31 +16,31 @@ namespace Project295.Infra.Services
         {
             _userProjectRepository = userProjectRepository;
         }
-        public List<UserProject> GetAllUserProject()
+        public Task<List<UserProject>> GetAllUserProject()
         {
-            return null;
+            return _userProjectRepository.GetAllUserProject();
 
         }
 
-        public UserProject GetUserProjectById(int id)
+        public Task<UserProject> GetUserProjectById(int id)
         {
-            return null;
+            return _userProjectRepository.GetUserProjectById(id);
 
         }
 
-        public void CreateUserProject(UserProject userProject)
+        public Task CreateUserProject(UserProject userProject)
         {
-
+            return _userProjectRepository.CreateUserProject(userProject);
         }
 
-        public void UpdateUserProject(UserProject userProject)
+        public Task UpdateUserProject(UserProject userProject)
         {
-
+            return _userProjectRepository.UpdateUserProject(userProject);
         }
 
-        public void DeleteUserProject(int id)
+        public Task DeleteUserProject(int id)
         {
-
+            return _userProjectRepository.DeleteUserProject(id);
         }
     }
 }

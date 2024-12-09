@@ -15,35 +15,35 @@ namespace Project295.API.Controllers
             _postStatusServices = postStatusServices;
         }
         [HttpGet]
-        public List<PostStatus> GetAllPostStatus()
+        public Task<List<PostStatus>> GetAllPostStatus()
         {
-            return null;
+            return _postStatusServices.GetAllPostStatus();
 
         }
         [HttpGet]
         [Route("GetPostStatusById")]
-        public PostStatus GetPostStatusById(int id)
+        public Task<PostStatus> GetPostStatusById(int id)
         {
-            return null;
+            return _postStatusServices.GetPostStatusById(id);
 
         }
         [HttpPost]
         [Route("CreatePostStatus")]
-        public void CreatePostStatus(PostStatus postStatus)
+        public Task CreatePostStatus(PostStatus postStatus)
         {
-
+            return _postStatusServices.CreatePostStatus(postStatus);
         }
         [HttpPut]
         [Route("UpdatePostStatus")]
-        public void UpdatePostStatus(PostStatus postStatus)
+        public Task UpdatePostStatus(PostStatus postStatus)
         {
-
+            return _postStatusServices.UpdatePostStatus(postStatus);
         }
         [HttpDelete]
         [Route("DeletePostStatus")]
-        public void DeletePostStatus(int id)
+        public Task DeletePostStatus(int id)
         {
-
+            return _postStatusServices.DeletePostStatus(id);
         }
     }
 }

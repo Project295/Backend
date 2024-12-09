@@ -9,10 +9,10 @@ namespace Project295.Core.Services
 {
     public interface ICategoryServices
     {
-         List<Category> GetAllCategory();
-         Category GetCategoryById(int id);
-         void CreateCategory(Category category);
-         void UpdateCategory(Category category);
-         void DeleteCategory(int id);
+        Task<List<Category>> GetAllCategory();
+        Task<Category> GetCategoryById(int id);
+        Task CreateCategory(Category category);
+        Task UpdateCategory(Category category);
+        Task DeleteCategory(int id);
     }
 }

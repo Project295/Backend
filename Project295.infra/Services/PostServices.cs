@@ -16,27 +16,27 @@ namespace Project295.Infra.Services
         {
             _postRepository = postRepository;
         }
-        public List<Post> GetAllPosts()
+        public Task<List<Post>> GetAllPosts()
         {
-            return null;
+            return _postRepository.GetAllPosts();
 
         }
-        public Post GetPostById(int id)
+        public Task<Post> GetPostById(int id)
         {
-            return null;
+            return _postRepository.GetPostById(id);
 
         }
-        public void CreatePost(Post post)
+        public Task CreatePost(Post post)
         {
-
+            return _postRepository.CreatePost(post);
         }
-        public void UpdatePost(Post post)
+        public Task UpdatePost(Post post)
         {
-
+            return _postRepository.UpdatePost(post);
         }
-        public void DeletePost(int id)
+        public Task DeletePost(int id)
         {
-
+            return _postRepository.DeletePost(id);
         }
     }
 }

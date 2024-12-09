@@ -1,6 +1,8 @@
-﻿using Project295.API.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Project295.API.Models;
 using Project295.Core.Common;
 using Project295.Core.Repository;
+using Project295.Infra.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,37 +13,45 @@ namespace Project295.Infra.Repository
 {
     public class PostStatusRepository: IPostStatusRepository
     {
-        private readonly IDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public PostStatusRepository(IDbContext dbContext)
+        public PostStatusRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public List<PostStatus> GetAllPostStatus()
+        public async Task<List<PostStatus>> GetAllPostStatus()
         {
-            return null;
+            return await _dbContext.PostStatuses.ToListAsync();
+
 
         }
 
-        public PostStatus GetPostStatusById(int id)
+        public async Task<PostStatus> GetPostStatusById(int id)
         {
-            return null;
+            return await _dbContext.PostStatuses.FirstOrDefaultAsync(x => x.PostStatusId == id);
 
         }
 
-        public void CreatePostStatus(PostStatus postStatus)
+        public async Task CreatePostStatus(PostStatus postStatus)
         {
-
+            _dbContext.PostStatuses.Add(postStatus);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void UpdatePostStatus(PostStatus postStatus)
+        public async Task UpdatePostStatus(PostStatus postStatus)
         {
-
+            _dbContext.PostStatuses.Update(postStatus);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void DeletePostStatus(int id)
+        public async Task DeletePostStatus(int id)
         {
-
+            var postStatus = await _dbContext.PostStatuses.FirstOrDefaultAsync(x => x.PostStatusId == id);
+            if (postStatus != null)
+            {
+                _dbContext.Remove(postStatus);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

@@ -9,10 +9,10 @@ namespace Project295.Core.Services
 {
     public interface IFollowerServices
     {
-        List<Follower> GetAllFollowers();
-        Follower GetFollowerById(int id);
-        void CreateFollower(Follower follower);
-        void UpdateFollower(Follower follower);
-        void DeleteFollower(int id);
+        Task<List<Follower>> GetAllFollowers();
+        Task<Follower> GetFollowerById(int id);
+        Task CreateFollower(Follower follower);
+        Task UpdateFollower(Follower follower);
+        Task DeleteFollower(int id);
     }
 }

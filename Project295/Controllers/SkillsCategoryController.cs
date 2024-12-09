@@ -15,35 +15,35 @@ namespace Project295.API.Controllers
             _skillsCategoryServices = skillsCategoryServices;
         }
         [HttpGet]
-        public List<SkillsCategory> GetAllSkillsCategory()
+        public Task<List<SkillsCategory>> GetAllSkillsCategory()
         {
-            return null;
+            return _skillsCategoryServices.GetAllSkillsCategory();
 
         }
         [HttpGet]
         [Route("GetSkillsCategoryById")]
-        public SkillsCategory GetSkillsCategoryById(int id)
+        public Task<SkillsCategory> GetSkillsCategoryById(int id)
         {
-            return null;
+            return _skillsCategoryServices.GetSkillsCategoryById(id);
 
         }
         [HttpPost]
         [Route("CreateSkillsCategory")]
-        public void CreateSkillsCategory(SkillsCategory skillsCategory)
+        public Task CreateSkillsCategory(SkillsCategory skillsCategory)
         {
-
+            return _skillsCategoryServices.CreateSkillsCategory(skillsCategory);
         }
         [HttpPut]
         [Route("UpdateSkillsCategory")]
-        public void UpdateSkillsCategory(SkillsCategory skillsCategory)
+        public Task UpdateSkillsCategory(SkillsCategory skillsCategory)
         {
-
+            return _skillsCategoryServices.UpdateSkillsCategory(skillsCategory);    
         }
         [HttpDelete]
         [Route("DeleteSkillsCategory")]
-        public void DeleteSkillsCategory(int id)
+        public Task DeleteSkillsCategory(int id)
         {
-
+            return _skillsCategoryServices.DeleteSkillsCategory(id);
         }
     }
 }

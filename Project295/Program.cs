@@ -1,9 +1,11 @@
+using Microsoft.EntityFrameworkCore;
 using Project295.Core.Common;
 using Project295.Core.Repository;
 using Project295.Core.Services;
 using Project295.Infra.Common;
 using Project295.Infra.Repository;
 using Project295.Infra.Services;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +16,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IDbContext, DbContext>();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+builder.Services.AddScoped<IDbContext, xDbContext>();
 
 builder.Services.AddScoped<IAttachmentRepository, AttachmentRepository>();
 builder.Services.AddScoped<IAttachmentServices, AttachmentServices>();

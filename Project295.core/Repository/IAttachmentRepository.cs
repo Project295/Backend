@@ -9,10 +9,10 @@ namespace Project295.Core.Repository
 {
     public interface IAttachmentRepository
     {
-         List<Attachment> GetAllAttachment();
-         Attachment GetAttachmentById(int id);
-         void CreateAttachment(Attachment attachment);
-         void UpdateAttachment(Attachment attachment);
-         void DeleteAttachment(int id);
+        Task<List<Attachment>> GetAllAttachment();
+        Task<Attachment> GetAttachmentById(int id);
+        Task CreateAttachment(Attachment attachment);
+        Task UpdateAttachment(Attachment attachment);
+        Task DeleteAttachment(int id);
     }
 }

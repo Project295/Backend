@@ -16,29 +16,27 @@ namespace Project295.Infra.Services
         {
             _ctegoryRepository = ctegoryRepository;
         }
-        public List<Category> GetAllCategory()
+        public Task<List<Category>> GetAllCategory()
         {
-            return null;
-
+            return _ctegoryRepository.GetAllCategory();
         }
 
-        public Category GetCategoryById(int id)
+        public Task<Category> GetCategoryById(int id)
         {
-            return null;
-
+            return _ctegoryRepository.GetCategoryById(id);
         }
-        public void CreateCategory(Category category)
+        public Task CreateCategory(Category category)
         {
-
+            return _ctegoryRepository.CreateCategory(category);
         }
-        public void UpdateCategory(Category category)
+        public Task UpdateCategory(Category category)
         {
-
+            return _ctegoryRepository.UpdateCategory(category);
         }
 
-        public void DeleteCategory(int id)
+        public Task DeleteCategory(int id)
         {
-
+            return _ctegoryRepository.DeleteCategory(id);
         }
     }
 }
