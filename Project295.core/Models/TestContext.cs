@@ -50,22 +50,26 @@ namespace Project295.API.Models
 
                 entity.Property(e => e.AttachmentId).ValueGeneratedNever();
 
+                entity.Property(e => e.AttachmentPath)
+                    .HasMaxLength(1000)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
                 entity.HasOne(d => d.AttachmentType)
                     .WithMany(p => p.Attachments)
                     .HasForeignKey(d => d.AttachmentTypeId)
-                    .HasConstraintName("FK__Attachmen__Attac__4F7CD00D");
+                    .HasConstraintName("FK__Attachmen__Attac__4E88ABD4");
 
                 entity.HasOne(d => d.Post)
                     .WithMany(p => p.Attachments)
                     .HasForeignKey(d => d.PostId)
-                    .HasConstraintName("FK__Attachmen__PostI__5165187F");
+                    .HasConstraintName("FK__Attachmen__PostI__5070F446");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Attachments)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__Attachmen__UserI__5070F446");
+                    .HasConstraintName("FK__Attachmen__UserI__4F7CD00D");
             });
 
             modelBuilder.Entity<AttachmentType>(entity =>
@@ -75,7 +79,7 @@ namespace Project295.API.Models
                 entity.Property(e => e.AttachmentTypeId).ValueGeneratedNever();
 
                 entity.Property(e => e.AttachmentTypeName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("attachmentTypeName");
             });
@@ -85,7 +89,7 @@ namespace Project295.API.Models
                 entity.Property(e => e.CategoryId).ValueGeneratedNever();
 
                 entity.Property(e => e.CategoryName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
             });
 
@@ -96,7 +100,7 @@ namespace Project295.API.Models
                 entity.Property(e => e.ComplainId).ValueGeneratedNever();
 
                 entity.Property(e => e.ComplainDiscription)
-                    .HasMaxLength(1)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
@@ -106,38 +110,38 @@ namespace Project295.API.Models
                 entity.HasOne(d => d.Complainant)
                     .WithMany(p => p.ComplainComplainants)
                     .HasForeignKey(d => d.ComplainantId)
-                    .HasConstraintName("FK__Complain__Compla__6477ECF3");
+                    .HasConstraintName("FK__Complain__Compla__6383C8BA");
 
                 entity.HasOne(d => d.Post)
                     .WithMany(p => p.Complains)
                     .HasForeignKey(d => d.PostId)
-                    .HasConstraintName("FK__Complain__postId__656C112C");
+                    .HasConstraintName("FK__Complain__postId__6477ECF3");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.ComplainUsers)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__Complain__UserId__66603565");
+                    .HasConstraintName("FK__Complain__UserId__656C112C");
             });
 
             modelBuilder.Entity<ContactU>(entity =>
             {
                 entity.HasKey(e => e.ContactUsId)
-                    .HasName("PK__ContactU__E10B7AC8A61C079B");
+                    .HasName("PK__ContactU__E10B7AC8D660D951");
 
                 entity.Property(e => e.ContactUsId).ValueGeneratedNever();
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
                 entity.Property(e => e.Email)
-                    .HasMaxLength(1)
+                    .HasMaxLength(100)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Message)
-                    .HasMaxLength(1)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Name)
-                    .HasMaxLength(1)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
             });
 
@@ -148,43 +152,40 @@ namespace Project295.API.Models
                 entity.HasOne(d => d.Followed)
                     .WithMany(p => p.FollowerFolloweds)
                     .HasForeignKey(d => d.FollowedId)
-                    .HasConstraintName("FK__Followers__Follo__4222D4EF");
+                    .HasConstraintName("FK__Followers__Follo__412EB0B6");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.FollowerUsers)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__Followers__UserI__412EB0B6");
+                    .HasConstraintName("FK__Followers__UserI__403A8C7D");
             });
 
             modelBuilder.Entity<Login>(entity =>
             {
                 entity.ToTable("Login");
 
-                entity.HasIndex(e => e.Password, "UQ__Login__87909B158093D7CB")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.UserName, "UQ__Login__C9F284566AC75E6B")
+                entity.HasIndex(e => e.UserName, "UQ__Login__C9F28456E3E9AD64")
                     .IsUnique();
 
                 entity.Property(e => e.LoginId).ValueGeneratedNever();
 
                 entity.Property(e => e.Password)
-                    .HasMaxLength(1)
+                    .HasMaxLength(150)
                     .IsUnicode(false);
 
                 entity.Property(e => e.UserName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(100)
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.Logins)
                     .HasForeignKey(d => d.RoleId)
-                    .HasConstraintName("FK__Login__RoleId__3D5E1FD2");
+                    .HasConstraintName("FK__Login__RoleId__3C69FB99");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Logins)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__Login__UserId__3E52440B");
+                    .HasConstraintName("FK__Login__UserId__3D5E1FD2");
             });
 
             modelBuilder.Entity<Post>(entity =>
@@ -196,7 +197,7 @@ namespace Project295.API.Models
                 entity.Property(e => e.CategoryId).HasColumnName("categoryId");
 
                 entity.Property(e => e.Contant)
-                    .HasMaxLength(1)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
@@ -204,17 +205,17 @@ namespace Project295.API.Models
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Posts)
                     .HasForeignKey(d => d.CategoryId)
-                    .HasConstraintName("FK__Post__categoryId__48CFD27E");
+                    .HasConstraintName("FK__Post__categoryId__47DBAE45");
 
                 entity.HasOne(d => d.PostStatus)
                     .WithMany(p => p.Posts)
                     .HasForeignKey(d => d.PostStatusId)
-                    .HasConstraintName("FK__Post__PostStatus__49C3F6B7");
+                    .HasConstraintName("FK__Post__PostStatus__48CFD27E");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Posts)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__Post__UserId__4AB81AF0");
+                    .HasConstraintName("FK__Post__UserId__49C3F6B7");
             });
 
             modelBuilder.Entity<PostStatus>(entity =>
@@ -224,7 +225,7 @@ namespace Project295.API.Models
                 entity.Property(e => e.PostStatusId).ValueGeneratedNever();
 
                 entity.Property(e => e.StatusName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
             });
 
@@ -235,7 +236,7 @@ namespace Project295.API.Models
                 entity.Property(e => e.RoleId).ValueGeneratedNever();
 
                 entity.Property(e => e.RoleName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
             });
 
@@ -244,9 +245,14 @@ namespace Project295.API.Models
                 entity.Property(e => e.SkillId).ValueGeneratedNever();
 
                 entity.Property(e => e.SkillName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(100)
                     .IsUnicode(false)
                     .HasColumnName("skillName");
+
+                entity.HasOne(d => d.SkillCategory)
+                    .WithMany(p => p.Skills)
+                    .HasForeignKey(d => d.SkillCategoryId)
+                    .HasConstraintName("FK__Skills__SkillCat__571DF1D5");
             });
 
             modelBuilder.Entity<SkillsCategory>(entity =>
@@ -254,7 +260,7 @@ namespace Project295.API.Models
                 entity.Property(e => e.SkillsCategoryId).ValueGeneratedNever();
 
                 entity.Property(e => e.SkillsCategoryName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
             });
 
@@ -265,15 +271,15 @@ namespace Project295.API.Models
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
                 entity.Property(e => e.FirstName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.LastName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.PhoneNumber)
-                    .HasMaxLength(1)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
             });
 
@@ -288,7 +294,7 @@ namespace Project295.API.Models
                 entity.Property(e => e.UserExperienceDateTo).HasColumnType("datetime");
 
                 entity.Property(e => e.UserExperienceDiscription)
-                    .HasMaxLength(1)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.UserId).HasColumnName("userId");
@@ -296,7 +302,7 @@ namespace Project295.API.Models
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserExperiences)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__UserExper__userI__5EBF139D");
+                    .HasConstraintName("FK__UserExper__userI__5DCAEF64");
             });
 
             modelBuilder.Entity<UserProject>(entity =>
@@ -308,13 +314,13 @@ namespace Project295.API.Models
                 entity.Property(e => e.UserId).HasColumnName("userId");
 
                 entity.Property(e => e.UserProjectDiscription)
-                    .HasMaxLength(1)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserProjects)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__UserProje__userI__619B8048");
+                    .HasConstraintName("FK__UserProje__userI__60A75C0F");
             });
 
             modelBuilder.Entity<UserSkill>(entity =>
@@ -326,15 +332,10 @@ namespace Project295.API.Models
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
                 entity.Property(e => e.OtherSkill)
-                    .HasMaxLength(1)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.UserId).HasColumnName("userId");
-
-                entity.HasOne(d => d.SkillCategory)
-                    .WithMany(p => p.UserSkills)
-                    .HasForeignKey(d => d.SkillCategoryId)
-                    .HasConstraintName("FK__UserSkill__Skill__5BE2A6F2");
 
                 entity.HasOne(d => d.Skill)
                     .WithMany(p => p.UserSkills)

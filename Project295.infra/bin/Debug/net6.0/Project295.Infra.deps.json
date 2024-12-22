@@ -673,10 +673,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.35"
         },
         "runtime": {
-          "Project295.Core.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Project295.Core.dll": {}
         }
       }
     }

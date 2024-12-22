@@ -133,10 +133,10 @@ namespace Project295.Infra.Common
                 .HasForeignKey(us => us.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // UserSkill - SkillsCategory (Many-to-One)
-            modelBuilder.Entity<UserSkill>()
+            // Skill - SkillsCategory (Many-to-One)
+            modelBuilder.Entity<Skill>()
                 .HasOne(us => us.SkillCategory)
-                .WithMany(sc => sc.UserSkills)
+                .WithMany(sc => sc.Skills)
                 .HasForeignKey(us => us.SkillCategoryId)
                 .OnDelete(DeleteBehavior.Restrict);
 

@@ -8,12 +8,10 @@ namespace Project295.API.Models
         public int UserSkillId { get; set; }
         public int? SkillId { get; set; }
         public string? OtherSkill { get; set; }
-        public int? SkillCategoryId { get; set; }
         public int? UserId { get; set; }
         public DateTime? CreatedAt { get; set; }
 
         public virtual Skill? Skill { get; set; }
-        public virtual SkillsCategory? SkillCategory { get; set; }
         public virtual User? User { get; set; }
     }
 }
