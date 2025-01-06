@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Repository;
-using Project295.Core.Services;
+
 
 namespace Project295.API.Controllers
 {
@@ -10,41 +10,42 @@ namespace Project295.API.Controllers
     [ApiController]
     public class SkillController : ControllerBase
     {
-        private readonly ISkillServices _skillServices;
-        public SkillController(ISkillServices skillServices)
+        private readonly AppDbContext _dbContext;
+        public SkillController(AppDbContext dbContext)
         {
-            _skillServices = skillServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public Task<List<Skill>> GetAllSkills()
+        public List<Skill> GetAllSkills()
         {
-            return _skillServices.GetAllSkills();
+            return _dbContext.Skills.ToList();
 
         }
         [HttpGet]
         [Route("GetSkillById")]
-        public Task<Skill> GetSkillById(int id)
+        public Skill GetSkillById(int id)
         {
-            return _skillServices.GetSkillById(id);
+            return _dbContext.Skills.FirstOrDefault(x=>x.SkillId == id);
 
         }
         [HttpPost]
         [Route("CreateSkill")]
-        public Task CreateSkill(Skill skill)
+        public void CreateSkill(Skill skill)
         {
-            return _skillServices.CreateSkill(skill);
+            _dbContext.Skills.Add(skill);
         }
         [HttpPut]
         [Route("UpdateSkill")]
-        public Task UpdateSkill(Skill skill)
+        public void UpdateSkill(Skill skill)
         {
-            return _skillServices.UpdateSkill(skill);
+            _dbContext.Skills.Update(skill);
         }
         [HttpDelete]
         [Route("DeleteSkill")]
-        public Task DeleteSkill(int id)
+        public void DeleteSkill(int id)
         {
-            return _skillServices.DeleteSkill(id);
+            var skill = _dbContext.Skills.FirstOrDefault(x => x.SkillId == id);
+            _dbContext.Skills.Remove(skill);
         }
     }
 }

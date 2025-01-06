@@ -8,9 +8,13 @@
     ".NETCoreApp,Version=v6.0": {
       "Project295.API/1.0.0": {
         "dependencies": {
+          "Dapper": "2.0.123",
+          "Microsoft.Data.SqlClient": "5.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.35",
           "Microsoft.EntityFrameworkCore.Design": "6.0.12",
-          "Project295.Core": "1.0.0",
-          "Project295.Infra": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.35",
+          "Microsoft.EntityFrameworkCore.Tools": "6.0.5",
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
@@ -201,6 +205,11 @@
             "assemblyVersion": "6.0.35.0",
             "fileVersion": "6.0.3524.46208"
           }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/6.0.5": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "6.0.12"
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
@@ -669,33 +678,6 @@
             "fileVersion": "5.0.20.51904"
           }
         }
-      },
-      "Project295.Core/1.0.0": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.35"
-        },
-        "runtime": {
-          "Project295.Core.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "Project295.Infra/1.0.0": {
-        "dependencies": {
-          "Dapper": "2.0.123",
-          "Microsoft.Data.SqlClient": "5.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.35",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.35",
-          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
-          "Project295.Core": "1.0.0"
-        },
-        "runtime": {
-          "Project295.Infra.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
       }
     }
   },
@@ -802,6 +784,13 @@
       "sha512": "sha512-etudN81bkWf+dvlomKAA5AwdHkfvuFw/eLr0aV8l7L7z8i1aciaEatqO4L9eQvYKBCGUV4fQ2IJcLMyF+k/Zcg==",
       "path": "microsoft.entityframeworkcore.sqlserver/6.0.35",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.35.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/6.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aeCzVNLmDl9IfB19WAjrlKcG61Cl4/ZV/9ubifmifKEps+kvMkKIcams5j+8q6dtx9/UL2x3tbOz2BS3eU0sXQ==",
+      "path": "microsoft.entityframeworkcore.tools/6.0.5",
+      "hashPath": "microsoft.entityframeworkcore.tools.6.0.5.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "type": "package",
@@ -1208,16 +1197,6 @@
       "sha512": "sha512-c1ho9WU9ZxMZawML+ssPKZfdnrg/OjR3pe0m9v8230z3acqphwvPJqzAkH54xRYm5ntZHGG1EPP3sux9H3qSPg==",
       "path": "system.windows.extensions/5.0.0",
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
-    },
-    "Project295.Core/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Project295.Infra/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

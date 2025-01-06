@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Repository;
-using Project295.Core.Services;
+
 
 namespace Project295.API.Controllers
 {
@@ -10,41 +10,42 @@ namespace Project295.API.Controllers
     [ApiController]
     public class UserExperienceController : ControllerBase
     {
-        private readonly IUserExperienceServices _userExperienceServices;
-        public UserExperienceController(IUserExperienceServices userExperienceServices)
+        private readonly AppDbContext _dbContext;
+        public UserExperienceController(AppDbContext dbContext)
         {
-            _userExperienceServices = userExperienceServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public  Task<List<UserExperience>> GetAllUserExperience()
+        public  List<UserExperience> GetAllUserExperience()
         {
-            return _userExperienceServices.GetAllUserExperience();
+            return _dbContext.UserExperiences.ToList();
 
         }
         [HttpGet]
         [Route("GetUserExperienceById")]
-        public  Task<UserExperience> GetUserExperienceById(int id)
+        public  UserExperience GetUserExperienceById(int id)
         {
-            return _userExperienceServices.GetUserExperienceById(id);
+            return _dbContext.UserExperiences.FirstOrDefault(x=>x.UserExperienceId==id);
 
         }
         [HttpPost]
         [Route("CreateUserExperience")]
-        public  Task CreateUserExperience(UserExperience userExperience)
+        public  void CreateUserExperience(UserExperience userExperience)
         {
-            return _userExperienceServices.CreateUserExperience(userExperience);
+             _dbContext.UserExperiences.Add(userExperience);
         }
         [HttpPut]
         [Route("UpdateUserExperience")]
-        public Task UpdateUserExperience(UserExperience userExperience)
+        public void UpdateUserExperience(UserExperience userExperience)
         {
-            return _userExperienceServices.UpdateUserExperience(userExperience);
+            _dbContext.UserExperiences.Update(userExperience);
         }
         [HttpDelete]
         [Route("DeleteUserExperience")]
-        public Task DeleteUserExperience(int id)
+        public void DeleteUserExperience(int id)
         {
-            return _userExperienceServices.DeleteUserExperience(id);
+            var userExperience = _dbContext.UserExperiences.FirstOrDefault(x => x.UserExperienceId == id);
+            _dbContext.UserExperiences.Remove(userExperience);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Services;
 
 namespace Project295.API.Controllers
 {
@@ -9,41 +9,42 @@ namespace Project295.API.Controllers
     [ApiController]
     public class SkillsCategoryController : ControllerBase
     {
-        private readonly ISkillsCategoryServices _skillsCategoryServices;
-        public SkillsCategoryController(ISkillsCategoryServices skillsCategoryServices)
+        private readonly AppDbContext _dbContext;
+        public SkillsCategoryController(AppDbContext dbContext)
         {
-            _skillsCategoryServices = skillsCategoryServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public Task<List<SkillsCategory>> GetAllSkillsCategory()
+        public List<SkillsCategory> GetAllSkillsCategory()
         {
-            return _skillsCategoryServices.GetAllSkillsCategory();
+            return _dbContext.SkillsCategories.ToList();
 
         }
         [HttpGet]
         [Route("GetSkillsCategoryById")]
-        public Task<SkillsCategory> GetSkillsCategoryById(int id)
+        public SkillsCategory GetSkillsCategoryById(int id)
         {
-            return _skillsCategoryServices.GetSkillsCategoryById(id);
+            return _dbContext.SkillsCategories.FirstOrDefault(x=>x.SkillsCategoryId==id);
 
         }
         [HttpPost]
         [Route("CreateSkillsCategory")]
-        public Task CreateSkillsCategory(SkillsCategory skillsCategory)
+        public void CreateSkillsCategory(SkillsCategory skillsCategory)
         {
-            return _skillsCategoryServices.CreateSkillsCategory(skillsCategory);
+             _dbContext.SkillsCategories.Add(skillsCategory);
         }
         [HttpPut]
         [Route("UpdateSkillsCategory")]
-        public Task UpdateSkillsCategory(SkillsCategory skillsCategory)
+        public void UpdateSkillsCategory(SkillsCategory skillsCategory)
         {
-            return _skillsCategoryServices.UpdateSkillsCategory(skillsCategory);    
+            _dbContext.SkillsCategories.Update(skillsCategory);
         }
         [HttpDelete]
         [Route("DeleteSkillsCategory")]
-        public Task DeleteSkillsCategory(int id)
+        public void DeleteSkillsCategory(int id)
         {
-            return _skillsCategoryServices.DeleteSkillsCategory(id);
+            var skillsCategory = _dbContext.SkillsCategories.FirstOrDefault(x => x.SkillsCategoryId == id);
+            _dbContext.SkillsCategories.Remove(skillsCategory);
         }
     }
 }

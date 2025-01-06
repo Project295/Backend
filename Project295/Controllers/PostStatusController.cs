@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Services;
 
 namespace Project295.API.Controllers
 {
@@ -9,41 +9,43 @@ namespace Project295.API.Controllers
     [ApiController]
     public class PostStatusController : ControllerBase
     {
-        private readonly IPostStatusServices _postStatusServices;
-        public PostStatusController(IPostStatusServices postStatusServices)
+        private readonly AppDbContext _dbContext;
+        public PostStatusController(AppDbContext dbContext)
         {
-            _postStatusServices = postStatusServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public Task<List<PostStatus>> GetAllPostStatus()
+        public List<PostStatus> GetAllPostStatus()
         {
-            return _postStatusServices.GetAllPostStatus();
+            return _dbContext.PostStatuses.ToList();
 
         }
         [HttpGet]
         [Route("GetPostStatusById")]
-        public Task<PostStatus> GetPostStatusById(int id)
+        public PostStatus GetPostStatusById(int id)
         {
-            return _postStatusServices.GetPostStatusById(id);
+            return _dbContext.PostStatuses.FirstOrDefault(x => x.PostStatusId == id);
 
         }
         [HttpPost]
         [Route("CreatePostStatus")]
-        public Task CreatePostStatus(PostStatus postStatus)
+        public void CreatePostStatus(PostStatus postStatus)
         {
-            return _postStatusServices.CreatePostStatus(postStatus);
+            _dbContext.PostStatuses.Add(postStatus);
         }
         [HttpPut]
         [Route("UpdatePostStatus")]
-        public Task UpdatePostStatus(PostStatus postStatus)
+        public void UpdatePostStatus(PostStatus postStatus)
         {
-            return _postStatusServices.UpdatePostStatus(postStatus);
+            _dbContext.PostStatuses.Update(postStatus);
         }
         [HttpDelete]
         [Route("DeletePostStatus")]
-        public Task DeletePostStatus(int id)
+        public void DeletePostStatus(int id)
         {
-            return _postStatusServices.DeletePostStatus(id);
+            var postStatus = _dbContext.PostStatuses.FirstOrDefault(x => x.PostStatusId == id);
+            _dbContext.PostStatuses.Remove(postStatus);
+
         }
     }
 }

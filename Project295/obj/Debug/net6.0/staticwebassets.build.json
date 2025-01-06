@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "yFqafD9iBLUk6POep93CzLBqhyB6wQIucAUH0jWSWaE=",
+  "Hash": "ycu6X+2PJSauvHGswAAOXM/IcyleXCjEV+9+6khm89A=",
   "Source": "Project295.API",
   "BasePath": "_content/Project295.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Project295.API\\wwwroot",
+      "Source": "Project295.API",
+      "ContentRoot": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\",
+      "BasePath": "_content/Project295.API",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

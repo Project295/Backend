@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Repository;
-using Project295.Core.Services;
+
 
 namespace Project295.API.Controllers
 {
@@ -10,41 +10,42 @@ namespace Project295.API.Controllers
     [ApiController]
     public class UserProjectController : ControllerBase
     {
-        private readonly IUserProjectServices _userProjectServices;
-        public UserProjectController(IUserProjectServices userProjectServices)
+        private readonly AppDbContext _dbContext;
+        public UserProjectController(AppDbContext dbContext)
         {
-            _userProjectServices = userProjectServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public Task<List<UserProject>> GetAllUserProject()
+        public List<UserProject> GetAllUserProject()
         {
-            return _userProjectServices.GetAllUserProject();
+            return _dbContext.UserProjects.ToList();
 
         }
         [HttpGet]
         [Route("GetUserProjectById")]
-        public Task<UserProject> GetUserProjectById(int id)
+        public UserProject GetUserProjectById(int id)
         {
-            return _userProjectServices.GetUserProjectById(id);
+            return _dbContext.UserProjects.FirstOrDefault(x=>x.UserProjectId==id);
 
         }
         [HttpPost]
         [Route("CreateUserProject")]
-        public Task CreateUserProject(UserProject userProject)
+        public void CreateUserProject(UserProject userProject)
         {
-            return _userProjectServices.CreateUserProject(userProject);
+            _dbContext.UserProjects.Add(userProject);       
         }
         [HttpPut]
         [Route("UpdateUserProject")]
-        public Task UpdateUserProject(UserProject userProject)
+        public void UpdateUserProject(UserProject userProject)
         {
-            return _userProjectServices.UpdateUserProject(userProject);
+            _dbContext.UserProjects.Update(userProject);
         }
         [HttpDelete]
         [Route("DeleteUserProject")]
-        public Task DeleteUserProject(int id)
+        public void DeleteUserProject(int id)
         {
-            return _userProjectServices.DeleteUserProject(id);
+            var userProject = _dbContext.UserProjects.FirstOrDefault(x => x.UserProjectId == id);
+            _dbContext.UserProjects.Remove(userProject);
         }
     }
 }

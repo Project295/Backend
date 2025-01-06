@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Services;
 
 namespace Project295.API.Controllers
 {
@@ -9,40 +9,41 @@ namespace Project295.API.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private readonly ILoginServices _loginServices;
-        public LoginController(ILoginServices loginServices)
+        private readonly AppDbContext _dbContext;
+        public LoginController(AppDbContext dbContext)
         {
-            _loginServices = loginServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public Task<List<Login>> GetAllLogins()
+        public List<Login> GetAllLogins()
         {
-            return _loginServices.GetAllLogins();
+            return _dbContext.Logins.ToList();
 
         }
         [HttpGet]
         [Route("GetLoginById")]
-        public Task<Login> GetLoginById(int id)
+        public Login GetLoginById(int id)
         {
-            return _loginServices.GetLoginById(id);
+            return _dbContext.Logins.FirstOrDefault(x=>x.LoginId==id);
         }
         [HttpPost]
         [Route("CreateLogin")]
-        public Task CreateLogin(Login login)
+        public void CreateLogin(Login login)
         {
-            return _loginServices.CreateLogin(login);
+             _dbContext.Logins.Add(login);
         }
         [HttpPut]
         [Route("UpdateLogin")]
-        public Task UpdateLogin(Login login)
+        public void UpdateLogin(Login login)
         {
-            return _loginServices.UpdateLogin(login);
+             _dbContext.Logins.Update(login);
         }
         [HttpDelete]
         [Route("DeleteLogin")]
-        public Task DeleteLogin(int id)
+        public void DeleteLogin(int id)
         {
-            return _loginServices.DeleteLogin(id);
+            var login = _dbContext.Logins.FirstOrDefault(x => x.LoginId == id);
+            _dbContext.Logins.Remove(login);
         }
 
     }

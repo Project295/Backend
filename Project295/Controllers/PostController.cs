@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Services;
 
 namespace Project295.API.Controllers
 {
@@ -9,41 +9,43 @@ namespace Project295.API.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        private readonly IPostServices _postServices;
-        public PostController(IPostServices postServices)
+        private readonly AppDbContext _dbContext;
+        public PostController(AppDbContext dbContext)
         {
-            _postServices = postServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public Task<List<Post>> GetAllPosts()
+        public List<Post> GetAllPosts()
         {
-            return _postServices.GetAllPosts();
+            return _dbContext.Posts.ToList();
 
         }
         [HttpGet]
         [Route("GetPostById")]
-        public Task<Post> GetPostById(int id)
+        public Post GetPostById(int id)
         {
-            return _postServices.GetPostById(id);
+            return _dbContext.Posts.FirstOrDefault(x => x.PostId == id);
 
         }
         [HttpPost]
         [Route("CreatePost")]
-        public Task CreatePost(Post post)
+        public void CreatePost(Post post)
         {
-            return _postServices.CreatePost(post);
+            _dbContext.Posts.Add(post);
         }
         [HttpPut]
         [Route("UpdatePost")]
-        public Task UpdatePost(Post post)
+        public void UpdatePost(Post post)
         {
-            return _postServices.UpdatePost(post);
+            _dbContext.Posts.Update(post);
         }
         [HttpDelete]
         [Route("DeletePost")]
-        public Task DeletePost(int id)
+        public void DeletePost(int id)
         {
-            return _postServices.DeletePost(id);
+            var post = _dbContext.Posts.FirstOrDefault(x => x.PostId == id);
+            _dbContext.Posts.Remove(post);
+
         }
     }
 }

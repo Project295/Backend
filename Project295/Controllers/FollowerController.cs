@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Services;
 
 namespace Project295.API.Controllers
 {
@@ -9,45 +9,46 @@ namespace Project295.API.Controllers
     [ApiController]
     public class FollowerController : ControllerBase
     {
-        private readonly IFollowerServices _followerServices;
-        public FollowerController(IFollowerServices followerServices)
+        private readonly AppDbContext _dbContext;
+        public FollowerController(AppDbContext dbContext)
         {
-            _followerServices = followerServices;
+            _dbContext = dbContext;
         }
 
         [HttpGet]
-        public Task<List<Follower>> GetAllFollowers()
+        public List<Follower> GetAllFollowers()
         {
-            return _followerServices.GetAllFollowers();
+            return _dbContext.Followers.ToList();
         }
 
         [HttpGet]
         [Route("GetFollowerById")]
-        public Task<Follower> GetFollowerById(int id)
+        public Follower GetFollowerById(int id)
         {
-            return _followerServices.GetFollowerById(id);
+            return _dbContext.Followers.FirstOrDefault(x => x.FollowerId == id);
 
         }
 
         [HttpPost]
         [Route("CreateFollower")]
-        public Task CreateFollower(Follower follower)
+        public void CreateFollower(Follower follower)
         {
-            return _followerServices.CreateFollower(follower);
+            _dbContext.Followers.Add(follower);
         }
 
         [HttpPut]
         [Route("UpdateFollower")]
-        public Task UpdateFollower(Follower follower)
+        public void UpdateFollower(Follower follower)
         {
-            return _followerServices.UpdateFollower(follower);
+            _dbContext.Followers.Update(follower);
         }
 
         [HttpDelete]
         [Route("DeleteFollower")]
-        public Task DeleteFollower(int id)
+        public void DeleteFollower(int id)
         {
-            return _followerServices.DeleteFollower(id);
+            var follower = _dbContext.Followers.FirstOrDefault(x => x.FollowerId == id);
+            _dbContext.Followers.Remove(follower);
         }
     }
 }

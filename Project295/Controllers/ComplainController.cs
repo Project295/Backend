@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Services;
 
 namespace Project295.API.Controllers
 {
@@ -9,40 +9,41 @@ namespace Project295.API.Controllers
     [ApiController]
     public class ComplainController : ControllerBase
     {
-        private readonly IComplainServices _complainServices;
-        public ComplainController(IComplainServices complainServices)
+        private readonly AppDbContext _dbContext;
+        public ComplainController(AppDbContext dbContext)
         {
-            _complainServices = complainServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public Task<List<Complain>> GetAllComplain()
+        public List<Complain> GetAllComplain()
         {
-            return _complainServices.GetAllComplain();
+            return _dbContext.Complains.ToList();
 
         }
         [HttpGet]
         [Route("GetComplainById")]
-        public Task<Complain> GetComplainById(int id)
+        public Complain GetComplainById(int id)
         {
-            return _complainServices.GetComplainById(id);
+            return _dbContext.Complains.FirstOrDefault(x=>x.ComplainId == id);
         }
         [HttpPost]
         [Route("CreateComplain")]
-        public Task CreateComplain(Complain complain)
+        public void CreateComplain(Complain complain)
         {
-            return _complainServices.UpdateComplain(complain);
+            _dbContext.Complains.Add(complain);
         }
         [HttpPut]
         [Route("UpdateComplain")]
-        public Task UpdateComplain(Complain complain)
+        public void UpdateComplain(Complain complain)
         {
-            return _complainServices.UpdateComplain(complain);
+            _dbContext.Complains.Update(complain);
         }
         [HttpDelete]
         [Route("DeleteComplain")]
-        public Task DeleteComplain(int id)
+        public void DeleteComplain(int id)
         {
-            return _complainServices.DeleteComplain(id);
+            var complain = _dbContext.Complains.FirstOrDefault(x => x.ComplainId == id);
+            _dbContext.Complains.Remove(complain);
         }
     }
 }

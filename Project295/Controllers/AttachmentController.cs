@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Project295.Core.Services;
+using Microsoft.EntityFrameworkCore;
+using Project295.API.Common;
 using Project295.API.Models;
+
 
 namespace Project295.API.Controllers
 {
@@ -9,44 +11,46 @@ namespace Project295.API.Controllers
     [ApiController]
     public class AttachmentController : ControllerBase
     {
-        private readonly IAttachmentServices _attachmentServices;
-        public AttachmentController(IAttachmentServices attachmentServices)
+        private readonly AppDbContext _dbContext;
+        public AttachmentController(AppDbContext dbContext)
         {
-            _attachmentServices = attachmentServices;
+            _dbContext = dbContext;
         }
 
         [HttpGet]
-        public Task<List<Attachment>> GetAllAttachment()
+        public List<Attachment> GetAllAttachment()
         {
-            return _attachmentServices.GetAllAttachment();
+            return _dbContext.Attachments.ToList();
+             
         }
 
         [HttpGet]
         [Route("GetAttachmentById")]
-        public Task<Attachment> GetAttachmentById(int id)
+        public Attachment GetAttachmentById(int id)
         {
-            return _attachmentServices.GetAttachmentById(id);
+            return  _dbContext.Attachments.FirstOrDefault(x => x.PostId == id);
         }
 
         [HttpPost]
         [Route("CreateAttachment")]
-        public Task CreateAttachment(Attachment attachment)
+        public void CreateAttachment(Attachment attachment)
         {
-            return _attachmentServices.CreateAttachment(attachment);
+             _dbContext.Attachments.Add(attachment);
         }
 
         [HttpPut]
         [Route("UpdateAttachment")]
-        public Task UpdateAttachment(Attachment attachment)
+        public void UpdateAttachment(Attachment attachment)
         {
-            return _attachmentServices.UpdateAttachment(attachment);
+            _dbContext.Attachments.Update(attachment);
         }
 
         [HttpDelete]
         [Route("DeleteAttachment")]
-        public Task DeleteAttachment(int id)
+        public void DeleteAttachment(int id)
         {
-            return _attachmentServices.DeleteAttachment(id);
+            var attachment = _dbContext.Attachments.FirstOrDefault(x => x.PostId == id);
+            _dbContext.Attachments.Remove(attachment);
         }
     }
 }

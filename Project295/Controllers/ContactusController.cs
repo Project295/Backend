@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Services;
+using System.Diagnostics.Contracts;
 
 namespace Project295.API.Controllers
 {
@@ -9,41 +10,42 @@ namespace Project295.API.Controllers
     [ApiController]
     public class ContactusController : ControllerBase
     {
-        private readonly IContactusServices _contactusServices;
-        public ContactusController(IContactusServices contactusServices)
+        private readonly AppDbContext _dbContext;
+        public ContactusController(AppDbContext dbContext)
         {
-            _contactusServices = contactusServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public Task<List<ContactU>> GetAllContactus()
+        public List<ContactU> GetAllContactus()
         {
-            return _contactusServices.GetAllContactus();
+            return _dbContext.ContactUs.ToList();
 
         }
         [HttpGet]
         [Route("GetUserById")]
-        public Task<ContactU> GetContactusById(int id)
+        public ContactU GetContactusById(int id)
         {
-            return _contactusServices.GetContactusById(id);
+            return _dbContext.ContactUs.FirstOrDefault(x => x.ContactUsId == id);
 
         }
         [HttpPost]
         [Route("CreateContactus")]
-        public Task CreateContactus(ContactU contactU)
+        public void CreateContactus(ContactU contactU)
         {
-            return _contactusServices.CreateContactus(contactU);
+             _dbContext.ContactUs.Add(contactU);
         }
         [HttpPut]
         [Route("UpdateContactus")]
-        public Task UpdateContactus(ContactU contactU)
+        public void UpdateContactus(ContactU contactU)
         {
-            return _contactusServices.UpdateContactus(contactU);
+            _dbContext.ContactUs.Update(contactU);
         }
         [HttpDelete]
         [Route("DeleteContactus")]
-        public Task DeleteContactus(int id)
+        public void DeleteContactus(int id)
         {
-            return _contactusServices.DeleteContactus(id);
+            var contact = _dbContext.ContactUs.FirstOrDefault(x => x.ContactUsId == id);
+            _dbContext.ContactUs.Remove(contact);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Services;
 
 namespace Project295.API.Controllers
 {
@@ -9,42 +9,43 @@ namespace Project295.API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserServices _userServices;
-        public UserController(IUserServices userServices)
+        private readonly AppDbContext _dbContext;
+        public UserController(AppDbContext dbContext)
         {
-            _userServices = userServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public Task<List<User>> GetAllUsers()
+        public List<User> GetAllUsers()
         {
-            return _userServices.GetAllUsers();
+            return _dbContext.Users.ToList();
 
         }
         [HttpGet]
         [Route("GetUserById")]
-        public Task<User> GetUserById(int id)
+        public User GetUserById(int id)
         {
-            return _userServices.GetUserById(id);
+            return _dbContext.Users.FirstOrDefault(x => x.UserId == id);
 
         }
         [HttpPost]
         [Route("CreateUser")]
-        public Task CreateUser(User user)
+        public void CreateUser(User user)
         {
-            return _userServices.CreateUser(user);
+             _dbContext.Users.Add(user);
         }
         [HttpPut]
         [Route("UpdateUser")]
-        public Task UpdateUser(User user)
+        public void UpdateUser(User user)
         {
-            return _userServices.UpdateUser(user);
+            _dbContext.Users.Update(user);
 
         }
         [HttpDelete]
         [Route("DeleteUser")]
-        public Task DeleteUser(int id)
+        public void DeleteUser(int id)
         {
-            return _userServices.DeleteUser(id);
+            var user = _dbContext.Users.FirstOrDefault(x => x.UserId == id);
+            _dbContext.Users.Remove(user);
         }
     }
 }

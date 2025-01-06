@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Services;
 
 namespace Project295.API.Controllers
 {
@@ -9,39 +9,40 @@ namespace Project295.API.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly ICategoryServices _categoryServices;
-        public CategoryController(ICategoryServices categoryServices)
+        private readonly AppDbContext _dbContext;
+        public CategoryController(AppDbContext dbContext)
         {
-            _categoryServices = categoryServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public Task<List<Category>> GetAllCategory()
+        public List<Category> GetAllCategory()
         {
-            return _categoryServices.GetAllCategory();
+            return _dbContext.Categories.ToList();
         }
         [HttpGet]
         [Route("GetCategoryById")]
-        public Task<Category> GetCategoryById(int id)
+        public Category GetCategoryById(int id)
         {
-            return _categoryServices.GetCategoryById(id);
+            return _dbContext.Categories.FirstOrDefault(x=>x.CategoryId==id);
         }
         [HttpPost]
         [Route("CreateCategory")]
-        public Task CreateCategory(Category category)
+        public void CreateCategory(Category category)
         {
-            return _categoryServices.CreateCategory(category);
+             _dbContext.Categories.Add(category);
         }
         [HttpPut]
         [Route("UpdateCategory")]
-        public Task UpdateCategory(Category category)
+        public void UpdateCategory(Category category)
         {
-            return _categoryServices.UpdateCategory(category);
+            _dbContext.Categories.Update(category);
         }
         [HttpDelete]
         [Route("DeleteCategory")]
-        public Task DeleteCategory(int id)
+        public void DeleteCategory(int id)
         {
-            return _categoryServices.DeleteCategory(id);
+               var category = _dbContext.Categories.FirstOrDefault(x => x.CategoryId == id);
+                 _dbContext.Categories.Remove(category);
         }
     }
 }

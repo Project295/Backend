@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Repository;
-using Project295.Core.Services;
 
 namespace Project295.API.Controllers
 {
@@ -10,41 +9,42 @@ namespace Project295.API.Controllers
     [ApiController]
     public class UserSkillController : ControllerBase
     {
-        private readonly IUserSkillServices _userSkillServices;
-        public UserSkillController(IUserSkillServices userSkillServices)
+        private readonly AppDbContext _dbContext;
+        public UserSkillController(AppDbContext dbContext)
         {
-            _userSkillServices = userSkillServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public Task<List<UserSkill>> GetAllUserSkill()
+        public List<UserSkill> GetAllUserSkill()
         {
-           return _userSkillServices.GetAllUserSkill();
+           return _dbContext.UserSkills.ToList();
 
         }
         [HttpGet]
         [Route("GetUserSkillById")]
-        public Task<UserSkill> GetUserSkillById(int id)
+        public UserSkill GetUserSkillById(int id)
         {
-            return _userSkillServices.GetUserSkillById(id);
+            return _dbContext.UserSkills.FirstOrDefault(x => x.SkillId == id);
 
         }
         [HttpPost]
         [Route("CreateUserSkill")]
-        public Task CreateUserSkill(UserSkill userSkill)
+        public void CreateUserSkill(UserSkill userSkill)
         {
-            return _userSkillServices.UpdateUserSkill(userSkill);
+             _dbContext.UserSkills.Add(userSkill);
         }
         [HttpPut]
         [Route("UpdateUserSkill")]
-        public  Task UpdateUserSkill(UserSkill userSkill)
+        public  void UpdateUserSkill(UserSkill userSkill)
         {
-            return  _userSkillServices.UpdateUserSkill(userSkill);
+            _dbContext.UserSkills.Update(userSkill);
         }
         [HttpDelete]
         [Route("DeleteUserSkill")]
-        public Task DeleteUserSkill(int id)
+        public void DeleteUserSkill(int id)
         {
-            return _userSkillServices.DeleteUserSkill(id);
+            var userSkill = _dbContext.UserSkills.FirstOrDefault(x => x.SkillId == id);
+            _dbContext.UserSkills.Remove(userSkill);
         }
     }
 }

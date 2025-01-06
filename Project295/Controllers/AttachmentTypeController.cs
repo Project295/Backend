@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project295.API.Common;
 using Project295.API.Models;
-using Project295.Core.Services;
+
 
 namespace Project295.API.Controllers
 {
@@ -9,39 +10,40 @@ namespace Project295.API.Controllers
     [ApiController]
     public class AttachmentTypeController : ControllerBase
     {
-        private readonly IAttachmentTypeServices _attachmentTypeServices;
-        public AttachmentTypeController(IAttachmentTypeServices attachmentTypeServices)
+        private readonly AppDbContext _dbContext;
+        public AttachmentTypeController(AppDbContext dbContext)
         {
-            _attachmentTypeServices = attachmentTypeServices;
+            _dbContext = dbContext;
         }
         [HttpGet]
-        public Task<List<AttachmentType>> GetAllAttachmentType()
+        public List<AttachmentType> GetAllAttachmentType()
         {
-            return _attachmentTypeServices.GetAllAttachmentType();
+            return _dbContext.AttachmentTypes.ToList();
         }
         [HttpGet]
         [Route("GetAttachmentTypeById")]
-        public Task<AttachmentType> GetAttachmentTypeById(int id)
+        public AttachmentType GetAttachmentTypeById(int id)
         {
-            return _attachmentTypeServices.GetAttachmentTypeById(id);
+            return _dbContext.AttachmentTypes.FirstOrDefault(x=>x.AttachmentTypeId == id);
         }
         [HttpPost]
         [Route("CreateAttachmentType")]
-        public Task CreateAttachmentType(AttachmentType attachmentType)
+        public void CreateAttachmentType(AttachmentType attachmentType)
         {
-            return _attachmentTypeServices.CreateAttachmentType(attachmentType);
+             _dbContext.AttachmentTypes.Add(attachmentType);
         }
         [HttpPut]
         [Route("UpdateAttachmentType")]
-        public Task UpdateAttachmentType(AttachmentType attachmentType)
+        public void UpdateAttachmentType(AttachmentType attachmentType)
         {
-            return _attachmentTypeServices.UpdateAttachmentType(attachmentType);
+            _dbContext.AttachmentTypes.Update(attachmentType);
         }
         [HttpDelete]
         [Route("DeleteAttachmentType")]
-        public Task DeleteAttachmentType(int id)
+        public void DeleteAttachmentType(int id)
         {
-            return _attachmentTypeServices.DeleteAttachmentType(id);
+           var attachmentType = _dbContext.AttachmentTypes.FirstOrDefault(x => x.AttachmentTypeId == id);
+            _dbContext.AttachmentTypes.Remove(attachmentType);
         }
     }
 }
