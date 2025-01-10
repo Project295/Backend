@@ -673,7 +673,7 @@
   },
   {
     "ContainingType": "Project295.API.Controllers.LoginController",
-    "Method": "GetAllLogins",
+    "Method": "GetAllLogin",
     "RelativePath": "api/Login",
     "HttpMethod": "GET",
     "IsController": true,
@@ -687,28 +687,6 @@
           "application/json",
           "text/json"
         ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.LoginController",
-    "Method": "CreateLogin",
-    "RelativePath": "api/Login/CreateLogin",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "login",
-        "Type": "Project295.API.Models.Login",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
         "StatusCode": 200
       }
     ]
@@ -742,21 +720,37 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "Project295.API.Models.Login",
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Project295.API.Controllers.LoginController",
+    "Method": "Register",
+    "RelativePath": "api/Login/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerDTO",
+        "Type": "Project295.API.DTO.RegisterDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
         "StatusCode": 200
       }
     ]

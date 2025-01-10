@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\My Download\\Project295\\Backend\\Project295\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\poststatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\poststatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\project295.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:project295.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -17,6 +25,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\skillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,10 +55,6 @@
       "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\skillscategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\poststatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\poststatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -58,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,59 +74,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\AppDbContext.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\AppDbContext.cs*",
+              "RelativeToolTip": "Models\\AppDbContext.cs*",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAYwA4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T20:12:40.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Project295.API",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Project295.API.csproj",
+              "RelativeDocumentMoniker": "Project295.API.csproj",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Project295.API.csproj",
+              "RelativeToolTip": "Project295.API.csproj",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-10T19:57:42.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RegisterDTO.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\RegisterDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\RegisterDTO.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\RegisterDTO.cs",
+              "RelativeToolTip": "DTO\\RegisterDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T18:47:18.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-01-06T18:46:22.411Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
               "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAmwD4AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-06T18:45:30.906Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Models\\AppDbContext.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\AppDbContext.cs",
-              "RelativeToolTip": "Models\\AppDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T18:45:13.143Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-06T18:43:47.793Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "UserSkillController.cs",
               "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserSkillController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserSkillController.cs",
@@ -131,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "UserProjectController.cs",
               "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserProjectController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserProjectController.cs",
@@ -144,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -157,7 +191,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
+              "Title": "PostStatusController.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\PostStatusController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PostStatusController.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\PostStatusController.cs",
+              "RelativeToolTip": "Controllers\\PostStatusController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T18:10:17.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "UserExperienceController.cs",
               "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserExperienceController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserExperienceController.cs",
@@ -170,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "SkillsCategoryController.cs",
               "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\SkillsCategoryController.cs",
               "RelativeDocumentMoniker": "Controllers\\SkillsCategoryController.cs",
@@ -183,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "SkillController.cs",
               "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\SkillController.cs",
               "RelativeDocumentMoniker": "Controllers\\SkillController.cs",
@@ -196,20 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PostStatusController.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\PostStatusController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PostStatusController.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\PostStatusController.cs",
-              "RelativeToolTip": "Controllers\\PostStatusController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T18:10:17.179Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "PostController.cs",
               "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\PostController.cs",
               "RelativeDocumentMoniker": "Controllers\\PostController.cs",

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Project295.API.Common;
+using Project295.API.DTO;
 using Project295.API.Models;
 
 namespace Project295.API.Controllers
@@ -15,35 +16,55 @@ namespace Project295.API.Controllers
             _dbContext = dbContext;
         }
         [HttpGet]
-        public List<Login> GetAllLogins()
+        public List<Login> GetAllLogin()
         {
-            return _dbContext.Logins.ToList();
+            return _dbContext.Login.ToList();
 
         }
         [HttpGet]
         [Route("GetLoginById")]
-        public Login GetLoginById(int id)
+        public string GetLoginById()
         {
-            return _dbContext.Logins.FirstOrDefault(x=>x.LoginId==id);
+            // return _dbContext.Login.FirstOrDefault(x=>x.LoginId==id);
+            return "1111";
         }
-        [HttpPost]
-        [Route("CreateLogin")]
-        public void CreateLogin(Login login)
+        [HttpPost("Register")]
+        public async Task Register(RegisterDTO registerDTO)
         {
-             _dbContext.Logins.Add(login);
+            User user = new User()
+            {
+                FirstName = registerDTO.FirstName,
+                LastName = registerDTO.LastName,
+                PhoneNumber = registerDTO.mobileNumber,
+                IsBlocked = false,
+                CreatedAt = DateTime.Now
+
+            };
+            await _dbContext.Users.AddAsync(user);
+            await _dbContext.SaveChangesAsync();
+
+            Login login = new Login()
+            {
+                Password = registerDTO.Password,
+                UserName = registerDTO.Email,
+                RoleId = 2,
+                UserId = user.UserId
+            };
+             _dbContext.Login.Add(login);
+            _dbContext.SaveChanges();
         }
         [HttpPut]
         [Route("UpdateLogin")]
         public void UpdateLogin(Login login)
         {
-             _dbContext.Logins.Update(login);
+             _dbContext.Login.Update(login);
         }
         [HttpDelete]
         [Route("DeleteLogin")]
         public void DeleteLogin(int id)
         {
-            var login = _dbContext.Logins.FirstOrDefault(x => x.LoginId == id);
-            _dbContext.Logins.Remove(login);
+            var login = _dbContext.Login.FirstOrDefault(x => x.LoginId == id);
+            _dbContext.Login.Remove(login);
         }
 
     }

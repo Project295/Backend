@@ -12,10 +12,10 @@ namespace Project295.API.Common
         public DbSet<Complain> Complains { get; set; }
         public DbSet<ContactU> ContactUs { get; set; }
         public DbSet<Follower> Followers { get; set; }
-        public DbSet<Login> Logins { get; set; }
+        public DbSet<Login> Login { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<PostStatus> PostStatuses { get; set; }
+        public DbSet<PostStatus> PostStatus { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<SkillsCategory> SkillsCategories { get; set; }

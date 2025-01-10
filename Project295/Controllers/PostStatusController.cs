@@ -17,34 +17,34 @@ namespace Project295.API.Controllers
         [HttpGet]
         public List<PostStatus> GetAllPostStatus()
         {
-            return _dbContext.PostStatuses.ToList();
+            return _dbContext.PostStatus.ToList();
 
         }
         [HttpGet]
         [Route("GetPostStatusById")]
         public PostStatus GetPostStatusById(int id)
         {
-            return _dbContext.PostStatuses.FirstOrDefault(x => x.PostStatusId == id);
+            return _dbContext.PostStatus.FirstOrDefault(x => x.PostStatusId == id);
 
         }
         [HttpPost]
         [Route("CreatePostStatus")]
         public void CreatePostStatus(PostStatus postStatus)
         {
-            _dbContext.PostStatuses.Add(postStatus);
+            _dbContext.PostStatus.Add(postStatus);
         }
         [HttpPut]
         [Route("UpdatePostStatus")]
         public void UpdatePostStatus(PostStatus postStatus)
         {
-            _dbContext.PostStatuses.Update(postStatus);
+            _dbContext.PostStatus.Update(postStatus);
         }
         [HttpDelete]
         [Route("DeletePostStatus")]
         public void DeletePostStatus(int id)
         {
-            var postStatus = _dbContext.PostStatuses.FirstOrDefault(x => x.PostStatusId == id);
-            _dbContext.PostStatuses.Remove(postStatus);
+            var postStatus = _dbContext.PostStatus.FirstOrDefault(x => x.PostStatusId == id);
+            _dbContext.PostStatus.Remove(postStatus);
 
         }
     }
