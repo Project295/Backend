@@ -715,23 +715,24 @@
   },
   {
     "ContainingType": "Project295.API.Controllers.LoginController",
-    "Method": "GetLoginById",
-    "RelativePath": "api/Login/GetLoginById",
+    "Method": "Login",
+    "RelativePath": "api/Login/Login",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
+        "Name": "UserName",
         "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
       }
-    ]
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Project295.API.Controllers.LoginController",
@@ -747,13 +748,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Project295.API.Controllers.LoginController",
