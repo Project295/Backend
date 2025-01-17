@@ -29,7 +29,7 @@ namespace Project295.API.Common
             {
                 entity.ToTable("Attachment");
 
-                entity.Property(e => e.AttachmentId).ValueGeneratedNever();
+                entity.Property(e => e.AttachmentId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
@@ -53,7 +53,7 @@ namespace Project295.API.Common
             {
                 entity.ToTable("AttachmentType");
 
-                entity.Property(e => e.AttachmentTypeId).ValueGeneratedNever();
+                entity.Property(e => e.AttachmentTypeId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.AttachmentTypeName)
                     .HasMaxLength(1)
@@ -63,7 +63,7 @@ namespace Project295.API.Common
 
             modelBuilder.Entity<Category>(entity =>
             {
-                entity.Property(e => e.CategoryId).ValueGeneratedNever();
+                entity.Property(e => e.CategoryId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CategoryName)
                     .HasMaxLength(1)
@@ -74,7 +74,7 @@ namespace Project295.API.Common
             {
                 entity.ToTable("Complain");
 
-                entity.Property(e => e.ComplainId).ValueGeneratedNever();
+                entity.Property(e => e.ComplainId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.ComplainDiscription)
                     .HasMaxLength(1)
@@ -105,7 +105,7 @@ namespace Project295.API.Common
                 entity.HasKey(e => e.ContactUsId)
                     .HasName("PK__ContactU__E10B7AC8A61C079B");
 
-                entity.Property(e => e.ContactUsId).ValueGeneratedNever();
+                entity.Property(e => e.ContactUsId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
@@ -124,7 +124,7 @@ namespace Project295.API.Common
 
             modelBuilder.Entity<Follower>(entity =>
             {
-                entity.Property(e => e.FollowerId).ValueGeneratedNever();
+                entity.Property(e => e.FollowerId).ValueGeneratedOnAdd();
 
                 entity.HasOne(d => d.Followed)
                     .WithMany(p => p.FollowerFolloweds)
@@ -147,7 +147,7 @@ namespace Project295.API.Common
                 entity.HasIndex(e => e.UserName, "UQ__Login__C9F284566AC75E6B")
                     .IsUnique();
 
-                entity.Property(e => e.LoginId).ValueGeneratedNever();
+                entity.Property(e => e.LoginId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Password)
                     .HasMaxLength(1)
@@ -172,7 +172,7 @@ namespace Project295.API.Common
             {
                 entity.ToTable("Post");
 
-                entity.Property(e => e.PostId).ValueGeneratedNever();
+                entity.Property(e => e.PostId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CategoryId).HasColumnName("categoryId");
 
@@ -202,7 +202,7 @@ namespace Project295.API.Common
             {
                 entity.ToTable("PostStatus");
 
-                entity.Property(e => e.PostStatusId).ValueGeneratedNever();
+                entity.Property(e => e.PostStatusId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.StatusName)
                     .HasMaxLength(1)
@@ -213,7 +213,7 @@ namespace Project295.API.Common
             {
                 entity.ToTable("Role");
 
-                entity.Property(e => e.RoleId).ValueGeneratedNever();
+                entity.Property(e => e.RoleId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.RoleName)
                     .HasMaxLength(1)
@@ -222,17 +222,23 @@ namespace Project295.API.Common
 
             modelBuilder.Entity<Skill>(entity =>
             {
-                entity.Property(e => e.SkillId).ValueGeneratedNever();
+                entity.Property(e => e.SkillId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.SkillName)
                     .HasMaxLength(1)
                     .IsUnicode(false)
                     .HasColumnName("skillName");
+
+                entity.Property(e => e.SkillCategoryId).HasColumnName("SkillCategoryId");
+                entity.HasOne(d => d.SkillsCategory)
+                  .WithMany(p => p.Skills)
+                  .HasForeignKey(d => d.SkillCategoryId)
+                  .HasConstraintName("FK__Skills__SkillCat__619B8048");
             });
 
             modelBuilder.Entity<SkillsCategory>(entity =>
             {
-                entity.Property(e => e.SkillsCategoryId).ValueGeneratedNever();
+                entity.Property(e => e.SkillsCategoryId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.SkillsCategoryName)
                     .HasMaxLength(1)
@@ -241,7 +247,7 @@ namespace Project295.API.Common
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.Property(e => e.UserId).ValueGeneratedNever();
+                entity.Property(e => e.UserId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
@@ -260,7 +266,7 @@ namespace Project295.API.Common
 
             modelBuilder.Entity<UserExperience>(entity =>
             {
-                entity.Property(e => e.UserExperienceId).ValueGeneratedNever();
+                entity.Property(e => e.UserExperienceId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
@@ -282,7 +288,7 @@ namespace Project295.API.Common
 
             modelBuilder.Entity<UserProject>(entity =>
             {
-                entity.Property(e => e.UserProjectId).ValueGeneratedNever();
+                entity.Property(e => e.UserProjectId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
@@ -302,7 +308,7 @@ namespace Project295.API.Common
             {
                 entity.ToTable("UserSkill");
 
-                entity.Property(e => e.UserSkillId).ValueGeneratedNever();
+                entity.Property(e => e.UserSkillId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
@@ -311,11 +317,6 @@ namespace Project295.API.Common
                     .IsUnicode(false);
 
                 entity.Property(e => e.UserId).HasColumnName("userId");
-
-                entity.HasOne(d => d.SkillCategory)
-                    .WithMany(p => p.UserSkills)
-                    .HasForeignKey(d => d.SkillCategoryId)
-                    .HasConstraintName("FK__UserSkill__Skill__5BE2A6F2");
 
                 entity.HasOne(d => d.Skill)
                     .WithMany(p => p.UserSkills)

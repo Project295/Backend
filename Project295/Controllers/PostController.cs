@@ -32,6 +32,8 @@ namespace Project295.API.Controllers
         public void CreatePost(Post post)
         {
             _dbContext.Posts.Add(post);
+            _dbContext.SaveChanges();
+
         }
         [HttpPut]
         [Route("UpdatePost")]
