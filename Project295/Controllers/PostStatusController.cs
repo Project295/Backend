@@ -37,19 +37,25 @@ namespace Project295.API.Controllers
         public void CreatePostStatus(PostStatus postStatus)
         {
             _dbContext.PostStatus.Add(postStatus);
+            _dbContext.SaveChanges();
+
         }
         [HttpPut]
         [Route("UpdatePostStatus")]
         public void UpdatePostStatus(PostStatus postStatus)
         {
             _dbContext.PostStatus.Update(postStatus);
+            _dbContext.SaveChanges();
+
         }
         [HttpDelete]
-        [Route("DeletePostStatus")]
+        [Route("DeletePostStatus/{id}")]
         public void DeletePostStatus(int id)
         {
             var postStatus = _dbContext.PostStatus.FirstOrDefault(x => x.PostStatusId == id);
             _dbContext.PostStatus.Remove(postStatus);
+            _dbContext.SaveChanges();
+
 
         }
     }

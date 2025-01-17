@@ -7,12 +7,13 @@ namespace Project295.API.Models
     {
         public SkillsCategory()
         {
-            UserSkills = new HashSet<UserSkill>();
+            Skills = new HashSet<Skill>();
         }
 
         public int SkillsCategoryId { get; set; }
         public string? SkillsCategoryName { get; set; }
 
-        public virtual ICollection<UserSkill> UserSkills { get; set; }
+        public virtual ICollection<Skill> Skills { get; set; }
+
     }
 }

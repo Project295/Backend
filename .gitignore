@@ -382,3 +382,4 @@ FodyWeavers.xsd
 *.bak
 *.tmp
 *.temp
+/Project295/Controllers/UserController.cs

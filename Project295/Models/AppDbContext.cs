@@ -231,6 +231,12 @@ namespace Project295.API.Common
                     .HasMaxLength(1)
                     .IsUnicode(false)
                     .HasColumnName("skillName");
+
+                entity.Property(e => e.SkillCategoryId).HasColumnName("SkillCategoryId");
+                entity.HasOne(d => d.SkillsCategory)
+                  .WithMany(p => p.Skills)
+                  .HasForeignKey(d => d.SkillCategoryId)
+                  .HasConstraintName("FK__Skills__SkillCat__619B8048");
             });
 
             modelBuilder.Entity<SkillsCategory>(entity =>
@@ -314,11 +320,6 @@ namespace Project295.API.Common
                     .IsUnicode(false);
 
                 entity.Property(e => e.UserId).HasColumnName("userId");
-
-                entity.HasOne(d => d.SkillCategory)
-                    .WithMany(p => p.UserSkills)
-                    .HasForeignKey(d => d.SkillCategoryId)
-                    .HasConstraintName("FK__UserSkill__Skill__5BE2A6F2");
 
                 entity.HasOne(d => d.Skill)
                     .WithMany(p => p.UserSkills)
