@@ -7,7 +7,6 @@ namespace Project295.API.Models
     {
         public Post()
         {
-            Attachments = new HashSet<Attachment>();
             Complains = new HashSet<Complain>();
         }
 
@@ -22,7 +21,7 @@ namespace Project295.API.Models
         public virtual Category? Category { get; set; }
         public virtual PostStatus? PostStatus { get; set; }
         public virtual User? User { get; set; }
-        public virtual ICollection<Attachment> Attachments { get; set; }
+        public virtual Attachment? Attachments { get; set; }
         public virtual ICollection<Complain> Complains { get; set; }
     }
 }

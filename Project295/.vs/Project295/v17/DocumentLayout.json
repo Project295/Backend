@@ -3,28 +3,75 @@
   "WorkspaceRootPath": "C:\\My Download\\Project295\\Backend\\Project295\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\service\\uploadattachmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:service\\uploadattachmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ssmad\\AppData\\Local\\SourceServer\\f9759bb4edc5a4bb8a776787bfacf83bd7f5b9cfa6cc1586b1a6c9adc4c24f11\\Project295\\Controllers\\PostController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\dto\\updatepostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:dto\\updatepostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\poststatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\poststatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\dto\\addpostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:dto\\addpostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\dto\\userpostsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:dto\\userpostsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\contactuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\contactuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\wwwroot\\attachment\\f20ff29b-8ff7-4eb0-958c-7df1e86dc807_ssss.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:wwwroot\\attachment\\f20ff29b-8ff7-4eb0-958c-7df1e86dc807_ssss.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\wwwroot\\attachment\\default-profile.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:wwwroot\\attachment\\default-profile.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\dto\\profilecountsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:dto\\profilecountsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\dto\\profiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:dto\\profiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\models\\attachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\attachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\attachmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\attachmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\models\\attachmenttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\attachmenttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,66 +80,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\models\\contactu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\contactu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\models\\complain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\complain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\poststatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\poststatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\userprojectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\userprojectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\project295.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:project295.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\skillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\skillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\userskillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\userskillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\userexperiencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\userexperiencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\skillscategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\skillscategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|c:\\my download\\project295\\backend\\project295\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -102,7 +89,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,302 +97,260 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Login.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Login.cs",
-              "RelativeDocumentMoniker": "Models\\Login.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Login.cs",
-              "RelativeToolTip": "Models\\Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T18:58:04.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ContactU.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\ContactU.cs",
-              "RelativeDocumentMoniker": "Models\\ContactU.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\ContactU.cs",
-              "RelativeToolTip": "Models\\ContactU.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T18:58:02.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Complain.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Complain.cs",
-              "RelativeDocumentMoniker": "Models\\Complain.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Complain.cs",
-              "RelativeToolTip": "Models\\Complain.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T18:58:01.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AttachmentType.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\AttachmentType.cs",
-              "RelativeDocumentMoniker": "Models\\AttachmentType.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\AttachmentType.cs",
-              "RelativeToolTip": "Models\\AttachmentType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T18:58:00.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Attachment.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Attachment.cs",
-              "RelativeDocumentMoniker": "Models\\Attachment.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Attachment.cs",
-              "RelativeToolTip": "Models\\Attachment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T18:49:09.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AttachmentController.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\AttachmentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AttachmentController.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\AttachmentController.cs",
-              "RelativeToolTip": "Controllers\\AttachmentController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T18:49:01.189Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T18:43:04.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LoginDTO.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\LoginDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\LoginDTO.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\LoginDTO.cs",
-              "RelativeToolTip": "DTO\\LoginDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Title": "PostController.cs",
+              "DocumentMoniker": "C:\\Users\\ssmad\\AppData\\Local\\SourceServer\\f9759bb4edc5a4bb8a776787bfacf83bd7f5b9cfa6cc1586b1a6c9adc4c24f11\\Project295\\Controllers\\PostController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\ssmad\\AppData\\Local\\SourceServer\\f9759bb4edc5a4bb8a776787bfacf83bd7f5b9cfa6cc1586b1a6c9adc4c24f11\\Project295\\Controllers\\PostController.cs",
+              "ToolTip": "C:\\Users\\ssmad\\AppData\\Local\\SourceServer\\f9759bb4edc5a4bb8a776787bfacf83bd7f5b9cfa6cc1586b1a6c9adc4c24f11\\Project295\\Controllers\\PostController.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\Users\\ssmad\\AppData\\Local\\SourceServer\\f9759bb4edc5a4bb8a776787bfacf83bd7f5b9cfa6cc1586b1a6c9adc4c24f11\\Project295\\Controllers\\PostController.cs [Read Only]",
+              "ViewState": "AgIAACMAAAAAAAAAAAAiwDMAAAAAAAAAAQAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T18:38:31.567Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Models\\AppDbContext.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\AppDbContext.cs",
-              "RelativeToolTip": "Models\\AppDbContext.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAAEoBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T20:12:40.563Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Project295.API",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Project295.API.csproj",
-              "RelativeDocumentMoniker": "Project295.API.csproj",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Project295.API.csproj",
-              "RelativeToolTip": "Project295.API.csproj",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-10T19:57:42.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-17T14:48:55.636Z",
+              "EditorCaption": " [Read Only]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAgwCIAAABpAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T18:45:30.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Post.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Post.cs",
-              "RelativeDocumentMoniker": "Models\\Post.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Post.cs",
-              "RelativeToolTip": "Models\\Post.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T18:58:04.753Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "RegisterDTO.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\RegisterDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\RegisterDTO.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\RegisterDTO.cs",
-              "RelativeToolTip": "DTO\\RegisterDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T18:47:18.133Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-06T18:46:22.411Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T18:43:47.793Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UserSkillController.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserSkillController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserSkillController.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserSkillController.cs",
-              "RelativeToolTip": "Controllers\\UserSkillController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T18:41:11.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UserProjectController.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserProjectController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserProjectController.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserProjectController.cs",
-              "RelativeToolTip": "Controllers\\UserProjectController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T18:35:41.049Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T18:26:22.745Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "PostStatusController.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\PostStatusController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PostStatusController.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\PostStatusController.cs",
-              "RelativeToolTip": "Controllers\\PostStatusController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T18:10:17.179Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "UserExperienceController.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserExperienceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserExperienceController.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserExperienceController.cs",
-              "RelativeToolTip": "Controllers\\UserExperienceController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T18:26:22.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "SkillsCategoryController.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\SkillsCategoryController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SkillsCategoryController.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\SkillsCategoryController.cs",
-              "RelativeToolTip": "Controllers\\SkillsCategoryController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T18:18:08.099Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "SkillController.cs",
-              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\SkillController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SkillController.cs",
-              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\SkillController.cs",
-              "RelativeToolTip": "Controllers\\SkillController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T18:15:35.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
               "Title": "PostController.cs",
               "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\PostController.cs",
               "RelativeDocumentMoniker": "Controllers\\PostController.cs",
               "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\PostController.cs",
               "RelativeToolTip": "Controllers\\PostController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAQwGUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T18:06:42.291Z",
+              "WhenOpened": "2025-01-14T00:07:02.348Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PostStatusController.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\PostStatusController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PostStatusController.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\PostStatusController.cs",
+              "RelativeToolTip": "Controllers\\PostStatusController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T22:52:15.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "f20ff29b-8ff7-4eb0-958c-7df1e86dc807_ssss.jpg - Bitmap [725x515, 24 bit, JPG]",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\f20ff29b-8ff7-4eb0-958c-7df1e86dc807_ssss.jpg",
+              "RelativeDocumentMoniker": "wwwroot\\attachment\\f20ff29b-8ff7-4eb0-958c-7df1e86dc807_ssss.jpg",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\f20ff29b-8ff7-4eb0-958c-7df1e86dc807_ssss.jpg - Bitmap [725x515, 24 bit, JPG]",
+              "RelativeToolTip": "wwwroot\\attachment\\f20ff29b-8ff7-4eb0-958c-7df1e86dc807_ssss.jpg - Bitmap [725x515, 24 bit, JPG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-01-17T12:09:42.774Z",
+              "EditorCaption": " - Bitmap [725x515, 24 bit, JPG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T15:00:14.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddPostDTO.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\AddPostDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\AddPostDTO.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\AddPostDTO.cs",
+              "RelativeToolTip": "DTO\\AddPostDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T20:13:50.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UpdatePostDTO.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\UpdatePostDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\UpdatePostDTO.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\UpdatePostDTO.cs",
+              "RelativeToolTip": "DTO\\UpdatePostDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T11:05:58.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UploadAttachmentService.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Service\\UploadAttachmentService.cs",
+              "RelativeDocumentMoniker": "Service\\UploadAttachmentService.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Service\\UploadAttachmentService.cs",
+              "RelativeToolTip": "Service\\UploadAttachmentService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAIwBQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T11:55:44.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ContactusController.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\ContactusController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ContactusController.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\ContactusController.cs",
+              "RelativeToolTip": "Controllers\\ContactusController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T12:01:07.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\LoginDTO.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\LoginDTO.cs",
+              "RelativeToolTip": "DTO\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T12:00:32.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserPostsDTO.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\UserPostsDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\UserPostsDTO.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\UserPostsDTO.cs",
+              "RelativeToolTip": "DTO\\UserPostsDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T22:30:22.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwB8AAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T15:04:12.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProfileCountsDTO.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\ProfileCountsDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\ProfileCountsDTO.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\ProfileCountsDTO.cs",
+              "RelativeToolTip": "DTO\\ProfileCountsDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T20:18:10.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "default-profile.jpg - Bitmap [1000x1000, 24 bit, JPG]",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\default-profile.jpg",
+              "RelativeDocumentMoniker": "wwwroot\\attachment\\default-profile.jpg",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\default-profile.jpg - Bitmap [1000x1000, 24 bit, JPG]",
+              "RelativeToolTip": "wwwroot\\attachment\\default-profile.jpg - Bitmap [1000x1000, 24 bit, JPG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-01-17T12:09:44.964Z",
+              "EditorCaption": " - Bitmap [1000x1000, 24 bit, JPG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T19:25:46.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Attachment.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Attachment.cs",
+              "RelativeDocumentMoniker": "Models\\Attachment.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Attachment.cs",
+              "RelativeToolTip": "Models\\Attachment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T15:18:41.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Post.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Post.cs",
+              "RelativeDocumentMoniker": "Models\\Post.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Post.cs",
+              "RelativeToolTip": "Models\\Post.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T22:05:42.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProfileDTO.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\ProfileDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\ProfileDTO.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\DTO\\ProfileDTO.cs",
+              "RelativeToolTip": "DTO\\ProfileDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T15:07:47.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\AppDbContext.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "Models\\AppDbContext.cs",
+              "ViewState": "AgIAAOIAAAAAAAAAAAAAABIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T15:20:31.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Login.cs",
+              "RelativeDocumentMoniker": "Models\\Login.cs",
+              "ToolTip": "C:\\My Download\\Project295\\Backend\\Project295\\Models\\Login.cs",
+              "RelativeToolTip": "Models\\Login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T14:59:43.389Z"
             }
           ]
         }

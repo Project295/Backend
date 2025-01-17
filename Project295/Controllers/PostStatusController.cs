@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Project295.API.Common;
+using Project295.API.DTO;
 using Project295.API.Models;
 
 namespace Project295.API.Controllers
@@ -15,10 +16,14 @@ namespace Project295.API.Controllers
             _dbContext = dbContext;
         }
         [HttpGet]
-        public List<PostStatus> GetAllPostStatus()
+        public IActionResult GetAllPostStatus()
         {
-            return _dbContext.PostStatus.ToList();
-
+            var postStatus = _dbContext.PostStatus.Select(status =>new PostStatusDTO()
+            {
+                PostStatusId = status.PostStatusId,
+                StatusName = status.StatusName
+            }).ToList();
+            return Ok(postStatus);
         }
         [HttpGet]
         [Route("GetPostStatusById")]
