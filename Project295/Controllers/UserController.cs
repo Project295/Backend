@@ -97,12 +97,16 @@ namespace Project295.API.Controllers
         public void CreateUser(User user)
         {
              _dbContext.Users.Add(user);
+            _dbContext.SaveChanges();
+
         }
         [HttpPut]
         [Route("UpdateUser")]
         public void UpdateUser(User user)
         {
             _dbContext.Users.Update(user);
+            _dbContext.SaveChanges();
+
 
         }
         [HttpDelete]
@@ -111,6 +115,55 @@ namespace Project295.API.Controllers
         {
             var user = _dbContext.Users.FirstOrDefault(x => x.UserId == id);
             _dbContext.Users.Remove(user);
+            _dbContext.SaveChanges();
+
+        }
+        [HttpGet("GetUsersData")]
+        public IActionResult GetUsersData()
+        {
+            var usersData = _dbContext.Login
+                .Include(l => l.User)
+                .Include(l => l.Role)
+                .Where(l => l.RoleId == l.Role.RoleId && l.UserId == l.User.UserId)
+                .Select(l => new UsersDTO
+                {
+                    LoginId = l.LoginId,
+                    UserName = l.UserName,
+                    RoleId = l.RoleId,
+                    RoleName = l.Role.RoleName,
+                    UserId = l.User.UserId,
+                    FirstName = l.User.FirstName,
+                    LastName = l.User.LastName,
+                    PhoneNumber = l.User.PhoneNumber,
+                    IsBlocked = l.User.IsBlocked
+                })
+                .ToList();
+
+            return Ok(usersData);
+        }
+
+        [HttpPut("BlockedUser")]
+        public void BlockedUser(User user)
+        {
+            if (user == null)
+            {
+                throw new ArgumentException("Invalid user data.");
+            }
+
+            if (user.UserId <= 0)
+            {
+                throw new ArgumentException("Invalid UserId.");
+            }
+
+            var existingUser = _dbContext.Users.FirstOrDefault(u => u.UserId == user.UserId);
+            if (existingUser == null)
+            {
+                throw new KeyNotFoundException($"User with UserId {user.UserId} not found.");
+            }
+
+            existingUser.IsBlocked = user.IsBlocked;
+
+            _dbContext.SaveChanges();
         }
     }
 }
