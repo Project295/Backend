@@ -34,7 +34,7 @@
   {
     "ContainingType": "Project295.API.Controllers.CategoryController",
     "Method": "DeleteCategory",
-    "RelativePath": "api/Category/DeleteCategory",
+    "RelativePath": "api/Category/DeleteCategory/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -42,7 +42,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -111,7 +111,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Project295.API.Models.Complain, Project295.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Project295.API.DTO.ComplainDTO, Project295.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -146,7 +146,7 @@
   {
     "ContainingType": "Project295.API.Controllers.ComplainController",
     "Method": "DeleteComplain",
-    "RelativePath": "api/Complain/DeleteComplain",
+    "RelativePath": "api/Complain/DeleteComplain/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -154,7 +154,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -214,6 +214,28 @@
     ]
   },
   {
+    "ContainingType": "Project295.API.Controllers.ComplainController",
+    "Method": "UpdateComplainStatus",
+    "RelativePath": "api/Complain/UpdateComplainStatus",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "post",
+        "Type": "Project295.API.Models.Post",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Project295.API.Controllers.ContactusController",
     "Method": "GetAllContactus",
     "RelativePath": "api/Contactus",
@@ -258,7 +280,7 @@
   {
     "ContainingType": "Project295.API.Controllers.ContactusController",
     "Method": "DeleteContactus",
-    "RelativePath": "api/Contactus/DeleteContactus",
+    "RelativePath": "api/Contactus/DeleteContactus/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -266,7 +288,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -733,7 +755,7 @@
   {
     "ContainingType": "Project295.API.Controllers.PostStatusController",
     "Method": "DeletePostStatus",
-    "RelativePath": "api/PostStatus/DeletePostStatus",
+    "RelativePath": "api/PostStatus/DeletePostStatus/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -741,7 +763,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -845,7 +867,7 @@
   {
     "ContainingType": "Project295.API.Controllers.SkillController",
     "Method": "DeleteSkill",
-    "RelativePath": "api/Skill/DeleteSkill",
+    "RelativePath": "api/Skill/DeleteSkill/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -853,7 +875,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -881,6 +903,32 @@
     "ReturnTypes": [
       {
         "Type": "Project295.API.Models.Skill",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Project295.API.Controllers.SkillController",
+    "Method": "GetSkillsByCategoryId",
+    "RelativePath": "api/Skill/GetSkillsByCategoryId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project295.API.Models.Skill, Project295.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -957,7 +1005,7 @@
   {
     "ContainingType": "Project295.API.Controllers.SkillsCategoryController",
     "Method": "DeleteSkillsCategory",
-    "RelativePath": "api/SkillsCategory/DeleteSkillsCategory",
+    "RelativePath": "api/SkillsCategory/DeleteSkillsCategory/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -965,7 +1013,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -1040,6 +1088,28 @@
           "application/json",
           "text/json"
         ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Project295.API.Controllers.UserController",
+    "Method": "BlockedUser",
+    "RelativePath": "api/User/BlockedUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Project295.API.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
         "StatusCode": 200
       }
     ]
@@ -1128,6 +1198,16 @@
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project295.API.Controllers.UserController",
+    "Method": "GetUsersData",
+    "RelativePath": "api/User/GetUsersData",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
