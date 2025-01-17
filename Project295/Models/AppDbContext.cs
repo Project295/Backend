@@ -25,143 +25,310 @@ namespace Project295.API.Common
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Attachment>(entity =>
+            {
+                entity.ToTable("Attachment");
 
-            // Ensure primary key for ContactU
-            modelBuilder.Entity<ContactU>()
-                .HasKey(c => c.ContactUsId);  // Define ContactUsId as the primary key
+                entity.Property(e => e.AttachmentId).ValueGeneratedOnAdd();
 
-            // Relationships and other configurations
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
-            // Role - Login (One-to-Many)
-            modelBuilder.Entity<Login>()
-                .HasOne(l => l.Role)
-                .WithMany(r => r.Logins)
-                .HasForeignKey(l => l.RoleId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(d => d.AttachmentType)
+                    .WithMany(p => p.Attachments)
+                    .HasForeignKey(d => d.AttachmentTypeId)
+                    .HasConstraintName("FK__Attachmen__Attac__4F7CD00D");
 
-            // Login - User (One-to-One or Many-to-One)
-            modelBuilder.Entity<Login>()
-                .HasOne(l => l.User)
-                .WithMany(u => u.Logins)
-                .HasForeignKey(l => l.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(d => d.Post)
+                    .WithMany(p => p.Attachments)
+                    .HasForeignKey(d => d.PostId)
+                    .HasConstraintName("FK__Attachmen__PostI__5165187F");
 
-            // Follower - User (Many-to-Many relationship between Users)
-            modelBuilder.Entity<Follower>()
-                .HasOne(f => f.User)
-                .WithMany(u => u.FollowerUsers)
-                .HasForeignKey(f => f.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Attachments)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK__Attachmen__UserI__5070F446");
+            });
 
-            modelBuilder.Entity<Follower>()
-                .HasOne(f => f.Followed)
-                .WithMany(u => u.FollowerFolloweds)
-                .HasForeignKey(f => f.FollowedId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<AttachmentType>(entity =>
+            {
+                entity.ToTable("AttachmentType");
 
-            // Complain - User (Many Complains per User, One User per Complainant)
-            modelBuilder.Entity<Complain>()
-                .HasOne(c => c.Complainant)
-                .WithMany(u => u.ComplainComplainants)
-                .HasForeignKey(c => c.ComplainantId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.Property(e => e.AttachmentTypeId).ValueGeneratedOnAdd();
 
-            modelBuilder.Entity<Complain>()
-                .HasOne(c => c.Post)
-                .WithMany(p => p.Complains)
-                .HasForeignKey(c => c.PostId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.Property(e => e.AttachmentTypeName)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .HasColumnName("attachmentTypeName");
+            });
 
-            modelBuilder.Entity<Complain>()
-                .HasOne(c => c.User)
-                .WithMany(u => u.ComplainUsers)
-                .HasForeignKey(c => c.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Category>(entity =>
+            {
+                entity.Property(e => e.CategoryId).ValueGeneratedOnAdd();
 
-            // Post - Category (Many-to-One)
-            modelBuilder.Entity<Post>()
-                .HasOne(p => p.Category)
-                .WithMany(c => c.Posts)
-                .HasForeignKey(p => p.CategoryId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.Property(e => e.CategoryName)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+            });
 
-            // Post - PostStatus (Many-to-One)
-            modelBuilder.Entity<Post>()
-                .HasOne(p => p.PostStatus)
-                .WithMany(ps => ps.Posts)
-                .HasForeignKey(p => p.PostStatusId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Complain>(entity =>
+            {
+                entity.ToTable("Complain");
 
-            // Attachment - Post (Many-to-One)
-            modelBuilder.Entity<Attachment>()
-                .HasOne(a => a.Post)
-                .WithMany(p => p.Attachments)
-                .HasForeignKey(a => a.PostId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.Property(e => e.ComplainId).ValueGeneratedOnAdd();
 
-            // Attachment - User (Many-to-One)
-            modelBuilder.Entity<Attachment>()
-                .HasOne(a => a.User)
-                .WithMany(u => u.Attachments)
-                .HasForeignKey(a => a.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.Property(e => e.ComplainDiscription)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
 
-            // Attachment - AttachmentType (Many-to-One)
-            modelBuilder.Entity<Attachment>()
-                .HasOne(a => a.AttachmentType)
-                .WithMany(at => at.Attachments)
-                .HasForeignKey(a => a.AttachmentTypeId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
-            // UserSkill - Skill (Many-to-One)
-            modelBuilder.Entity<UserSkill>()
-                .HasOne(us => us.Skill)
-                .WithMany(s => s.UserSkills)
-                .HasForeignKey(us => us.SkillId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.Property(e => e.PostId).HasColumnName("postId");
 
-            // UserSkill - User (Many-to-One)
-            modelBuilder.Entity<UserSkill>()
-                .HasOne(us => us.User)
-                .WithMany(u => u.UserSkills)
-                .HasForeignKey(us => us.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(d => d.Complainant)
+                    .WithMany(p => p.ComplainComplainants)
+                    .HasForeignKey(d => d.ComplainantId)
+                    .HasConstraintName("FK__Complain__Compla__6477ECF3");
 
-            // UserSkill - SkillsCategory (Many-to-One)
-            modelBuilder.Entity<UserSkill>()
-                .HasOne(us => us.SkillCategory)
-                .WithMany(sc => sc.UserSkills)
-                .HasForeignKey(us => us.SkillCategoryId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(d => d.Post)
+                    .WithMany(p => p.Complains)
+                    .HasForeignKey(d => d.PostId)
+                    .HasConstraintName("FK__Complain__postId__656C112C");
 
-            // UserExperience - User (Many-to-One)
-            modelBuilder.Entity<UserExperience>()
-                .HasOne(ue => ue.User)
-                .WithMany(u => u.UserExperiences)
-                .HasForeignKey(ue => ue.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.ComplainUsers)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK__Complain__UserId__66603565");
+            });
 
-            // UserProject - User (Many-to-One)
-            modelBuilder.Entity<UserProject>()
-                .HasOne(up => up.User)
-                .WithMany(u => u.UserProjects)
-                .HasForeignKey(up => up.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<ContactU>(entity =>
+            {
+                entity.HasKey(e => e.ContactUsId)
+                    .HasName("PK__ContactU__E10B7AC8A61C079B");
 
-            // Category - Post (One-to-Many)
-            modelBuilder.Entity<Category>()
-                .HasMany(c => c.Posts)
-                .WithOne(p => p.Category)
-                .HasForeignKey(p => p.CategoryId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.Property(e => e.ContactUsId).ValueGeneratedOnAdd();
 
-            // PostStatus - Post (One-to-Many)
-            modelBuilder.Entity<PostStatus>()
-                .HasMany(ps => ps.Posts)
-                .WithOne(p => p.PostStatus)
-                .HasForeignKey(p => p.PostStatusId)
-                .OnDelete(DeleteBehavior.Restrict);
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Message)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Follower>(entity =>
+            {
+                entity.Property(e => e.FollowerId).ValueGeneratedOnAdd();
+
+                entity.HasOne(d => d.Followed)
+                    .WithMany(p => p.FollowerFolloweds)
+                    .HasForeignKey(d => d.FollowedId)
+                    .HasConstraintName("FK__Followers__Follo__4222D4EF");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.FollowerUsers)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK__Followers__UserI__412EB0B6");
+            });
+
+            modelBuilder.Entity<Login>(entity =>
+            {
+                entity.ToTable("Login");
+
+                entity.HasIndex(e => e.Password, "UQ__Login__87909B158093D7CB")
+                    .IsUnique();
+
+                entity.HasIndex(e => e.UserName, "UQ__Login__C9F284566AC75E6B")
+                    .IsUnique();
+
+                entity.Property(e => e.LoginId).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Password)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserName)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.Logins)
+                    .HasForeignKey(d => d.RoleId)
+                    .HasConstraintName("FK__Login__RoleId__3D5E1FD2");
+
+                entity.HasOne(d => d.User)
+                    .WithOne(p => p.Logins)
+                    .HasForeignKey<Login>(d => d.UserId)
+                    .HasConstraintName("FK__Login__UserId__3E52440B");
+            });
+
+            modelBuilder.Entity<Post>(entity =>
+            {
+                entity.ToTable("Post");
+
+                entity.Property(e => e.PostId).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.CategoryId).HasColumnName("categoryId");
+
+                entity.Property(e => e.Contant)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.Posts)
+                    .HasForeignKey(d => d.CategoryId)
+                    .HasConstraintName("FK__Post__categoryId__48CFD27E");
+
+                entity.HasOne(d => d.PostStatus)
+                    .WithMany(p => p.Posts)
+                    .HasForeignKey(d => d.PostStatusId)
+                    .HasConstraintName("FK__Post__PostStatus__49C3F6B7");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Posts)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK__Post__UserId__4AB81AF0");
+            });
+
+            modelBuilder.Entity<PostStatus>(entity =>
+            {
+                entity.ToTable("PostStatus");
+
+                entity.Property(e => e.PostStatusId).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.StatusName)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Role>(entity =>
+            {
+                entity.ToTable("Role");
+
+                entity.Property(e => e.RoleId).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.RoleName)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Skill>(entity =>
+            {
+                entity.Property(e => e.SkillId).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.SkillName)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .HasColumnName("skillName");
+
+                entity.Property(e => e.SkillCategoryId).HasColumnName("SkillCategoryId");
+                entity.HasOne(d => d.SkillsCategory)
+                  .WithMany(p => p.Skills)
+                  .HasForeignKey(d => d.SkillCategoryId)
+                  .HasConstraintName("FK__Skills__SkillCat__619B8048");
+            });
+
+            modelBuilder.Entity<SkillsCategory>(entity =>
+            {
+                entity.Property(e => e.SkillsCategoryId).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.SkillsCategoryName)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(e => e.UserId).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+
+                entity.Property(e => e.FirstName)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LastName)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PhoneNumber)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<UserExperience>(entity =>
+            {
+                entity.Property(e => e.UserExperienceId).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+
+                entity.Property(e => e.UserExperienceDateFrom).HasColumnType("datetime");
+
+                entity.Property(e => e.UserExperienceDateTo).HasColumnType("datetime");
+
+                entity.Property(e => e.UserExperienceDiscription)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserId).HasColumnName("userId");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.UserExperiences)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK__UserExper__userI__5EBF139D");
+            });
+
+            modelBuilder.Entity<UserProject>(entity =>
+            {
+                entity.Property(e => e.UserProjectId).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+
+                entity.Property(e => e.UserId).HasColumnName("userId");
+
+                entity.Property(e => e.UserProjectDiscription)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.UserProjects)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK__UserProje__userI__619B8048");
+            });
+
+            modelBuilder.Entity<UserSkill>(entity =>
+            {
+                entity.ToTable("UserSkill");
+
+                entity.Property(e => e.UserSkillId).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+
+                entity.Property(e => e.OtherSkill)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserId).HasColumnName("userId");
+
+                entity.HasOne(d => d.Skill)
+                    .WithMany(p => p.UserSkills)
+                    .HasForeignKey(d => d.SkillId)
+                    .HasConstraintName("FK__UserSkill__Skill__59FA5E80");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.UserSkills)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK__UserSkill__userI__5AEE82B9");
+            });
+
         }
     }
 }

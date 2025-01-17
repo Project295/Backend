@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Project295.API.Common;
 using Project295.API.DTO;
 using Project295.API.Models;
@@ -22,36 +23,51 @@ namespace Project295.API.Controllers
 
         }
         [HttpGet]
-        [Route("GetLoginById")]
-        public string GetLoginById()
+        [Route("Login")]
+        public IActionResult Login([FromQuery]LoginDTO loginDTO)
         {
-            // return _dbContext.Login.FirstOrDefault(x=>x.LoginId==id);
-            return "1111";
+            var user = _dbContext.Users.Include(l=>l.Logins).FirstOrDefault(x=>x.Logins.Password  ==loginDTO.Password && x.Logins.UserName == loginDTO.UserName);
+            if (user == null)
+            {
+                return Unauthorized(new { Message = "Invalid username or password" });
+            }
+
+            return Ok(new { Message = "Login successful", UserId = user.UserId, RoleId=user.Logins.RoleId });
         }
         [HttpPost("Register")]
-        public async Task Register(RegisterDTO registerDTO)
+        public IActionResult Register(RegisterDTO registerDTO)
         {
-            User user = new User()
-            {
-                FirstName = registerDTO.FirstName,
-                LastName = registerDTO.LastName,
-                PhoneNumber = registerDTO.mobileNumber,
-                IsBlocked = false,
-                CreatedAt = DateTime.Now
+            bool isUserExist = _dbContext.Login.Any(x=>x.UserName == registerDTO.Email);
 
-            };
-            await _dbContext.Users.AddAsync(user);
-            await _dbContext.SaveChangesAsync();
-
-            Login login = new Login()
+            if (isUserExist)
             {
-                Password = registerDTO.Password,
-                UserName = registerDTO.Email,
-                RoleId = 2,
-                UserId = user.UserId
-            };
-             _dbContext.Login.Add(login);
-            _dbContext.SaveChanges();
+                return BadRequest(new { message = "User already exists" });
+            }
+            else
+            {
+                User user = new User()
+                {
+                    FirstName = registerDTO.FirstName,
+                    LastName = registerDTO.LastName,
+                    PhoneNumber = registerDTO.mobileNumber,
+                    IsBlocked = false,
+                    CreatedAt = DateTime.Now
+
+                };
+                 _dbContext.Users.Add(user);
+                _dbContext.SaveChanges();
+
+                Login login = new Login()
+                {
+                    Password = registerDTO.Password,
+                    UserName = registerDTO.Email,
+                    RoleId = 2,
+                    UserId = user.UserId
+                };
+                _dbContext.Login.Add(login);
+                _dbContext.SaveChanges();
+            }
+            return Ok(new { message = "User added successfully" });
         }
         [HttpPut]
         [Route("UpdateLogin")]

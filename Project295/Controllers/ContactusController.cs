@@ -33,19 +33,25 @@ namespace Project295.API.Controllers
         public void CreateContactus(ContactU contactU)
         {
              _dbContext.ContactUs.Add(contactU);
+            _dbContext.SaveChanges();
+
         }
         [HttpPut]
         [Route("UpdateContactus")]
         public void UpdateContactus(ContactU contactU)
         {
             _dbContext.ContactUs.Update(contactU);
+            _dbContext.SaveChanges();
+
         }
         [HttpDelete]
-        [Route("DeleteContactus")]
+        [Route("DeleteContactus/{id}")]
         public void DeleteContactus(int id)
         {
             var contact = _dbContext.ContactUs.FirstOrDefault(x => x.ContactUsId == id);
             _dbContext.ContactUs.Remove(contact);
+            _dbContext.SaveChanges();
+
         }
     }
 }
