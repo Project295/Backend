@@ -32,6 +32,9 @@ namespace Project295.API.Common
                 entity.Property(e => e.AttachmentId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+                entity.Property(e => e.AttachmentPath)
+                      .HasMaxLength(1)
+                      .IsUnicode(false);
 
                 entity.HasOne(d => d.AttachmentType)
                     .WithMany(p => p.Attachments)
@@ -39,8 +42,8 @@ namespace Project295.API.Common
                     .HasConstraintName("FK__Attachmen__Attac__4F7CD00D");
 
                 entity.HasOne(d => d.Post)
-                    .WithMany(p => p.Attachments)
-                    .HasForeignKey(d => d.PostId)
+                    .WithOne(p => p.Attachments)
+                    .HasForeignKey<Attachment>(d => d.PostId)
                     .HasConstraintName("FK__Attachmen__PostI__5165187F");
 
                 entity.HasOne(d => d.User)
