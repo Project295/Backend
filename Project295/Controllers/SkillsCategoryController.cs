@@ -29,22 +29,40 @@ namespace Project295.API.Controllers
         }
         [HttpPost]
         [Route("CreateSkillsCategory")]
-        public void CreateSkillsCategory(SkillsCategory skillsCategory)
+        public void CreateSkillsCategory([FromBody] SkillsCategory skillsCategory)
         {
-             _dbContext.SkillsCategories.Add(skillsCategory);
+            if (skillsCategory == null)
+            {
+                throw new ArgumentNullException(nameof(skillsCategory), "Invalid data.");
+            }
+
+            _dbContext.SkillsCategories.Add(skillsCategory);
+            _dbContext.SaveChanges();
         }
         [HttpPut]
         [Route("UpdateSkillsCategory")]
-        public void UpdateSkillsCategory(SkillsCategory skillsCategory)
+        public void UpdateSkillsCategory([FromBody]  SkillsCategory skillsCategory)
         {
+
             _dbContext.SkillsCategories.Update(skillsCategory);
+            _dbContext.SaveChanges();
         }
         [HttpDelete]
-        [Route("DeleteSkillsCategory")]
+        [Route("DeleteSkillsCategory/{id}")]
         public void DeleteSkillsCategory(int id)
         {
-            var skillsCategory = _dbContext.SkillsCategories.FirstOrDefault(x => x.SkillsCategoryId == id);
+            var skillsCategory = _dbContext.SkillsCategories
+                                           .FirstOrDefault(x => x.SkillsCategoryId == id);
+
+            if (skillsCategory == null)
+            {
+                throw new Exception($"Skills Category with ID {id} not found.");
+            }
+
             _dbContext.SkillsCategories.Remove(skillsCategory);
+            _dbContext.SaveChanges();
         }
+
+
     }
 }

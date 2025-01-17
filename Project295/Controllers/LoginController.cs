@@ -55,7 +55,7 @@ namespace Project295.API.Controllers
 
                 };
                  _dbContext.Users.Add(user);
-                 _dbContext.SaveChanges();
+                _dbContext.SaveChanges();
 
                 Login login = new Login()
                 {

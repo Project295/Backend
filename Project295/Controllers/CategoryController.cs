@@ -30,19 +30,25 @@ namespace Project295.API.Controllers
         public void CreateCategory(Category category)
         {
              _dbContext.Categories.Add(category);
+            _dbContext.SaveChanges();
+
         }
         [HttpPut]
         [Route("UpdateCategory")]
         public void UpdateCategory(Category category)
         {
             _dbContext.Categories.Update(category);
+            _dbContext.SaveChanges();
+
         }
         [HttpDelete]
-        [Route("DeleteCategory")]
+        [Route("DeleteCategory/{id}")]
         public void DeleteCategory(int id)
         {
                var category = _dbContext.Categories.FirstOrDefault(x => x.CategoryId == id);
                  _dbContext.Categories.Remove(category);
+                 _dbContext.SaveChanges();
+
         }
     }
 }

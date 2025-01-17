@@ -30,22 +30,57 @@ namespace Project295.API.Controllers
         }
         [HttpPost]
         [Route("CreateSkill")]
-        public void CreateSkill(Skill skill)
+        public void CreateSkill([FromBody] Skill skill)
         {
-            _dbContext.Skills.Add(skill);
+            if(skill == null)
+            {
+                throw new ArgumentNullException(nameof(skill), "Invalid data.");
+            }
+
+            _dbContext.Skills.Add(new Skill
+            {
+                SkillName = skill.SkillName,
+                SkillCategoryId = skill.SkillCategoryId
+            });
+
+            _dbContext.SaveChanges();
+
         }
         [HttpPut]
         [Route("UpdateSkill")]
-        public void UpdateSkill(Skill skill)
+        public void UpdateSkill([FromBody] Skill skill)
         {
-            _dbContext.Skills.Update(skill);
+            var existingSkill = _dbContext.Skills.FirstOrDefault(x => x.SkillId == skill.SkillId);
+            if (existingSkill == null)
+            {
+                throw new KeyNotFoundException("Skill not found.");
+            }
+
+            existingSkill.SkillName = skill.SkillName ?? existingSkill.SkillName; 
+
+            _dbContext.SaveChanges();
+
         }
         [HttpDelete]
-        [Route("DeleteSkill")]
+        [Route("DeleteSkill/{id}")]
         public void DeleteSkill(int id)
         {
             var skill = _dbContext.Skills.FirstOrDefault(x => x.SkillId == id);
+            if(skill == null)
+            {
+                throw new Exception($"Skill with ID {id} not found.");
+            }
+
             _dbContext.Skills.Remove(skill);
+            _dbContext.SaveChanges();
+
+        }
+
+        [HttpGet]
+        [Route("GetSkillsByCategoryId/{id}")]
+        public IEnumerable<Skill> GetSkillsByCategoryId(int id)
+        {
+            return _dbContext.Skills.Where(x => x.SkillCategoryId == id).ToList();
         }
     }
 }
