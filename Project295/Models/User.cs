@@ -24,6 +24,11 @@ namespace Project295.API.Models
         public string? PhoneNumber { get; set; }
         public bool? IsBlocked { get; set; }
         public DateTime? CreatedAt { get; set; }
+        public string? Brif { get; set; }
+        public string? Univarsity { get; set; }
+        public string? Address { get; set; }
+        public string? JobTitle { get; set; }
+        public string? Company { get; set; }
 
         public virtual ICollection<Attachment> Attachments { get; set; }
         public virtual ICollection<Complain> ComplainComplainants { get; set; }
