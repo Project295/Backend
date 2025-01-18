@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3cT61Bv9Tu+foMCZSk8z2Eo9YoyuCnieRN6hh0HKrNw=",
+  "Hash": "uAbnqW+nogrrLQVDI/yjwwleFNMF0jhiTmEUweEK/04=",
   "Source": "Project295.API",
   "BasePath": "_content/Project295.API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Project295.API\\wwwroot",
       "Source": "Project295.API",
-      "ContentRoot": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\",
+      "ContentRoot": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\",
       "BasePath": "_content/Project295.API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\attachment\\5743fcb7-7286-45b9-ae90-52fe563db025_ssss.jpg",
+      "Identity": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\5743fcb7-7286-45b9-ae90-52fe563db025_ssss.jpg",
       "SourceId": "Project295.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\",
+      "ContentRoot": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\",
       "BasePath": "_content/Project295.API",
       "RelativePath": "attachment/5743fcb7-7286-45b9-ae90-52fe563db025_ssss.jpg",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\attachment\\5743fcb7-7286-45b9-ae90-52fe563db025_ssss.jpg"
     },
     {
-      "Identity": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\attachment\\9f714d62-481b-4f23-b118-3b8eaaa22d30_ssss.jpg",
+      "Identity": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\9f714d62-481b-4f23-b118-3b8eaaa22d30_ssss.jpg",
       "SourceId": "Project295.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\",
+      "ContentRoot": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\",
       "BasePath": "_content/Project295.API",
       "RelativePath": "attachment/9f714d62-481b-4f23-b118-3b8eaaa22d30_ssss.jpg",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\attachment\\9f714d62-481b-4f23-b118-3b8eaaa22d30_ssss.jpg"
     },
     {
-      "Identity": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\attachment\\a7a2a18c-aeda-4564-8e39-34ca47c9c7ff_MobilityPlus_VenturaAluminiumSelf-PropelledWheelchair.jpg",
+      "Identity": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\a7a2a18c-aeda-4564-8e39-34ca47c9c7ff_MobilityPlus_VenturaAluminiumSelf-PropelledWheelchair.jpg",
       "SourceId": "Project295.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\",
+      "ContentRoot": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\",
       "BasePath": "_content/Project295.API",
       "RelativePath": "attachment/a7a2a18c-aeda-4564-8e39-34ca47c9c7ff_MobilityPlus_VenturaAluminiumSelf-PropelledWheelchair.jpg",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\attachment\\a7a2a18c-aeda-4564-8e39-34ca47c9c7ff_MobilityPlus_VenturaAluminiumSelf-PropelledWheelchair.jpg"
     },
     {
-      "Identity": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\attachment\\default-background.png",
+      "Identity": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\default-background.png",
       "SourceId": "Project295.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\",
+      "ContentRoot": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\",
       "BasePath": "_content/Project295.API",
       "RelativePath": "attachment/default-background.png",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\attachment\\default-background.png"
     },
     {
-      "Identity": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\attachment\\default-profile.jpg",
+      "Identity": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\default-profile.jpg",
       "SourceId": "Project295.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\",
+      "ContentRoot": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\",
       "BasePath": "_content/Project295.API",
       "RelativePath": "attachment/default-profile.jpg",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\attachment\\default-profile.jpg"
     },
     {
-      "Identity": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\attachment\\f20ff29b-8ff7-4eb0-958c-7df1e86dc807_ssss.jpg",
+      "Identity": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\f20ff29b-8ff7-4eb0-958c-7df1e86dc807_ssss.jpg",
       "SourceId": "Project295.API",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\github\\Project295\\Backend\\Project295\\wwwroot\\",
+      "ContentRoot": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\",
       "BasePath": "_content/Project295.API",
       "RelativePath": "attachment/f20ff29b-8ff7-4eb0-958c-7df1e86dc807_ssss.jpg",
       "AssetKind": "All",
