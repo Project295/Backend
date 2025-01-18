@@ -3,7 +3,7 @@ using Project295.API.Models;
 
 namespace Project295.API.Common
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public DbSet<Attachment> Attachments { get; set; }
@@ -255,16 +255,32 @@ namespace Project295.API.Common
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
                 entity.Property(e => e.FirstName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.LastName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.PhoneNumber)
-                    .HasMaxLength(1)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
+
+                entity.Property(e => e.Brif)
+              .HasMaxLength(1000)
+              .IsUnicode(false);
+                entity.Property(e => e.Address)
+              .HasMaxLength(1000)
+              .IsUnicode(false);
+                entity.Property(e => e.JobTitle)
+              .HasMaxLength(1000)
+              .IsUnicode(false);
+                entity.Property(e => e.Univarsity)
+              .HasMaxLength(1000)
+              .IsUnicode(false);
+                entity.Property(e => e.Company)
+          .HasMaxLength(1000)
+          .IsUnicode(false);
             });
 
             modelBuilder.Entity<UserExperience>(entity =>
