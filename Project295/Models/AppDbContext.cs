@@ -3,7 +3,7 @@ using Project295.API.Models;
 
 namespace Project295.API.Common
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public DbSet<Attachment> Attachments { get; set; }
@@ -32,6 +32,9 @@ namespace Project295.API.Common
                 entity.Property(e => e.AttachmentId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+                entity.Property(e => e.AttachmentPath)
+                      .HasMaxLength(1)
+                      .IsUnicode(false);
 
                 entity.HasOne(d => d.AttachmentType)
                     .WithMany(p => p.Attachments)
@@ -39,8 +42,8 @@ namespace Project295.API.Common
                     .HasConstraintName("FK__Attachmen__Attac__4F7CD00D");
 
                 entity.HasOne(d => d.Post)
-                    .WithMany(p => p.Attachments)
-                    .HasForeignKey(d => d.PostId)
+                    .WithOne(p => p.Attachments)
+                    .HasForeignKey<Attachment>(d => d.PostId)
                     .HasConstraintName("FK__Attachmen__PostI__5165187F");
 
                 entity.HasOne(d => d.User)
@@ -252,16 +255,32 @@ namespace Project295.API.Common
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
                 entity.Property(e => e.FirstName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.LastName)
-                    .HasMaxLength(1)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.PhoneNumber)
-                    .HasMaxLength(1)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
+
+                entity.Property(e => e.Brif)
+              .HasMaxLength(1000)
+              .IsUnicode(false);
+                entity.Property(e => e.Address)
+              .HasMaxLength(1000)
+              .IsUnicode(false);
+                entity.Property(e => e.JobTitle)
+              .HasMaxLength(1000)
+              .IsUnicode(false);
+                entity.Property(e => e.Univarsity)
+              .HasMaxLength(1000)
+              .IsUnicode(false);
+                entity.Property(e => e.Company)
+          .HasMaxLength(1000)
+          .IsUnicode(false);
             });
 
             modelBuilder.Entity<UserExperience>(entity =>

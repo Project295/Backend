@@ -1,229 +1,5 @@
 [
   {
-    "ContainingType": "Project295.API.Controllers.AttachmentController",
-    "Method": "GetAllAttachment",
-    "RelativePath": "api/Attachment",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Project295.API.Models.Attachment, Project295.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.AttachmentController",
-    "Method": "CreateAttachment",
-    "RelativePath": "api/Attachment/CreateAttachment",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "attachment",
-        "Type": "Project295.API.Models.Attachment",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.AttachmentController",
-    "Method": "DeleteAttachment",
-    "RelativePath": "api/Attachment/DeleteAttachment",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.AttachmentController",
-    "Method": "GetAttachmentById",
-    "RelativePath": "api/Attachment/GetAttachmentById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Project295.API.Models.Attachment",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.AttachmentController",
-    "Method": "UpdateAttachment",
-    "RelativePath": "api/Attachment/UpdateAttachment",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "attachment",
-        "Type": "Project295.API.Models.Attachment",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.AttachmentTypeController",
-    "Method": "GetAllAttachmentType",
-    "RelativePath": "api/AttachmentType",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Project295.API.Models.AttachmentType, Project295.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.AttachmentTypeController",
-    "Method": "CreateAttachmentType",
-    "RelativePath": "api/AttachmentType/CreateAttachmentType",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "attachmentType",
-        "Type": "Project295.API.Models.AttachmentType",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.AttachmentTypeController",
-    "Method": "DeleteAttachmentType",
-    "RelativePath": "api/AttachmentType/DeleteAttachmentType",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.AttachmentTypeController",
-    "Method": "GetAttachmentTypeById",
-    "RelativePath": "api/AttachmentType/GetAttachmentTypeById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Project295.API.Models.AttachmentType",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.AttachmentTypeController",
-    "Method": "UpdateAttachmentType",
-    "RelativePath": "api/AttachmentType/UpdateAttachmentType",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "attachmentType",
-        "Type": "Project295.API.Models.AttachmentType",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "Project295.API.Controllers.CategoryController",
     "Method": "GetAllCategory",
     "RelativePath": "api/Category",
@@ -231,17 +7,7 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Project295.API.Models.Category, Project295.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Project295.API.Controllers.CategoryController",
@@ -268,7 +34,7 @@
   {
     "ContainingType": "Project295.API.Controllers.CategoryController",
     "Method": "DeleteCategory",
-    "RelativePath": "api/Category/DeleteCategory",
+    "RelativePath": "api/Category/DeleteCategory/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -276,7 +42,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -345,7 +111,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Project295.API.Models.Complain, Project295.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Project295.API.DTO.ComplainDTO, Project295.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -380,7 +146,7 @@
   {
     "ContainingType": "Project295.API.Controllers.ComplainController",
     "Method": "DeleteComplain",
-    "RelativePath": "api/Complain/DeleteComplain",
+    "RelativePath": "api/Complain/DeleteComplain/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -388,7 +154,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -448,6 +214,28 @@
     ]
   },
   {
+    "ContainingType": "Project295.API.Controllers.ComplainController",
+    "Method": "UpdateComplainStatus",
+    "RelativePath": "api/Complain/UpdateComplainStatus",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "post",
+        "Type": "Project295.API.Models.Post",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Project295.API.Controllers.ContactusController",
     "Method": "GetAllContactus",
     "RelativePath": "api/Contactus",
@@ -492,7 +280,7 @@
   {
     "ContainingType": "Project295.API.Controllers.ContactusController",
     "Method": "DeleteContactus",
-    "RelativePath": "api/Contactus/DeleteContactus",
+    "RelativePath": "api/Contactus/DeleteContactus/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -500,7 +288,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -795,24 +583,38 @@
   {
     "ContainingType": "Project295.API.Controllers.PostController",
     "Method": "CreatePost",
-    "RelativePath": "api/Post/CreatePost",
+    "RelativePath": "api/Post/AddPost",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "post",
-        "Type": "Project295.API.Models.Post",
-        "IsRequired": true
+        "Name": "Contant",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoryId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "PostStatusId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Attachment",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Project295.API.Controllers.PostController",
@@ -823,18 +625,28 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "postId",
         "Type": "System.Int32",
         "IsRequired": false
       }
     ],
-    "ReturnTypes": [
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project295.API.Controllers.PostController",
+    "Method": "GetAllUserPosts",
+    "RelativePath": "api/Post/GetAllUserPosts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
-    ]
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Project295.API.Controllers.PostController",
@@ -871,18 +683,42 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "post",
-        "Type": "Project295.API.Models.Post",
-        "IsRequired": true
+        "Name": "PostId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contant",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoryId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "PostStatusId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AttachmentId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AttachmentPath",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Attachment",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Project295.API.Controllers.PostStatusController",
@@ -892,17 +728,7 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Project295.API.Models.PostStatus, Project295.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Project295.API.Controllers.PostStatusController",
@@ -929,7 +755,7 @@
   {
     "ContainingType": "Project295.API.Controllers.PostStatusController",
     "Method": "DeletePostStatus",
-    "RelativePath": "api/PostStatus/DeletePostStatus",
+    "RelativePath": "api/PostStatus/DeletePostStatus/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -937,7 +763,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -1041,7 +867,7 @@
   {
     "ContainingType": "Project295.API.Controllers.SkillController",
     "Method": "DeleteSkill",
-    "RelativePath": "api/Skill/DeleteSkill",
+    "RelativePath": "api/Skill/DeleteSkill/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -1049,7 +875,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -1077,6 +903,32 @@
     "ReturnTypes": [
       {
         "Type": "Project295.API.Models.Skill",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Project295.API.Controllers.SkillController",
+    "Method": "GetSkillsByCategoryId",
+    "RelativePath": "api/Skill/GetSkillsByCategoryId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project295.API.Models.Skill, Project295.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1153,7 +1005,7 @@
   {
     "ContainingType": "Project295.API.Controllers.SkillsCategoryController",
     "Method": "DeleteSkillsCategory",
-    "RelativePath": "api/SkillsCategory/DeleteSkillsCategory",
+    "RelativePath": "api/SkillsCategory/DeleteSkillsCategory/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -1161,7 +1013,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -1242,6 +1094,28 @@
   },
   {
     "ContainingType": "Project295.API.Controllers.UserController",
+    "Method": "BlockedUser",
+    "RelativePath": "api/User/BlockedUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Project295.API.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Project295.API.Controllers.UserController",
     "Method": "CreateUser",
     "RelativePath": "api/User/CreateUser",
     "HttpMethod": "POST",
@@ -1309,6 +1183,48 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Project295.API.Controllers.UserController",
+    "Method": "GetUserProfile",
+    "RelativePath": "api/User/GetUserProfile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project295.API.Controllers.UserController",
+    "Method": "GetUsersData",
+    "RelativePath": "api/User/GetUsersData",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project295.API.Controllers.UserController",
+    "Method": "ProfileCounts",
+    "RelativePath": "api/User/ProfileCounts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Project295.API.Controllers.UserController",

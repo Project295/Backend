@@ -7,6 +7,8 @@ namespace Project295.API.Models
     {
         public int AttachmentId { get; set; }
         public int? AttachmentTypeId { get; set; }
+        public string? AttachmentPath { get; set; }
+
         public int? UserId { get; set; }
         public int? PostId { get; set; }
         public DateTime? CreatedAt { get; set; }

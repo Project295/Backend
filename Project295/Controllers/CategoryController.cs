@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Project295.API.Common;
+using Project295.API.DTO;
 using Project295.API.Models;
 
 namespace Project295.API.Controllers
@@ -15,9 +16,16 @@ namespace Project295.API.Controllers
             _dbContext = dbContext;
         }
         [HttpGet]
-        public List<Category> GetAllCategory()
+        public IActionResult GetAllCategory()
         {
-            return _dbContext.Categories.ToList();
+            var categories = _dbContext.Categories.Select(category => new PostCategoriesDTO()
+            {
+                categoryName = category.CategoryName,
+                categoryId = category.CategoryId,
+            }).ToList(); 
+
+
+            return Ok(categories);
         }
         [HttpGet]
         [Route("GetCategoryById")]
