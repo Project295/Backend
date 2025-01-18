@@ -13,6 +13,7 @@
         public string? Address { get; set; }
         public string? JobTitle { get; set; }
         public string? Company { get; set; }
+        public string? Password { get; set; }
 
     }
 
