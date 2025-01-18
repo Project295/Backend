@@ -57,15 +57,20 @@ namespace Project295.API.Controllers
                     LastName = userProfile.LastName,
                     PhoneNumber = userProfile.PhoneNumber,
                     PersonalImagePath = userProfile.Attachments.FirstOrDefault(x => x.AttachmentTypeId == profilePictureTypeId)?.AttachmentPath,
-                    HeaderImagePath = userProfile.Attachments.FirstOrDefault(x => x.AttachmentTypeId == profileHeaderTypeId)?.AttachmentPath
+                    HeaderImagePath = userProfile.Attachments.FirstOrDefault(x => x.AttachmentTypeId == profileHeaderTypeId)?.AttachmentPath,
+                    Brif = userProfile.Brif,
+                    University = userProfile.Univarsity,
+                    Address = userProfile.Address,
+                    JobTitle = userProfile.JobTitle,
+                    Company = userProfile.Company,
                 };
                 if (profileDTO.PersonalImagePath == null)
                 {
-                    profileDTO.PersonalImagePath = "https://localhost:7011/wwwroot/attachment/default-profile.jpg";
+                    profileDTO.PersonalImagePath = "https://localhost:7011/attachment/default-profile.jpg";
                 }
-                else if (profileDTO.HeaderImagePath == null)
+                 if (profileDTO.HeaderImagePath == null)
                 {
-                    profileDTO.HeaderImagePath = "https://localhost:7011/wwwroot/attachment/default-background.png";
+                    profileDTO.HeaderImagePath = "https://localhost:7011/attachment/default-background.png";
                 }
 
                 return Ok(profileDTO);
