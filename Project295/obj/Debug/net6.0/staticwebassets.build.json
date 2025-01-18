@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3GIie9dAv7B0+gxjV712juFkocLDeRlGWNxTv1gGUFA=",
+  "Hash": "uAbnqW+nogrrLQVDI/yjwwleFNMF0jhiTmEUweEK/04=",
   "Source": "Project295.API",
   "BasePath": "_content/Project295.API",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\attachment\\5743fcb7-7286-45b9-ae90-52fe563db025_ssss.jpg"
+    },
+    {
+      "Identity": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\9f714d62-481b-4f23-b118-3b8eaaa22d30_ssss.jpg",
+      "SourceId": "Project295.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\",
+      "BasePath": "_content/Project295.API",
+      "RelativePath": "attachment/9f714d62-481b-4f23-b118-3b8eaaa22d30_ssss.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\attachment\\9f714d62-481b-4f23-b118-3b8eaaa22d30_ssss.jpg"
     },
     {
       "Identity": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\a7a2a18c-aeda-4564-8e39-34ca47c9c7ff_MobilityPlus_VenturaAluminiumSelf-PropelledWheelchair.jpg",

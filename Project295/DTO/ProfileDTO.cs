@@ -8,6 +8,7 @@
         public string? PhoneNumber { get; set; }
         public string? PersonalImagePath { get; set; }
         public string? HeaderImagePath { get; set; }
+        public string? Password { get; set; }
 
     }
 }
