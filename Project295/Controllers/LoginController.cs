@@ -31,6 +31,11 @@ namespace Project295.API.Controllers
             {
                 return Unauthorized(new { Message = "Invalid username or password" });
             }
+            if(user.IsBlocked == true)
+            {
+                return Unauthorized(new { Message = "User is Blocked" });
+
+            }
 
             return Ok(new { Message = "Login successful", UserId = user.UserId, RoleId=user.Logins.RoleId });
         }

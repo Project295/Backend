@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Project295.API.Common;
 using Project295.API.DTO;
 using Project295.API.Models;
+using Project295.API.Service;
 
 namespace Project295.API.Controllers
 {
@@ -12,9 +13,11 @@ namespace Project295.API.Controllers
     public class UserController : ControllerBase
     {
         private readonly AppDbContext _dbContext;
-        public UserController(AppDbContext dbContext)
+        private readonly UploadAttachmentService _uploadAttachmentService;
+        public UserController(AppDbContext dbContext, UploadAttachmentService uploadAttachmentService)
         {
             _dbContext = dbContext;
+            _uploadAttachmentService = uploadAttachmentService;
         }
         [HttpGet]
         public List<User> GetAllUsers()
@@ -57,15 +60,22 @@ namespace Project295.API.Controllers
                     LastName = userProfile.LastName,
                     PhoneNumber = userProfile.PhoneNumber,
                     PersonalImagePath = userProfile.Attachments.FirstOrDefault(x => x.AttachmentTypeId == profilePictureTypeId)?.AttachmentPath,
-                    HeaderImagePath = userProfile.Attachments.FirstOrDefault(x => x.AttachmentTypeId == profileHeaderTypeId)?.AttachmentPath
+                    HeaderImagePath = userProfile.Attachments.FirstOrDefault(x => x.AttachmentTypeId == profileHeaderTypeId)?.AttachmentPath,
+                    Brif = userProfile.Brif,
+                    University = userProfile.Univarsity,
+                    Address = userProfile.Address,
+                    JobTitle = userProfile.JobTitle,
+                    Company = userProfile.Company,
+                    HeaderImagePath = userProfile.Attachments.FirstOrDefault(x => x.AttachmentTypeId == profileHeaderTypeId)?.AttachmentPath,
+                    Password = userProfile.Logins.Password
                 };
                 if (profileDTO.PersonalImagePath == null)
                 {
-                    profileDTO.PersonalImagePath = "https://localhost:7011/wwwroot/attachment/default-profile.jpg";
+                    profileDTO.PersonalImagePath = "https://localhost:7011/attachment/default-profile.jpg";
                 }
-                else if (profileDTO.HeaderImagePath == null)
+                 if (profileDTO.HeaderImagePath == null)
                 {
-                    profileDTO.HeaderImagePath = "https://localhost:7011/wwwroot/attachment/default-background.png";
+                    profileDTO.HeaderImagePath = "https://localhost:7011/attachment/default-background.png";
                 }
 
                 return Ok(profileDTO);
@@ -102,12 +112,32 @@ namespace Project295.API.Controllers
         }
         [HttpPut]
         [Route("UpdateUser")]
-        public void UpdateUser(User user)
+        public IActionResult UpdateUser([FromForm]UpdateUserDTO updateUserDTO)
         {
+            var user = _dbContext.Users.FirstOrDefault(x => x.UserId == updateUserDTO.UserId);
+            user.FirstName = updateUserDTO.FirstName;
+            user.LastName = updateUserDTO.LastName;
+            user.PhoneNumber = updateUserDTO.PhoneNumber;
             _dbContext.Users.Update(user);
+            var login = _dbContext.Login.FirstOrDefault(x => x.UserId == updateUserDTO.UserId);
+            login.Password = updateUserDTO.Password;
+            login.UserName = updateUserDTO.UserName;
+            _dbContext.Login.Update(login);
+            if (updateUserDTO.image is not null)
+            {
+                var attachmenttype = _dbContext.AttachmentTypes.FirstOrDefault(x=>x.AttachmentTypeName.ToLower().Contains("personal"))!.AttachmentTypeId;
+                var attachment = new Attachment();
+                attachment = _dbContext.Attachments.FirstOrDefault(x => x.UserId == updateUserDTO.UserId && x.AttachmentTypeId==attachmenttype);
+                attachment.AttachmentPath = updateUserDTO.image is not null ? _uploadAttachmentService.UploadImage(updateUserDTO.image) : attachment.AttachmentPath;
+                attachment.CreatedAt = updateUserDTO.image is not null ? DateTime.Now: attachment.CreatedAt;
+                attachment.UserId = updateUserDTO.UserId;
+                _dbContext.Attachments.Update(attachment);
+            }
+
+
             _dbContext.SaveChanges();
 
-
+            return Ok();
         }
         [HttpDelete]
         [Route("DeleteUser")]
