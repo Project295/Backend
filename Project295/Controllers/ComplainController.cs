@@ -55,11 +55,18 @@ namespace Project295.API.Controllers
         }
         [HttpPost]
         [Route("CreateComplain")]
-        public void CreateComplain(Complain complain)
+        public IActionResult CreateComplain([FromQuery] string complaintDescription, [FromQuery] int postId, [FromQuery] int userId)
         {
+            var complain = new Complain()
+            {
+                ComplainDiscription = complaintDescription,
+                PostId = postId,
+                UserId = userId,
+                CreatedAt = DateTime.Now
+            };
             _dbContext.Complains.Add(complain);
             _dbContext.SaveChanges();
-
+            return Ok();
         }
         [HttpPut]
         [Route("UpdateComplain")]

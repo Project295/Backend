@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Project295.API.Common;
+using Project295.API.DTO;
 using Project295.API.Models;
 using System.Diagnostics.Contracts;
 
@@ -30,11 +31,17 @@ namespace Project295.API.Controllers
         }
         [HttpPost]
         [Route("CreateContactus")]
-        public void CreateContactus(ContactU contactU)
+        public IActionResult CreateContactus([FromBody] ContactUsDto contactData)
         {
-             _dbContext.ContactUs.Add(contactU);
+            var contact = new ContactU()
+            {
+                Name = contactData.Name,
+                Email = contactData.Email,
+                Message = contactData.Message
+            };
+             _dbContext.ContactUs.Add(contact);
             _dbContext.SaveChanges();
-
+            return Ok();
         }
         [HttpPut]
         [Route("UpdateContactus")]

@@ -11,7 +11,6 @@ namespace Project295.API.Common
         public DbSet<Category> Categories { get; set; }
         public DbSet<Complain> Complains { get; set; }
         public DbSet<ContactU> ContactUs { get; set; }
-        public DbSet<Follower> Followers { get; set; }
         public DbSet<Login> Login { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<User> Users { get; set; }
@@ -123,21 +122,6 @@ namespace Project295.API.Common
                 entity.Property(e => e.Name)
                     .HasMaxLength(1)
                     .IsUnicode(false);
-            });
-
-            modelBuilder.Entity<Follower>(entity =>
-            {
-                entity.Property(e => e.FollowerId).ValueGeneratedOnAdd();
-
-                entity.HasOne(d => d.Followed)
-                    .WithMany(p => p.FollowerFolloweds)
-                    .HasForeignKey(d => d.FollowedId)
-                    .HasConstraintName("FK__Followers__Follo__4222D4EF");
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.FollowerUsers)
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__Followers__UserI__412EB0B6");
             });
 
             modelBuilder.Entity<Login>(entity =>

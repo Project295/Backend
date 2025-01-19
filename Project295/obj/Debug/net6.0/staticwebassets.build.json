@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uAbnqW+nogrrLQVDI/yjwwleFNMF0jhiTmEUweEK/04=",
+  "Hash": "Lg7i3HykjQz88/y+91iuUau8oCZfDOra5Dr4jgIiXCw=",
   "Source": "Project295.API",
   "BasePath": "_content/Project295.API",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\attachment\\5743fcb7-7286-45b9-ae90-52fe563db025_ssss.jpg"
+    },
+    {
+      "Identity": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\585ce530-b9ca-4d41-8f5d-f609dcd0025e_hgrdg.jpeg",
+      "SourceId": "Project295.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\",
+      "BasePath": "_content/Project295.API",
+      "RelativePath": "attachment/585ce530-b9ca-4d41-8f5d-f609dcd0025e_hgrdg.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\attachment\\585ce530-b9ca-4d41-8f5d-f609dcd0025e_hgrdg.jpeg"
     },
     {
       "Identity": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\9f714d62-481b-4f23-b118-3b8eaaa22d30_ssss.jpg",
@@ -129,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\attachment\\f20ff29b-8ff7-4eb0-958c-7df1e86dc807_ssss.jpg"
+    },
+    {
+      "Identity": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\attachment\\f67f34c1-0443-4ebb-a57d-ecfc07cbd416_Asmadi99.JPG",
+      "SourceId": "Project295.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\My Download\\Project295\\Backend\\Project295\\wwwroot\\",
+      "BasePath": "_content/Project295.API",
+      "RelativePath": "attachment/f67f34c1-0443-4ebb-a57d-ecfc07cbd416_Asmadi99.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\attachment\\f67f34c1-0443-4ebb-a57d-ecfc07cbd416_Asmadi99.JPG"
     }
   ]
 }

@@ -10,8 +10,6 @@ namespace Project295.API.Models
             Attachments = new HashSet<Attachment>();
             ComplainComplainants = new HashSet<Complain>();
             ComplainUsers = new HashSet<Complain>();
-            FollowerFolloweds = new HashSet<Follower>();
-            FollowerUsers = new HashSet<Follower>();
             Posts = new HashSet<Post>();
             UserExperiences = new HashSet<UserExperience>();
             UserProjects = new HashSet<UserProject>();
@@ -33,8 +31,6 @@ namespace Project295.API.Models
         public virtual ICollection<Attachment> Attachments { get; set; }
         public virtual ICollection<Complain> ComplainComplainants { get; set; }
         public virtual ICollection<Complain> ComplainUsers { get; set; }
-        public virtual ICollection<Follower> FollowerFolloweds { get; set; }
-        public virtual ICollection<Follower> FollowerUsers { get; set; }
         public virtual Login? Logins { get; set; }
         public virtual ICollection<Post> Posts { get; set; }
         public virtual ICollection<UserExperience> UserExperiences { get; set; }

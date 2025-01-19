@@ -75,10 +75,24 @@ namespace Project295.API.Controllers
             return Ok(new { message = "User added successfully" });
         }
         [HttpPut]
-        [Route("UpdateLogin")]
-        public void UpdateLogin(Login login)
+        [Route("UpdatePassword")]
+        public IActionResult UpdateLogin([FromBody] UpdatePasswordDTO updatePasswordDTO)
         {
+            var login = _dbContext.Login.FirstOrDefault(x=>x.UserId == updatePasswordDTO.UserId);
+            if(login.Password != updatePasswordDTO.OldPassword)
+            {
+                return BadRequest();
+            }
+          
+                login.Password = updatePasswordDTO.NewPassword;
+            
+
              _dbContext.Login.Update(login);
+
+             _dbContext.SaveChanges();
+
+            return Ok();
+
         }
         [HttpDelete]
         [Route("DeleteLogin")]
