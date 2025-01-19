@@ -2995,19 +2995,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\smadi\\.nuget\\packages\\": {}
+    "C:\\Users\\ssmad\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\github\\Project295\\Backend\\Project295\\Project295.API.csproj",
+      "projectUniqueName": "C:\\My Download\\Project295\\Backend\\Project295\\Project295.API.csproj",
       "projectName": "Project295.API",
-      "projectPath": "D:\\github\\Project295\\Backend\\Project295\\Project295.API.csproj",
-      "packagesPath": "C:\\Users\\smadi\\.nuget\\packages\\",
-      "outputPath": "D:\\github\\Project295\\Backend\\Project295\\obj\\",
+      "projectPath": "C:\\My Download\\Project295\\Backend\\Project295\\Project295.API.csproj",
+      "packagesPath": "C:\\Users\\ssmad\\.nuget\\packages\\",
+      "outputPath": "C:\\My Download\\Project295\\Backend\\Project295\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\smadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ssmad\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3091,7 +3091,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

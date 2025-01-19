@@ -84,23 +84,6 @@ namespace Project295.API.Controllers
                 return BadRequest(new { message = "This profile is damaged! Please contact the admin." });
             }
         }
-        [HttpGet]
-        [Route("ProfileCounts")]
-        public IActionResult ProfileCounts([FromQuery]int userId)
-        {
-            var counts = _dbContext.Users
-                 .Where(x => x.UserId == userId)
-                 .Select(count => new ProfileCountsDTO()
-                 {
-                   PostsCount = count.Posts.Count(),
-                   FollowedsCount = count.FollowerFolloweds.Count(),
-                   FollowerCount = count.FollowerUsers.Count()
-                 })
-                .FirstOrDefault();
-
-            return Ok(counts);
-
-        }
         [HttpPost]
         [Route("CreateUser")]
         public void CreateUser(User user)
@@ -138,6 +121,7 @@ namespace Project295.API.Controllers
 
             return Ok();
         }
+
         [HttpDelete]
         [Route("DeleteUser")]
         public void DeleteUser(int id)
@@ -193,6 +177,61 @@ namespace Project295.API.Controllers
             existingUser.IsBlocked = user.IsBlocked;
 
             _dbContext.SaveChanges();
+        }
+
+        [HttpPut]
+        [Route("UpdateUserData")]
+        public IActionResult UpdateUserData([FromForm] UpdateUserDataDTO updateUserDTO)
+        {
+            if (updateUserDTO == null)
+            {
+                return BadRequest("Invalid user data.");
+            }
+            var user = _dbContext.Users.FirstOrDefault(x => x.UserId == updateUserDTO.UserId);
+            user.FirstName = updateUserDTO.FirstName ?? user.FirstName;
+            user.LastName = updateUserDTO.LastName ?? user.LastName;
+            user.PhoneNumber = updateUserDTO.PhoneNumber ?? user.PhoneNumber;
+            user.JobTitle = updateUserDTO.JobTitle ?? user.JobTitle;
+            user.Company = updateUserDTO.Company ?? user.Company;
+            user.Address = updateUserDTO.Address ?? user.Address;
+            user.Brif = updateUserDTO.Brief ?? user.Brif;
+            _dbContext.Users.Update(user);
+
+            var login = _dbContext.Login.FirstOrDefault(x=>x.UserId == updateUserDTO.UserId);
+            login.UserName = updateUserDTO.Email ?? login.UserName;
+            var attachmentType = _dbContext.AttachmentTypes.ToList();
+
+            int profilePictureTypeId = attachmentType
+                .FirstOrDefault(x => x.AttachmentTypeName!.ToLower().Contains("personal"))!
+                .AttachmentTypeId;
+
+            int profileHeaderTypeId = attachmentType
+                .FirstOrDefault(x => x.AttachmentTypeName!.ToLower().Contains("header"))!
+                .AttachmentTypeId;
+            _dbContext.Login.Update(login);
+            if(updateUserDTO.CoverPic is not null)
+            {
+                var Coverattachment = new Attachment();
+                Coverattachment = _dbContext.Attachments.FirstOrDefault(x => x.UserId == updateUserDTO.UserId && x.AttachmentTypeId == profileHeaderTypeId);
+                Coverattachment.AttachmentPath = updateUserDTO.CoverPic is not null ? _uploadAttachmentService.UploadImage(updateUserDTO.CoverPic) : Coverattachment.AttachmentPath;
+                Coverattachment.CreatedAt = updateUserDTO.CoverPic is not null ? DateTime.Now : Coverattachment.CreatedAt;
+                Coverattachment.UserId = updateUserDTO.UserId;
+                _dbContext.Attachments.Update(Coverattachment);
+
+            }
+            if (updateUserDTO.ProfilePic is not null)
+            {
+                var profilattachment = new Attachment();
+                profilattachment = _dbContext.Attachments.FirstOrDefault(x => x.UserId == updateUserDTO.UserId && x.AttachmentTypeId == profilePictureTypeId);
+                profilattachment.AttachmentPath = updateUserDTO.ProfilePic is not null ? _uploadAttachmentService.UploadImage(updateUserDTO.CoverPic) : profilattachment.AttachmentPath;
+                profilattachment.CreatedAt = updateUserDTO.ProfilePic is not null ? DateTime.Now : profilattachment.CreatedAt;
+                profilattachment.UserId = updateUserDTO.UserId;
+                _dbContext.Attachments.Update(profilattachment);
+
+            }
+
+            _dbContext.SaveChanges();
+            return Ok();
         }
     }
 }
