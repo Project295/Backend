@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Project295.API.Common;
+using Project295.API.DTO;
 using Project295.API.Models;
 
 
@@ -16,36 +17,131 @@ namespace Project295.API.Controllers
             _dbContext = dbContext;
         }
         [HttpGet]
-        public  List<UserExperience> GetAllUserExperience()
+        [Route("GetUserExperienceById/{userId}")]
+        public  IActionResult GetUserExperienceById(int userId)
         {
-            return _dbContext.UserExperiences.ToList();
+            var UserExperience = _dbContext.UserExperiences
+                .Where(x=>x.UserId== userId && x.UserExperienceTitle!=null)
+                .Select(Experience => new GetUserExperienceDTO()
+                {
+                    UserExperienceId = Experience.UserExperienceId,
+                    UserExperienceTitle = Experience.UserExperienceTitle,
+                    UserExperienceDiscription = Experience.UserExperienceDiscription,
+                    UserExperienceDateFrom = Experience.UserExperienceDateFrom,
+                    UserExperienceDateTo = Experience.UserExperienceDateTo,
+                    UserId = Experience.UserId,
+                    CreatedAt = Experience.CreatedAt
 
-        }
-        [HttpGet]
-        [Route("GetUserExperienceById")]
-        public  UserExperience GetUserExperienceById(int id)
-        {
-            return _dbContext.UserExperiences.FirstOrDefault(x=>x.UserExperienceId==id);
+                }).ToList();
 
+            return Ok(UserExperience);
         }
         [HttpPost]
         [Route("CreateUserExperience")]
-        public  void CreateUserExperience(UserExperience userExperience)
+        public  IActionResult CreateUserExperience(AddUserExperienceDTO addUserExperienceDTO)
         {
+            var userExperience = new UserExperience()
+            {
+                UserExperienceTitle = addUserExperienceDTO.UserExperienceTitle,
+                UserId = addUserExperienceDTO.UserId,
+                UserExperienceDiscription = addUserExperienceDTO.UserExperienceDiscription,
+                UserExperienceDateFrom = addUserExperienceDTO.UserExperienceDateFrom,
+                UserExperienceDateTo = addUserExperienceDTO.UserExperienceDateTo,
+                CreatedAt = DateTime.Now
+            };
              _dbContext.UserExperiences.Add(userExperience);
+            _dbContext.SaveChanges();
+            return Ok(userExperience);
         }
         [HttpPut]
         [Route("UpdateUserExperience")]
-        public void UpdateUserExperience(UserExperience userExperience)
+        public IActionResult UpdateUserExperience(UpdateUserExperienceDTO updateUserExperienceDTO)
         {
-            _dbContext.UserExperiences.Update(userExperience);
+
+            var userExperience = _dbContext.UserExperiences
+                 .FirstOrDefault(x => x.UserExperienceId == updateUserExperienceDTO.UserExperienceId);
+            userExperience.UserExperienceTitle = updateUserExperienceDTO?.UserExperienceTitle;
+            userExperience.UserExperienceDiscription = updateUserExperienceDTO?.UserExperienceDiscription;
+            userExperience.UserExperienceDateFrom = updateUserExperienceDTO?.UserExperienceDateFrom;
+            userExperience.UserExperienceDateTo = updateUserExperienceDTO?.UserExperienceDateTo;
+
+                
+                _dbContext.UserExperiences.Update(userExperience);
+            _dbContext.SaveChanges();
+            return Ok();
         }
         [HttpDelete]
-        [Route("DeleteUserExperience")]
-        public void DeleteUserExperience(int id)
+        [Route("DeleteUserExperience/{userExperienceId}")]
+        public IActionResult DeleteUserExperience(int userExperienceId)
         {
-            var userExperience = _dbContext.UserExperiences.FirstOrDefault(x => x.UserExperienceId == id);
+            var userExperience = _dbContext.UserExperiences.FirstOrDefault(x => x.UserExperienceId == userExperienceId);
             _dbContext.UserExperiences.Remove(userExperience);
+            _dbContext.SaveChanges();
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("GetUserEducationById/{userId}")]
+        public IActionResult GetUserEducationById(int userId)
+        {
+            var userEducation = _dbContext.UserExperiences
+                .Where(x => x.UserId == userId && x.UniversityName !=null)
+                .Select(Experience => new GetUserEducationDTO()
+                {
+                    UserExperienceId = Experience.UserExperienceId,
+                    UniversityName = Experience.UniversityName,
+                    CertificationName = Experience.CertificationName,
+                    UserExperienceDateFrom = Experience.UserExperienceDateFrom,
+                    UserExperienceDateTo = Experience.UserExperienceDateTo,
+                    UserId = Experience.UserId,
+                    CreatedAt = Experience.CreatedAt
+
+                }).ToList();
+
+            return Ok(userEducation);
+        }
+        [HttpPost]
+        [Route("CreateUserEducation")]
+        public IActionResult CreateUserEducation(AddUserEducationDTO addUserEducationDTO)
+        {
+            var userEducation = new UserExperience()
+            {
+                UniversityName = addUserEducationDTO.UniversityName,
+                UserId = addUserEducationDTO.UserId,
+                CertificationName = addUserEducationDTO.CertificationName,
+                UserExperienceDateFrom = addUserEducationDTO.UserExperienceDateFrom,
+                UserExperienceDateTo = addUserEducationDTO.UserExperienceDateTo,
+                CreatedAt = DateTime.Now
+            };
+            _dbContext.UserExperiences.Add(userEducation);
+            _dbContext.SaveChanges();
+            return Ok(userEducation);
+        }
+        [HttpPut]
+        [Route("UpdateUserEducation")]
+        public IActionResult UpdateUserEducation(UpdateUserEducationDTO updateUserEducationDTO)
+        {
+
+            var userEducation = _dbContext.UserExperiences
+                 .FirstOrDefault(x => x.UserExperienceId == updateUserEducationDTO.UserExperienceId);
+            userEducation.CertificationName = updateUserEducationDTO?.CertificationName;
+            userEducation.UniversityName = updateUserEducationDTO?.UniversityName;
+            userEducation.UserExperienceDateFrom = updateUserEducationDTO?.UserExperienceDateFrom;
+            userEducation.UserExperienceDateTo = updateUserEducationDTO?.UserExperienceDateTo;
+
+
+            _dbContext.UserExperiences.Update(userEducation);
+            _dbContext.SaveChanges();
+            return Ok();
+        }
+        [HttpDelete]
+        [Route("DeleteUserEducation/{userExperienceId}")]
+        public IActionResult DeleteUserEducation(int userExperienceId)
+        {
+            var userEducation = _dbContext.UserExperiences.FirstOrDefault(x => x.UserExperienceId == userExperienceId);
+            _dbContext.UserExperiences.Remove(userEducation);
+            _dbContext.SaveChanges();
+            return Ok();
         }
     }
 }

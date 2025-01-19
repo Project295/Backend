@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Project295.API.Common;
+using Project295.API.DTO;
 using Project295.API.Models;
 
 namespace Project295.API.Controllers
@@ -14,37 +16,47 @@ namespace Project295.API.Controllers
         {
             _dbContext = dbContext;
         }
+        
         [HttpGet]
-        public List<UserSkill> GetAllUserSkill()
+        [Route("GetUserSkillByUserId/{userId}")]
+        public IActionResult GetUserSkillById(int userId)
         {
-           return _dbContext.UserSkills.ToList();
+            var userSkills = _dbContext.UserSkills
+                .Include(s=>s.Skill)
+                .Where(x => x.UserId == userId)
+                .Select(userSkill=> new GetAllUserSkillsDTO()
+                {
+                    UserSkillId = userSkill.UserSkillId,
+                    UserId = userSkill.UserId,
+                    SkillId = userSkill.SkillId,
+                    SkillName = userSkill.Skill.SkillName,
+                    CreatedAt = userSkill.CreatedAt
+                }).ToList();
 
-        }
-        [HttpGet]
-        [Route("GetUserSkillById")]
-        public UserSkill GetUserSkillById(int id)
-        {
-            return _dbContext.UserSkills.FirstOrDefault(x => x.SkillId == id);
-
+            return Ok(userSkills);
         }
         [HttpPost]
         [Route("CreateUserSkill")]
-        public void CreateUserSkill(UserSkill userSkill)
+        public IActionResult CreateUserSkill(AddUserSkillsDTO addUserSkillsDTO)
         {
+            var userSkill = new UserSkill()
+            {
+                UserId = addUserSkillsDTO.UserId,
+                SkillId = addUserSkillsDTO.SkillId
+            };
              _dbContext.UserSkills.Add(userSkill);
+            _dbContext.SaveChanges();
+            return Ok();
         }
-        [HttpPut]
-        [Route("UpdateUserSkill")]
-        public  void UpdateUserSkill(UserSkill userSkill)
-        {
-            _dbContext.UserSkills.Update(userSkill);
-        }
+        
         [HttpDelete]
-        [Route("DeleteUserSkill")]
-        public void DeleteUserSkill(int id)
+        [Route("DeleteUserSkill/{userSkillId}")]
+        public IActionResult DeleteUserSkill(int userSkillId)
         {
-            var userSkill = _dbContext.UserSkills.FirstOrDefault(x => x.SkillId == id);
+            var userSkill = _dbContext.UserSkills.FirstOrDefault(x => x.UserSkillId == userSkillId);
             _dbContext.UserSkills.Remove(userSkill);
+            _dbContext.SaveChanges();
+            return Ok();
         }
     }
 }

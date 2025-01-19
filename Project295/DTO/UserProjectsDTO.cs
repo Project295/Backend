@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Project295.API.Models
+﻿namespace Project295.API.DTO
 {
-    public partial class UserProject
+    public class UserProjectsDTO
     {
         public int UserProjectId { get; set; }
         public string? UserProjectsTitle { get; set; }
@@ -11,6 +8,5 @@ namespace Project295.API.Models
         public int? UserId { get; set; }
         public DateTime? CreatedAt { get; set; }
 
-        public virtual User? User { get; set; }
     }
 }
