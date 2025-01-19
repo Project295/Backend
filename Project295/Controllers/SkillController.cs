@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Project295.API.Common;
+using Project295.API.DTO;
 using Project295.API.Models;
 
 
@@ -16,16 +17,29 @@ namespace Project295.API.Controllers
             _dbContext = dbContext;
         }
         [HttpGet]
-        public List<Skill> GetAllSkills()
+        public IActionResult GetAllSkills()
         {
-            return _dbContext.Skills.ToList();
+            var skills = _dbContext.Skills.Select(skill => new GetAllSkillsDTO()
+            {
+                SkillId = skill.SkillId,
+                SkillName = skill.SkillName,
+            }).ToList();
 
+            return Ok(skills);
         }
         [HttpGet]
         [Route("GetSkillById")]
-        public Skill GetSkillById(int id)
+        public IActionResult GetSkillById(int skillId)
         {
-            return _dbContext.Skills.FirstOrDefault(x=>x.SkillId == id);
+            var skill = _dbContext.Skills
+                .Where(x=>x.SkillId == skillId)
+                .Select(skills => new GetAllSkillsDTO()
+                {
+                    SkillId = skills.SkillId,
+                    SkillName=skills.SkillName,
+                });
+
+            return Ok(skill);
 
         }
         [HttpPost]

@@ -66,7 +66,6 @@ namespace Project295.API.Controllers
                     Address = userProfile.Address,
                     JobTitle = userProfile.JobTitle,
                     Company = userProfile.Company,
-                    HeaderImagePath = userProfile.Attachments.FirstOrDefault(x => x.AttachmentTypeId == profileHeaderTypeId)?.AttachmentPath,
                     Password = userProfile.Logins.Password
                 };
                 if (profileDTO.PersonalImagePath == null)

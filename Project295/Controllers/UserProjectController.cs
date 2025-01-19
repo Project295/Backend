@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Project295.API.Common;
+using Project295.API.DTO;
 using Project295.API.Models;
 
 
@@ -16,36 +17,60 @@ namespace Project295.API.Controllers
             _dbContext = dbContext;
         }
         [HttpGet]
-        public List<UserProject> GetAllUserProject()
+        [Route("GetUserProjectById/{userId}")]
+        public IActionResult GetUserProjectById(int userId)
         {
-            return _dbContext.UserProjects.ToList();
+            var userProjects = _dbContext.UserProjects
+                .Where(x => x.UserId == userId)
+                .Select(userProject=> new UserProjectsDTO(){
+                    UserProjectId = userProject.UserProjectId,
+                    UserProjectsTitle = userProject.UserProjectsTitle,
+                    UserProjectDiscription = userProject.UserProjectDiscription,
+                    CreatedAt = userProject.CreatedAt,
+                    UserId = userProject.UserId
 
-        }
-        [HttpGet]
-        [Route("GetUserProjectById")]
-        public UserProject GetUserProjectById(int id)
-        {
-            return _dbContext.UserProjects.FirstOrDefault(x=>x.UserProjectId==id);
+                
+                 }).ToList();
+
+            return Ok(userProjects);
 
         }
         [HttpPost]
         [Route("CreateUserProject")]
-        public void CreateUserProject(UserProject userProject)
+        public IActionResult CreateUserProject([FromBody] AddUserProjectDTO userProjectDTO)
         {
-            _dbContext.UserProjects.Add(userProject);       
+            var userProject = new UserProject()
+            {
+                UserProjectsTitle = userProjectDTO.UserProjectsTitle,
+                UserProjectDiscription = userProjectDTO.UserProjectDiscription,
+                UserId = userProjectDTO.UserId,
+                CreatedAt = DateTime.Now,
+
+            };
+            _dbContext.UserProjects.Add(userProject);
+            _dbContext.SaveChanges();
+            return Ok();
         }
         [HttpPut]
         [Route("UpdateUserProject")]
-        public void UpdateUserProject(UserProject userProject)
+        public IActionResult UpdateUserProject([FromBody]UpdateUserProjectDTO updateUserProjectDTO)
         {
+            var userProject = _dbContext.UserProjects
+                .FirstOrDefault(x => x.UserProjectId == updateUserProjectDTO.UserProjectId);
+            userProject.UserProjectsTitle = updateUserProjectDTO.UserProjectsTitle;
+            userProject.UserProjectDiscription = updateUserProjectDTO.UserProjectDiscription;
             _dbContext.UserProjects.Update(userProject);
+            _dbContext.SaveChanges();
+            return Ok();
         }
         [HttpDelete]
-        [Route("DeleteUserProject")]
-        public void DeleteUserProject(int id)
+        [Route("DeleteUserProject/{userProjectId}")]
+        public IActionResult DeleteUserProject(int userProjectId)
         {
-            var userProject = _dbContext.UserProjects.FirstOrDefault(x => x.UserProjectId == id);
+            var userProject = _dbContext.UserProjects.FirstOrDefault(x => x.UserProjectId == userProjectId);
             _dbContext.UserProjects.Remove(userProject);
+            _dbContext.SaveChanges();
+            return Ok();
         }
     }
 }
