@@ -130,18 +130,22 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "complain",
-        "Type": "Project295.API.Models.Complain",
-        "IsRequired": true
+        "Name": "complaintDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Project295.API.Controllers.ComplainController",
@@ -264,18 +268,12 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "contactU",
-        "Type": "Project295.API.Models.ContactU",
+        "Name": "contactData",
+        "Type": "Project295.API.DTO.ContactUsDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Project295.API.Controllers.ContactusController",
@@ -336,118 +334,6 @@
       {
         "Name": "contactU",
         "Type": "Project295.API.Models.ContactU",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.FollowerController",
-    "Method": "GetAllFollowers",
-    "RelativePath": "api/Follower",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Project295.API.Models.Follower, Project295.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.FollowerController",
-    "Method": "CreateFollower",
-    "RelativePath": "api/Follower/CreateFollower",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "follower",
-        "Type": "Project295.API.Models.Follower",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.FollowerController",
-    "Method": "DeleteFollower",
-    "RelativePath": "api/Follower/DeleteFollower",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.FollowerController",
-    "Method": "GetFollowerById",
-    "RelativePath": "api/Follower/GetFollowerById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Project295.API.Models.Follower",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.FollowerController",
-    "Method": "UpdateFollower",
-    "RelativePath": "api/Follower/UpdateFollower",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "follower",
-        "Type": "Project295.API.Models.Follower",
         "IsRequired": true
       }
     ],
@@ -541,24 +427,18 @@
   {
     "ContainingType": "Project295.API.Controllers.LoginController",
     "Method": "UpdateLogin",
-    "RelativePath": "api/Login/UpdateLogin",
+    "RelativePath": "api/Login/UpdatePassword",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "login",
-        "Type": "Project295.API.Models.Login",
+        "Name": "updatePasswordDTO",
+        "Type": "Project295.API.DTO.UpdatePasswordDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Project295.API.Controllers.PostController",
@@ -568,17 +448,7 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Project295.API.Models.Post, Project295.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Project295.API.Controllers.PostController",
@@ -1212,22 +1082,6 @@
   },
   {
     "ContainingType": "Project295.API.Controllers.UserController",
-    "Method": "ProfileCounts",
-    "RelativePath": "api/User/ProfileCounts",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Project295.API.Controllers.UserController",
     "Method": "UpdateUser",
     "RelativePath": "api/User/UpdateUser",
     "HttpMethod": "PUT",
@@ -1266,6 +1120,72 @@
       },
       {
         "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project295.API.Controllers.UserController",
+    "Method": "UpdateUserData",
+    "RelativePath": "api/User/UpdateUserData",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "FirstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LastName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "JobTitle",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Company",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Brief",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProfilePic",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "CoverPic",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
       }

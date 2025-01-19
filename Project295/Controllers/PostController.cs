@@ -20,9 +20,46 @@ namespace Project295.API.Controllers
             _uploadAttachmentService = uploadAttachmentService;
         }
         [HttpGet]
-        public List<Post> GetAllPosts()
+        public IActionResult GetAllPosts()
         {
-            return _dbContext.Posts.ToList();
+            //public string? contant { get; set; }
+            //public DateTime? createdAt { get; set; }
+            //public string? postAttachmentPath { get; set; }
+            //public string? userAttachmentPath { get; set; }
+            //public int? userId { get; set; }
+            //public string? FirstName { get; set; }
+            //public string? LastName { get; set; }
+            //public string? UserName { get; set; }
+            var attachmentType = _dbContext.AttachmentTypes.ToList();
+            int postImageTypeId = attachmentType.Find(x => x.AttachmentTypeName.ToLower().Contains("post")).AttachmentTypeId;
+            int personalImageTypeId = attachmentType.Find(x => x.AttachmentTypeName.ToLower().Contains("personal")).AttachmentTypeId;
+
+            var homePosts = _dbContext.Posts
+                  .Where(x => x.IsBlocked == false)
+                  .Include(u => u.User)
+                  .ThenInclude(l => l.Logins)
+                  .Include(a => a.Attachments)
+                  .Select(post => new HomePostDTO
+                  {
+                      PostId = post.PostId,
+                      PostStatusId = post.PostStatusId,
+                      CategoryId = post.CategoryId,
+                      Contant = post.Contant,
+                      CreatedAt = post.CreatedAt,
+                      PostAttachmentPath = post.Attachments.AttachmentTypeId==postImageTypeId? post.Attachments.AttachmentPath:null,
+                      UserId = post.UserId,
+                      UserName = post.User.Logins.UserName,
+                      FirstName = post.User.FirstName,
+                      LastName = post.User.LastName,
+                      UserAttachmentPath = post.User.Attachments
+                        .Where(a => a.AttachmentTypeId == personalImageTypeId)
+                        .Select(a => a.AttachmentPath)
+                        .FirstOrDefault() ?? "https://localhost:7011/attachment/default-profile.jpg"
+
+
+                  }).ToList();
+
+            return Ok(homePosts);
 
         }
         [HttpGet]
