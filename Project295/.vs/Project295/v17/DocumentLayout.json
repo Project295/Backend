@@ -3,44 +3,44 @@
   "WorkspaceRootPath": "D:\\github\\Project295\\Backend\\Project295\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\models\\userexperience.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\userexperience.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\controllers\\userskillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\userskillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\dto\\getalluserskillsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:dto\\getalluserskillsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\controllers\\skillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\skillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\models\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\models\\userskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\userskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\controllers\\userexperiencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\userexperiencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\models\\skillscategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\skillscategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\controllers\\userprojectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:controllers\\userprojectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\dto\\profiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:dto\\profiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\models\\userproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\userproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\dto\\usersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:dto\\usersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|d:\\github\\project295\\backend\\project295\\models\\userexperience.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66E4C7AF-F973-4CFD-9973-6091CB79BC75}|Project295.API.csproj|solutionrelative:models\\userexperience.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,136 +50,142 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 9,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserSkill.cs",
-              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Models\\UserSkill.cs",
-              "RelativeDocumentMoniker": "Models\\UserSkill.cs",
-              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Models\\UserSkill.cs",
-              "RelativeToolTip": "Models\\UserSkill.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAwAAAA",
+              "Title": "GetAllUserSkillsDTO.cs",
+              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\DTO\\GetAllUserSkillsDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\GetAllUserSkillsDTO.cs",
+              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\DTO\\GetAllUserSkillsDTO.cs",
+              "RelativeToolTip": "DTO\\GetAllUserSkillsDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:55:43.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserExperience.cs",
-              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Models\\UserExperience.cs",
-              "RelativeDocumentMoniker": "Models\\UserExperience.cs",
-              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Models\\UserExperience.cs",
-              "RelativeToolTip": "Models\\UserExperience.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:55:41.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProfileDTO.cs",
-              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\DTO\\ProfileDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\ProfileDTO.cs",
-              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\DTO\\ProfileDTO.cs",
-              "RelativeToolTip": "DTO\\ProfileDTO.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAA1wAsAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T20:17:22.242Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UsersDTO.cs",
-              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\DTO\\UsersDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\UsersDTO.cs",
-              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\DTO\\UsersDTO.cs",
-              "RelativeToolTip": "DTO\\UsersDTO.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T20:17:05.753Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAA7wBsAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T20:07:45.62Z",
+              "WhenOpened": "2025-01-19T07:43:33.116Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PostController.cs",
-              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Controllers\\PostController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PostController.cs",
-              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Controllers\\PostController.cs",
-              "RelativeToolTip": "Controllers\\PostController.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAlwFAAAAAYAAAA",
+              "Title": "Skill.cs",
+              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Models\\Skill.cs",
+              "RelativeDocumentMoniker": "Models\\Skill.cs",
+              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Models\\Skill.cs",
+              "RelativeToolTip": "Models\\Skill.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T19:30:44.438Z",
+              "WhenOpened": "2025-01-19T06:32:24.472Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Models\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Models\\AppDbContext.cs",
-              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Models\\AppDbContext.cs",
-              "RelativeToolTip": "Models\\AppDbContext.cs",
-              "ViewState": "AQIAAAgBAAAAAAAAAAAQwBkBAAAdAAAA",
+              "DocumentIndex": 6,
+              "Title": "SkillsCategory.cs",
+              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Models\\SkillsCategory.cs",
+              "RelativeDocumentMoniker": "Models\\SkillsCategory.cs",
+              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Models\\SkillsCategory.cs",
+              "RelativeToolTip": "Models\\SkillsCategory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T20:05:20.815Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAowDcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T19:41:07.497Z",
+              "WhenOpened": "2025-01-19T06:24:08.948Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAlwEAAAAAyAAAA",
+              "Title": "UserSkill.cs",
+              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Models\\UserSkill.cs",
+              "RelativeDocumentMoniker": "Models\\UserSkill.cs",
+              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Models\\UserSkill.cs",
+              "RelativeToolTip": "Models\\UserSkill.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAcAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T18:19:09.921Z",
+              "WhenOpened": "2025-01-18T23:53:31.736Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SkillController.cs",
+              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Controllers\\SkillController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SkillController.cs",
+              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Controllers\\SkillController.cs",
+              "RelativeToolTip": "Controllers\\SkillController.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAIwDAAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T23:35:31.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserProject.cs",
+              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Models\\UserProject.cs",
+              "RelativeDocumentMoniker": "Models\\UserProject.cs",
+              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Models\\UserProject.cs",
+              "RelativeToolTip": "Models\\UserProject.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T20:51:02.833Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-17T17:24:00.616Z",
+              "Title": "UserExperience.cs",
+              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Models\\UserExperience.cs",
+              "RelativeDocumentMoniker": "Models\\UserExperience.cs",
+              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Models\\UserExperience.cs",
+              "RelativeToolTip": "Models\\UserExperience.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T19:55:03.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserSkillController.cs",
+              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Controllers\\UserSkillController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserSkillController.cs",
+              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Controllers\\UserSkillController.cs",
+              "RelativeToolTip": "Controllers\\UserSkillController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAywBwAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T15:36:42.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserExperienceController.cs",
+              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Controllers\\UserExperienceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserExperienceController.cs",
+              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Controllers\\UserExperienceController.cs",
+              "RelativeToolTip": "Controllers\\UserExperienceController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAIkAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T15:03:33.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserProjectController.cs",
+              "DocumentMoniker": "D:\\github\\Project295\\Backend\\Project295\\Controllers\\UserProjectController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserProjectController.cs",
+              "ToolTip": "D:\\github\\Project295\\Backend\\Project295\\Controllers\\UserProjectController.cs",
+              "RelativeToolTip": "Controllers\\UserProjectController.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAUwDsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T14:43:47.637Z",
               "EditorCaption": ""
             }
           ]

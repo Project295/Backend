@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Project295.API.Models
+﻿namespace Project295.API.DTO
 {
-    public partial class UserExperience
+    public class GetUserExperienceDTO
     {
         public int UserExperienceId { get; set; }
         public string? UserExperienceTitle { get; set; }
         public string? UserExperienceDiscription { get; set; }
-        public string? UniversityName { get; set; }
-        public string? CertificationName { get; set; }
         public DateTime? UserExperienceDateFrom { get; set; }
         public DateTime? UserExperienceDateTo { get; set; }
         public int? UserId { get; set; }
         public DateTime? CreatedAt { get; set; }
-
-        public virtual User? User { get; set; }
     }
 }
