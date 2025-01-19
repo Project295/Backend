@@ -277,7 +277,19 @@ namespace Project295.API.Common
 
                 entity.Property(e => e.UserExperienceDateTo).HasColumnType("datetime");
 
-                entity.Property(e => e.UserExperienceDiscription)
+                entity.Property(e => e.UserExperienceTitle)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                 entity.Property(e => e.UserExperienceTitle)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                 entity.Property(e => e.UniversityName)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+                
+                entity.Property(e => e.CertificationName)
                     .HasMaxLength(1)
                     .IsUnicode(false);
 
@@ -297,6 +309,10 @@ namespace Project295.API.Common
 
                 entity.Property(e => e.UserId).HasColumnName("userId");
 
+                entity.Property(e => e.UserProjectsTitle)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);    
+                
                 entity.Property(e => e.UserProjectDiscription)
                     .HasMaxLength(1)
                     .IsUnicode(false);
@@ -315,9 +331,6 @@ namespace Project295.API.Common
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
-                entity.Property(e => e.OtherSkill)
-                    .HasMaxLength(1)
-                    .IsUnicode(false);
 
                 entity.Property(e => e.UserId).HasColumnName("userId");
 
